@@ -1,0 +1,34 @@
+// @use 'src/styles/variables' as *;
+
+
+$primary-color: #0da16b;
+
+.who-we-are {
+    display: flex;
+    flex-direction: row-reverse; // flips layout so text is on the right
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
+    background-color: $primary-color;
+    color: white; // makes text visible
+  
+    .text-wrap, .image-wrap {
+      flex: 1;
+      padding: 2rem;
+    }
+  
+    .image-wrap img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  
+    p {
+        font-size: 1.25rem;
+    }
+
+}
+  

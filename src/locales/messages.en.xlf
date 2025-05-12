@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="he" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5375102441909646319" datatype="html">
+        <source>דף הבית</source>
+        <target>Home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/navbar/navbar.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7278519916777228985" datatype="html">
+        <source>אודות</source>
+        <target>About</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/navbar/navbar.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8341680320265309612" datatype="html">
+        <source>סוגי רפואה</source>
+        <target>Treatment options</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/navbar/navbar.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7551366047534400295" datatype="html">
+        <source>איך מגיעים</source>
+        <target>Location</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/navbar/navbar.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="650050579454003357" datatype="html">
+        <source>אנגלית</source>
+        <target>EN</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/navbar/navbar.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
