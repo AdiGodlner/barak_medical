@@ -3,12 +3,18 @@
     flex-direction: column;
     min-height: 100vh;
   }
-  
-  router-outlet {
-    flex-grow: 1;
-  }
-  
-  app-footer {
-    margin-top: auto;
+
+.spacer{
+  min-height: 74px;
+  width: 100%;
+  content: "";
+}
+
+router-outlet {
+  flex-grow: 1;
+}
+
+app-footer {
+  margin-top: auto;
   }
   

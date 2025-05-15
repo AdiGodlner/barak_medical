@@ -1,37 +1,54 @@
 <nav>
+  <ul>
+      <li>
+          <a routerLink="/"
+           class="logo"
+           aria-label="Go to home page"
+          >
+              ברק מדיקל
+          </a>
+      </li>                                                                                                                                             
 
-    <ul>
-        <li>
-            <a routerLink="/" class="logo">
-                ברק מדיקל
-            </a>
-        </li>
-        <span class="spacer"></span>
-        <li><a routerLink="/"
-            routerLinkActive="active" 
-            [routerLinkActiveOptions]="{ exact: true }" 
-            i18n >דף הבית</a></li>
-        <li>
-            <a routerLink="/about"
-             routerLinkActive="active"
-             i18n >אודות</a>
-        </li>
-        <li>
-            <a routerLink="/treatments"
-             routerLinkActive="active"
-             i18n >סוגי רפואה</a>
-        </li>
-        <li>
-            <a routerLink="/location" routerLinkActive="active"
-            i18n >איך מגיעים</a>
-        </li>
-        <li>
-            <a i18n href="http://localhost:4201/"
-            i18n >אנגלית</a>
-        </li>
-    </ul>
+      <li><a routerLink="/"
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{ exact: true }" 
+           >דף הבית</a>
+      </li>
+      
+      <li>
+          <a routerLink="/about"
+           routerLinkActive="active"
+            >אודות
+          </a>
+      </li>
+      
+      <li>
+          <a routerLink="/treatments"
+           routerLinkActive="active"
+            >סוגי רפואה
+          </a>
+      </li>
+      
+      <li>
+          <a routerLink="/location" routerLinkActive="active"
+           >איך מגיעים
+          </a>
+      </li>
+      
+      <li>
+          <a href="http://localhost:4201/"
+           >אנגלית</a>
+      </li>
+  </ul>
+
+  <div class="spacer"></div>
+  @if (isMobileMode) {
 
 
+  <button  (click)="toggleMobileMenu()" aria-label="Menu">
+      ☰
+  </button>
+  }
 </nav>
 
 
