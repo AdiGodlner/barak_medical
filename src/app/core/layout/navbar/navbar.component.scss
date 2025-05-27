@@ -68,40 +68,6 @@ nav {
   }
 }
 
-.language-toggle {
-  display: inline-block;
-  background-color: $bg-hover-light;
-  border-radius: 100%; // makes it fully rounded
-  padding: 0.5rem 1rem;
-  font-size: $font-size-sm;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  color: $text;
-  border: 2px solid $mid-dark-blue;
-  transition: background-color 0.2s ease, color 0.2s ease;
-
-}
-
-
-// TODO add skip link 
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #000;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  z-index: 1000;
-  transition: top 0.3s ease;
-  text-decoration: none;
-
-  &:focus {
-    top: 0;
-  }
-}
-
-
 ul {
 
   container-type: inline-size; 
@@ -116,6 +82,55 @@ ul {
   gap: $space-lg;
 
 }
+
+
+
+
+
+.switch-button {
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  /* z-index: 197 !important; */
+  cursor: pointer;
+  transition: 0.3s ease all;
+  border: 1px solid white;
+  position: relative;
+}
+
+.switch-button .switch-button-case {
+  display: inline-block;
+  // background: none;
+  width: 49%;
+  height: 100%;
+  color: white;
+  // position: relative;
+  border: none;
+  transition: 0.3s ease all;
+  // z-index: 2000;
+}
+
+
+.switch-button .active {
+  color: #151515;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  transition: 0.3s ease-out all;
+  border-radius: 0; /* Optional: adjust for pill shape */
+}
+
+.switch-button .active-case {
+  color: #151515;
+}
+
+
+
+
 
 
 @container cardContainerWrap (width >= 1000px) {
