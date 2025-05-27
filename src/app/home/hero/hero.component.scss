@@ -1,53 +1,108 @@
-// @use 'src/styles/variables' as *;
+@use '../../../styles/variables.scss' as *;
 
 
-$primary-color: #0d47a1;
-$bg-color: #f5f5f5;
-
-.hero {
+.hero{
+  
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  gap: 2rem;
-  min-height: 100vh;
-  width: 100%;
-  padding: 5rem;       
-  
-  background-color: $primary-color;
+  gap: $space-xxl;
+  min-height:90vh ;
+
 }
 
+.background-image-wrap {
+  
+  flex:1;
+  background: $bright-yellow;
+  background-image: linear-gradient(90deg, $bright-yellow 0%, rgba(255, 255, 255, 1) 70%);
+  
+
+}
+
+
+.background-image{
+  
+  background-image: url('../../../../public/assets/images/hero/hero_bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;        // Cover entire area
+  background-position: 100% top;
+  height: 100%;
+  width: 100%;
+
+
+}
+// 785 text 1445
 .hero-text {
-  color: $bg-color;
-  flex: 1;
-  padding: 2rem;
+
+  h1{
+    font-size: 4.5rem;
+    line-height: 0.8;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $mid-dark-blue;
+  // flex: 1;
+  padding: 2.5rem;
+  // padding: 0 2.5rem 0 0;
   text-align: right;
-  min-width: 500px;
+  width:33.3%;
 }
 
 .hero-image{
-  padding: 2rem;
+  width: 100%;
+  height: 100%;
   flex-shrink: 0;
   flex-grow: 1;
-  min-width: 300px;
 }
 
 .hero-image img {
-    border-radius: 50%;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  width: 60%;
+  height: 900%;
+  left: 0;
+  // max-width: 500px;
+  display: none;
+  object-fit: cover;
+  // margin: 0 auto;
 }
 
 h1 {
-  color: $bg-color;
-  font-size: 5rem;
-  margin-bottom: 1rem;
+  font-size: $font-size-xxxl;
+  margin-bottom: $space-sm;
 }
 
 p {
-  color: $bg-color;
-  font-size: 1.5rem;
+  font-size: $font-size-md;
+  margin-bottom: $space-xxxl;
+  margin-top: $space-xxxl;
+
 }
+
+.cta-btn{
+
+  display: inline-block;
+  width: 30%;
+  border-radius: $radius-md;
+  text-align: center;
+  font-size: $font-size-md;
+  font-weight: bold;
+  padding: calc($space-sm / 4) $space-sm;
+  text-decoration: none;
+  color: $mid-dark-blue;
+  background-color: $light-blue;
+
+  &:hover{
+
+    color: $light-blue;
+    background-color: $mid-dark-blue;
+    
+  }
+}
+
+
+// svg{
+//     // color: $text-light;
+//     width: 100%;
+//     height: 100%;
+//     aspect-ratio: 1/1;
+// }

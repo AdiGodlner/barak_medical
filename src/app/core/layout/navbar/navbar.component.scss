@@ -1,64 +1,66 @@
-
+@use '../../../../styles/variables.scss' as *;
 
 nav {
+  
   width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
-  padding: 0.5rem 1rem;
+  background-color: $bg-white;
+  border-bottom: $border-s solid $bg-secondary;
+  padding: $space-xxs $space-sm;
   direction: rtl; 
   position:fixed;
   z-index: 999;
 
-  ul {
-    margin: 0;
-    padding: 0;
-
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 1.5rem; // spacing between items
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-  }
 
   a {
-    text-decoration: none;
-    color: #1a1a1a;
-    font-size: 1rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.25rem;
-    display: inline-block;
 
-    // Minimum touch size
-    min-height: 44px;
+    display: inline-block;
+    text-decoration: none;
+    color: $mid-dark-blue;
+    font-size: $font-size-md;
+    padding: 2px $space-sm;
+    border-radius: 15px;
+    border: 2px solid transparent; // reserve space!
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    // Minimum touch size for AAA
+    min-height: 24px;
     min-width: 44px;
 
-    // Focus styles (keyboard)
     &:focus-visible {
-      outline: 3px solid #005fcc;
+      outline: 2px solid $focus-bg;
       outline-offset: 2px;
-      background-color: #e6f0ff;
+      border-color: $text;
+      background-color: $focus-bg;
     }
 
     &:hover {
-      background-color: #f5f5f5;
+
+      border-color: $mid-dark-blue;
+      color: $mid-light-blue;
+
     }
+
   }
   a.active {
-    text-decoration: underline;
     font-weight: bold;
-    color: #005bbb;
+    color: $primary; // maybe change to an accent color
   }
   
 
   .logo {
     font-weight: bold;
-    font-size: 1.2rem;
-    color: #005fcc;
+    font-size: $font-size-md;
+    color: $primary;
+    height: 4rem; 
   }
+
+  .logo-image{
+    height: 100%;
+    max-height: 100%;
+    width: auto;      
+    display: block;
+  }
+
 
   .spacer {
     flex-grow: 1;
@@ -66,8 +68,23 @@ nav {
   }
 }
 
+.language-toggle {
+  display: inline-block;
+  background-color: $bg-hover-light;
+  border-radius: 100%; // makes it fully rounded
+  padding: 0.5rem 1rem;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: $text;
+  border: 2px solid $mid-dark-blue;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
-// Optional skip link (best for keyboard users)
+}
+
+
+// TODO add skip link 
 .skip-link {
   position: absolute;
   top: -40px;
@@ -82,4 +99,48 @@ nav {
   &:focus {
     top: 0;
   }
+}
+
+
+ul {
+
+  container-type: inline-size; 
+  container-name: cardContainerWrap;
+    
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: $space-lg;
+
+}
+
+
+@container cardContainerWrap (width >= 1000px) {
+
+  .hamburger{
+    display: none;
+  }
+
+  .navItem{
+    display: flex;
+    align-items: center;
+  }
+
+
+}
+
+@container cardContainerWrap (width < 1000px) {
+
+  .hamburger{
+    display: flex;
+    align-items: center;
+  }
+
+  .navItem{
+    display: none;
+  }
+
 }

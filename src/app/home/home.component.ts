@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { ContactComponent } from './contact/contact.component';
 import { HeroComponent } from './hero/hero.component';
-import { LocationComponent } from './location/location.component';
 import { AdditionalTreatmentsComponent } from './treatment-cards/additional-treatments/additional-treatments.component';
 import { OccupationalMedicineComponent } from './treatment-cards/occupational-medicine/occupational-medicine.component';
 import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
-
+import { TestingGroundComponent } from '../testing-ground/testing-ground.component';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -13,10 +11,9 @@ import { Meta, Title } from '@angular/platform-browser';
   imports: [
     HeroComponent,
     WhoWeAreComponent,
+    TestingGroundComponent,
     AdditionalTreatmentsComponent,
     OccupationalMedicineComponent,
-    ContactComponent,
-    LocationComponent,
 
   ],
   templateUrl: './home.component.html',

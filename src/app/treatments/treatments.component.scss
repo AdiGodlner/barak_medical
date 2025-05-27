@@ -1,17 +1,19 @@
+@use '../../styles/variables.scss' as *;
+
 .treatment {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    margin-bottom: $space-xxl;
+    padding: $space-sm;
+    background-color: $primary-bg;
+    border-radius: $radius-lg;
   }
   
   .treatment h3 {
-    color: #333;
+    color: $text;
     margin-top: 0;
   }
   
   .treatments h1, .treatments h2 {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: $space-xl;
   }
   

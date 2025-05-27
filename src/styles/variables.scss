@@ -6,15 +6,37 @@
 // ------------------------------------
 
 // Color Palette
-$primary: #005fcc;
-$primary-bg: #fcfafa;
-$bg: #ffffff;
-$text: #1a1a1a;
-$text-dark: #00171f;
-$cta: #eccacb;
-$accent: #3b3b3b;
-$complementary: #ffffff;
-$general-1: #ececec;
+
+$light-blue:#Dae3ed;
+$mid-light-blue:#3d4272;
+$mid-dark-blue:#232873;
+$dark-blue: #181d4c;
+
+$bright-yellow: #Ffedc0;
+$mid-dark-yellow: #ffdd7c;
+$dark-yellow: #Ffdd39;
+
+$bg-white: #fff;
+
+
+$primary: #1E3A8A;
+$primary-bg: #F9FAFB;
+$bg-secondary: #E5E7EB;
+$bg-dark: #111827;
+$text: #111827;
+$text-light: #F9FAFB;
+// Focus
+$focus-bg: #FACC15;
+$focus-color: #111827;
+// Hover Backgrounds
+$bg-hover-light: #E0E7FF;
+$bg-hover-dark: #1E40AF;
+// Hover Text
+$hover-light: #1E3A8A;
+$hover-dark: #F9FAFB;
+$border: rgba(255,255,255,.85);
+
+
 
 // Font sizes
 $font-size-xxxs: 0.5rem;   // 8px
@@ -38,10 +60,21 @@ $space-xl:   1.75rem;  // 28px
 $space-xxl:  2rem;     // 32px
 $space-xxxl: 2.25rem;  // 36px
 
+// Border widths
+$border-s: 1px;
+$border-md: 2px;
+$border-l: 3px;
+
 // Border radius
 $radius-sm:  0.25rem;  // 4px
 $radius-md:  0.5rem;   // 8px
 $radius-lg:  1rem;     // 16px
+
+// animation times
+$very-fast: 1s;
+$fast: 2s;
+$mid: 3s;
+$long: 4s;
 
 // Breakpoints
 $breakpoint-sm:  36rem;  // 576px

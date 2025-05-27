@@ -1,54 +1,53 @@
 <nav>
-  <ul>
-      <li>
-          <a routerLink="/"
-           class="logo"
-           aria-label="Go to home page"
-          >
-              ברק מדיקל
-          </a>
-      </li>                                                                                                                                             
+  <ul class="myContainer" >
 
-      <li><a routerLink="/"
-          routerLinkActive="active" 
-          [routerLinkActiveOptions]="{ exact: true }" 
-           >דף הבית</a>
-      </li>
-      
-      <li>
-          <a routerLink="/about"
-           routerLinkActive="active"
-            >אודות
-          </a>
-      </li>
-      
-      <li>
-          <a routerLink="/treatments"
-           routerLinkActive="active"
-            >סוגי רפואה
-          </a>
-      </li>
-      
-      <li>
-          <a routerLink="/location" routerLinkActive="active"
-           >איך מגיעים
-          </a>
-      </li>
-      
-      <li>
-          <a href="http://localhost:4201/"
-           >אנגלית</a>
-      </li>
+    <li class="hamburger" >
+        
+        <button  aria-label="toggle menu" >
+            <span>menu</span>
+        </button>
+
+    </li>
+
+    <li >
+        <a routerLink="/"
+        class="logo"
+        aria-label="Go to home page"
+        >
+            <img class="logo-image" src="/assets/logo.svg" alt="Home page">
+        </a>
+    </li>                                                                                                                                             
+
+    <li class="navItem">
+        <a routerLink="/about"
+        routerLinkActive="active"
+        >עלינו
+        </a>
+    </li>
+    
+    <li class="navItem">
+        <a routerLink="/treatments"
+        routerLinkActive="active"
+        >שירותי רפואה
+        </a>
+    </li>
+    
+    <li class="navItem">
+        <a routerLink="/location" routerLinkActive="active"
+        >המרפאה
+        </a>
+    </li>
+    <div class="spacer"></div>
+    <li>
+        <a href="/en" class="language-toggle" lang="en"> English</a>
+        <!-- <a href="http://localhost:4201/" class="logo">
+        <img class="logo-image" src="/assets/heb_eng.svg" alt="english page">
+        </a> -->
+    </li>
+    
   </ul>
 
-  <div class="spacer"></div>
-  @if (isMobileMode) {
-
-
-  <button  (click)="toggleMobileMenu()" aria-label="Menu">
-      ☰
-  </button>
-  }
+  
 </nav>
 
 
