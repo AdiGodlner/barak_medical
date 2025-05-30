@@ -1,19 +1,24 @@
 @use '../../../../styles/variables.scss' as *;
 
 nav {
-  
+
+  container-type: inline-size; 
+  container-name: ulContainer;
+
   width: 100%;
   background-color: $bg-white;
-  border-bottom: $border-s solid $bg-secondary;
+  // border-bottom: $border-s solid $light-blue;// used to be color // $bg-secondary: #E5E7EB;
+
   padding: $space-xxs $space-sm;
   direction: rtl; 
+  
   position:fixed;
   z-index: 999;
 
 
   a {
 
-    display: inline-block;
+    display: block;
     text-decoration: none;
     color: $mid-dark-blue;
     font-size: $font-size-md;
@@ -26,13 +31,6 @@ nav {
     min-height: 24px;
     min-width: 44px;
 
-    &:focus-visible {
-      outline: 2px solid $focus-bg;
-      outline-offset: 2px;
-      border-color: $text;
-      background-color: $focus-bg;
-    }
-
     &:hover {
 
       border-color: $mid-dark-blue;
@@ -40,38 +38,55 @@ nav {
 
     }
 
+    &:focus-visible {
+      outline: 2px solid $dark-yellow;
+      outline-offset: 2px;
+      border-color: $mid-dark-blue;
+      background-color: $dark-yellow;
+    }
+
+
   }
   a.active {
     font-weight: bold;
-    color: $primary; // maybe change to an accent color
+    color: $mid-light-blue; 
+  
   }
   
 
-  .logo {
-    font-weight: bold;
-    font-size: $font-size-md;
-    color: $primary;
-    height: 4rem; 
+.logo {
+
+  a {
+    padding: 0;
+    display: block;
+    height: 100%;
+
   }
 
-  .logo-image{
-    height: 100%;
-    max-height: 100%;
-    width: auto;      
-    display: block;
-  }
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  min-width: 3rem; 
+
+}
+
+img {
+  display: block;
+  width: auto;
+  height: 100%;
+
+}
 
 
   .spacer {
     flex-grow: 1;
     // aria-hidden: true;
   }
+
 }
 
 ul {
 
-  container-type: inline-size; 
-  container-name: cardContainerWrap;
     
   margin: 0;
   padding: 0;
@@ -83,57 +98,21 @@ ul {
 
 }
 
+.hamburger{
 
-
-
-
-.switch-button {
-  width: 400px;
-  height: 40px;
-  text-align: center;
-  /* z-index: 197 !important; */
-  cursor: pointer;
-  transition: 0.3s ease all;
-  border: 1px solid white;
-  position: relative;
-}
-
-.switch-button .switch-button-case {
-  display: inline-block;
-  // background: none;
-  width: 49%;
+  background-color: red;
   height: 100%;
-  color: white;
-  // position: relative;
-  border: none;
-  transition: 0.3s ease all;
-  // z-index: 2000;
-}
+  button{
 
-
-.switch-button .active {
-  color: #151515;
-  background-color: white;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  z-index: 1;
-  transition: 0.3s ease-out all;
-  border-radius: 0; /* Optional: adjust for pill shape */
-}
-
-.switch-button .active-case {
-  color: #151515;
+    min-width: 44px;
+    min-height: 24px;
+    display: block;
+  }
 }
 
 
 
-
-
-
-@container cardContainerWrap (width >= 1000px) {
+@container ulContainer (width >= 1000px) {
 
   .hamburger{
     display: none;
@@ -144,17 +123,34 @@ ul {
     align-items: center;
   }
 
+  .spacer{
+    display:block;
+  }
 
 }
 
-@container cardContainerWrap (width < 1000px) {
+@container ulContainer (width < 1000px) {
+
+  ul{
+    
+    align-items: center;
+    justify-content: space-between;
+
+  }
 
   .hamburger{
     display: flex;
     align-items: center;
   }
+  .logo{
+    min-height: 2rem;
+  }
 
   .navItem{
+    display: none;
+  }
+
+  .spacer{
     display: none;
   }
 

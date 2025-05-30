@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import { HeroComponent } from './hero/hero.component';
 import { AdditionalTreatmentsComponent } from './treatment-cards/additional-treatments/additional-treatments.component';
 import { OccupationalMedicineComponent } from './treatment-cards/occupational-medicine/occupational-medicine.component';
-import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
-import { TestingGroundComponent } from '../testing-ground/testing-ground.component';
+// import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
+// import { TestingGroundComponent } from '../testing-ground/testing-ground.component';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
   imports: [
     HeroComponent,
-    WhoWeAreComponent,
-    TestingGroundComponent,
+    // WhoWeAreComponent,
+    // TestingGroundComponent,
     AdditionalTreatmentsComponent,
     OccupationalMedicineComponent,
 

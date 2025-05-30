@@ -1,7 +1,5 @@
-// @use 'src/styles/variables' as *;
+@use '../../../styles/variables.scss' as *;
 
-
-$primary-color: #0da16b;
 
 .who-we-are {
     display: flex;
@@ -11,8 +9,8 @@ $primary-color: #0da16b;
     justify-content: space-between;
     min-height: 100vh;
     width: 100%;
-    background-color: $primary-color;
-    color: white; // makes text visible
+    background-color: $bg-white;
+    color: $mid-dark-blue;
   
     .text-wrap, .image-wrap {
       min-width: 500px;
