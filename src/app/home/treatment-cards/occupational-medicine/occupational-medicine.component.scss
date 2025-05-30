@@ -1,11 +1,4 @@
 @use '../../../../styles/variables.scss' as *;
-@use '../cards-container.scss' as *;
-
-h2{
+@import url('../cards-container.scss');
 
 
-    font-size: $font-size-xxl;
-    margin-bottom: $space-lg;
-    text-align: center;
-
-}

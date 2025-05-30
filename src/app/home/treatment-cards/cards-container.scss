@@ -1,6 +1,17 @@
 @use '../../../styles/variables.scss' as *;
 
 
+h2{
+
+
+    font-weight: bold;
+    color: $mid-light-blue;
+    
+    margin-bottom: $space-lg;
+    padding: 0  2.5rem 0 0 ;
+
+}
+
 .cards-section {
 
   padding-block: 4rem;
@@ -22,12 +33,16 @@
   margin: 1rem auto;
   gap: 1rem;
   max-width: 100%;
+  justify-items: center;
 
 }
 
 .card{
   
   display: flex;
+  // min-width: 400px;
+  justify-content: center;
+
 }
 
 @container cardContainerWrap ( width > 1700px) {
@@ -47,6 +62,8 @@
   
 
   .cards-container {
+    max-width: 1100px;
+    padding-inline: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     // background-color: purple;
@@ -56,8 +73,9 @@
 }
 
 
-@container cardContainerWrap ( width <= 1100px   ) {
+@container cardContainerWrap ( width <= 820px   ) {
   .cards-container {
+    max-width: 600px;
     grid-template-columns: 1fr;
     // background-color: blue;
   }

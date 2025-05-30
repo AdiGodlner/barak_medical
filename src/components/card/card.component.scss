@@ -3,6 +3,7 @@
 
 .treatment-card {
 
+  // container: myFooContainer / inline-size;
     border: 3px solid $mid-dark-blue;
     border-radius: 30px;
     padding: $space-sm;
@@ -18,7 +19,7 @@
     justify-content: space-between;
     height: 100%;
 
-    // max-width: 400px;
+    // max-width: 414px;
     // max-height: 460px;
     
     &:hover {
@@ -36,7 +37,7 @@
     h3 {
       text-align: center;
       font-weight: bold;
-      font-size: $font-size-xxxl;
+      font-size: clamp(0.5rem, 0.5rem + 2vw, 1.8rem);
       margin-bottom: $space-xs;
       color: $mid-dark-blue;
     }
