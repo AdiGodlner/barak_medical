@@ -3,8 +3,8 @@
 
     <li class="hamburger" >
         
-        <button  aria-label="toggle menu" >
-            menu
+        <button  aria-label="toggle menu" (click)="toggleMenu()" >
+            <img src="/assets/images/hamburger.svg" alt="" class="hamburger-image"  >
         </button>
 
     </li>
@@ -16,21 +16,21 @@
         </a>
     </li>                                                                                                                                             
 
-    <li class="navItem">
+    <li class="nav-item">
         <a routerLink="/about"
         routerLinkActive="active"
         >עלינו
         </a>
     </li>
     
-    <li class="navItem">
+    <li class="nav-item dropdown">
         <a routerLink="/treatments"
         routerLinkActive="active"
         >שירותי רפואה
         </a>
     </li>
     
-    <li class="navItem">
+    <li class="nav-item">
         <a routerLink="/location" routerLinkActive="active"
         >המרפאה
         </a>
@@ -38,7 +38,7 @@
     
     <div class="spacer"></div>
     
-    <li class="logo" >
+    <li class="language-toggle" >
         <a href="http://localhost:4201/">
             <img src="/assets/heb_eng.svg" alt="english page">
         </a>
@@ -47,30 +47,76 @@
     
   </ul>
 
-  
 </nav>
 
+<aside 
+  class="side-menu"
+  [class.open]="isMenuOpen"
+  [attr.aria-hidden]="!isMenuOpen"
+  [attr.inert]="!isMenuOpen ? '' : null"
+>
+
+  <ul>
+    
+    <li class="nav-item">
+        <a routerLink="/about"
+        routerLinkActive="active"
+        >עלינו
+        </a>
+    </li>
+    <!-- routerLink="/treatments"
+        routerLinkActive="active" -->
+    <li class="nav-item dropdown">
+        <button 
+            (click)="toggleDropdown()" 
+            aria-haspopup="true" 
+            [attr.aria-expanded]="isDropdownOpen"
+            class="dropdown-toggle"
+        >שירותי רפואה ▼
+            <!-- <span class="caret" aria-hidden="true">▼</span> -->
+        </button>
+        <!-- <ul class="dropdown-content"
+            [class.open]="isDropdownOpen"
+            [attr.aria-hidden]="!isDropdownOpen"
+            [attr.inert]="!isDropdownOpen ? '' : null"
 
 
+        >
+            <li class="nav-item" >
+                כושר עבודה
+            </li>
+            <li class="nav-item" >
+              ייעוץ לגופים גדולים
+            </li>
+            <li class="nav-item" >
+            קביעת קשר סיבתי
+            </li>
+            <li class="nav-item" >
+                מיצוי זכויות רפואיות
+            </li>
+            <li class="nav-item" >
+                רפואה צבאית
+            </li>
+            <li class="nav-item" >
+                מנהל רפואי
+            </li>
+            <li class="nav-item" >
+                רפואת צלילה
+            </li>
+            <li class="nav-item">
+                רפואה תעופתית
+            </li>
+            
+        </ul> -->
+    </li>
+    
+    <li class="nav-item">
+        <a routerLink="/location" routerLinkActive="active"
+        >המרפאה
+        </a>
+    </li>
+    
+  </ul>
 
+</aside>
 
-<!-- 
-
-// better he/ en link ideas and options none work right now 
-
-<div class="switch-button">
-            <span class="active"></span>
-            <a class="switch-button-case right"> עברית</a>
-            <a class="switch-button-case left active-case">English</a>
-        </div>         -->
-         <!-- <a
-        href="/en"
-        class="lang-toggle"
-        aria-label="Switch to English"
-      >
-        <span class="lang-option">עברית</span>
-        <span class="lang-option">English</span>
-        <span class="lang-indicator" style="left: 50%;"></span>
-      </a> -->
-        <!-- <a href="/en" class="language-toggle" lang="en"> English</a> -->
-       

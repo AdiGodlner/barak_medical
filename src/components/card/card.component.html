@@ -1,7 +1,9 @@
-<div class="treatment-card">
+<!-- <div class="treatment-card"> -->
   <img [src]="imageUrl" [alt]="title" class="card-image" />
-  <h3>{{ title }}</h3>
+  <div class="title-wrap">
+    <h3>{{ title }}</h3>
+  </div>
   <p>{{ description }}</p>
   <a [routerLink]="['/treatments']" [fragment]="anchorId">להרחבה</a>
-</div>
+<!-- </div> -->
   

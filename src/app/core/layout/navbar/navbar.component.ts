@@ -13,10 +13,34 @@ import { RouterModule } from '@angular/router';
 
 
 export class NavbarComponent {
+  
+  
+  
+  isMenuOpen:boolean = false;
+  isDropdownOpen: boolean = false;
+
+  toggleMenu() {
+
+    this.isMenuOpen = !this.isMenuOpen;
+    
+    if (!this.isMenuOpen) {
+      this.isDropdownOpen = false;
+    }
+
+  }
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
 
 
-
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 
   
+
+
+
 
 }

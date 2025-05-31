@@ -1,9 +1,12 @@
 @use '../../styles/variables.scss' as *;
 
+// .treatment-car
+:host {
 
-.treatment-card {
-
-  // container: myFooContainer / inline-size;
+    // container: myFooContainer / inline-size;
+    // width: 100%;
+    // align-self: stretch;
+    // flex: 1 1 auto;
     border: 3px solid $mid-dark-blue;
     border-radius: 30px;
     padding: $space-sm;
@@ -33,11 +36,15 @@
       max-height: 180px;
       margin-bottom: $space-sm;
     }
-  
+    
+    .title-wrap{
+      container: foo / inline-size;
+    }
+
     h3 {
       text-align: center;
       font-weight: bold;
-      font-size: clamp(0.5rem, 0.5rem + 2vw, 1.8rem);
+      font-size: clamp(0.5rem, 0.5rem + 5cqw, 1.8rem);
       margin-bottom: $space-xs;
       color: $mid-dark-blue;
     }
