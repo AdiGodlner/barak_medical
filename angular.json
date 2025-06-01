@@ -25,9 +25,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize":[
-              "en-US"
-          ],
+            "baseHref": "/barak-medical/",
+            "localize":false,
             "outputPath": "dist/barak-medical",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -113,6 +112,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
