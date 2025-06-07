@@ -33,7 +33,7 @@
           "options": {
             "baseHref": "/barak-medical/",
             "localize":false,
-            "outputPath": "dist/barak-medical",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -56,7 +56,7 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "outputMode": "server",
+            "outputMode": "static",
             "ssr": {
               "entry": "src/server.ts"
             }

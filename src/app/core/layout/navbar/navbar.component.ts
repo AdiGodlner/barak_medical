@@ -14,33 +14,27 @@ import { RouterModule } from '@angular/router';
 
 export class NavbarComponent {
   
-  
-  
-  isMenuOpen:boolean = false;
-  isDropdownOpen: boolean = false;
+  isMainMenuOpen:boolean = false;
+  isSubMenuOpen: boolean = false;
 
   toggleMenu() {
 
-    this.isMenuOpen = !this.isMenuOpen;
+    //  TODO add overlay so if user click of menu menu closes
+
+    this.isMainMenuOpen = !this.isMainMenuOpen;
     
-    if (!this.isMenuOpen) {
-      this.isDropdownOpen = false;
+    if ( !this.isMainMenuOpen ) {
+      this.isSubMenuOpen = false;
     }
 
   }
 
-  toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
+  toggleSubMenuOpen() {
+    
+    this.isSubMenuOpen = !this.isSubMenuOpen;
+    console.log(" this submenu is ", this.isSubMenuOpen);
+
   }
-
-
-  closeMenu() {
-    this.isMenuOpen = false;
-  }
-
-  
-
-
 
 
 }

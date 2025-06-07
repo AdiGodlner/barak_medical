@@ -1,12 +1,7 @@
-@use '../../styles/variables.scss' as *;
+@use 'styles/variables.scss' as *;
 
-// .treatment-car
 :host {
 
-    // container: myFooContainer / inline-size;
-    // width: 100%;
-    // align-self: stretch;
-    // flex: 1 1 auto;
     border: 3px solid $mid-dark-blue;
     border-radius: 30px;
     padding: $space-sm;

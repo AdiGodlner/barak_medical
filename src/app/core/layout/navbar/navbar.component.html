@@ -1,122 +1,88 @@
 <nav>
-  <ul>
-
-    <li class="hamburger" >
-        
-        <button  aria-label="toggle menu" (click)="toggleMenu()" >
-            <img src="/assets/images/hamburger.svg" alt="" class="hamburger-image"  >
-        </button>
-
-    </li>
-
-    <li class="logo">
-        <a routerLink="/"
-        aria-label="Go to home page">
-            <img src="/assets/logo.svg" alt="Home page">
-        </a>
-    </li>                                                                                                                                             
-
-    <li class="nav-item">
-        <a routerLink="/about"
-        routerLinkActive="active"
-        >עלינו
-        </a>
-    </li>
     
-    <li class="nav-item dropdown">
-        <a routerLink="/treatments"
-        routerLinkActive="active"
-        >שירותי רפואה
+    <button
+    class="hamburger"  
+    aria-label="toggle menu"
+    (click)="toggleMenu()"  >
+        <img src="/assets/images/hamburger.svg" alt="" class="hamburger-image"  >
+    </button>
+
+    <div class="logo">
+        <a 
+            routerLink="/" 
+            aria-label="Go to home page" >
+            <img src="/assets/logo.svg" alt="">
         </a>
-    </li>
-    
-    <li class="nav-item">
-        <a routerLink="/location" routerLinkActive="active"
-        >המרפאה
-        </a>
-    </li>
-    
-    <div class="spacer"></div>
-    
-    <li class="language-toggle" >
+    </div>
+
+
+    <ul
+        class="menu-list"
+        [class.open]="isMainMenuOpen" 
+        [attr.aria-hidden]="!(isMainMenuOpen) "
+    >
+
+        <li class="menu-item">
+                <a routerLink="/he/about" routerLinkActive="active" >עלינו</a>
+        </li>
+
+        <li class="menu-item dropdown-menu-item">
+            
+            <button
+             class="submenu-btn"
+              (click)="toggleSubMenuOpen()" >
+                שירותי רפואה
+              </button>
+              
+            @if (isSubMenuOpen) {
+
+                <ul class="submenu"
+            >
+                <li class="menu-item" >
+                    <a routerLink="/he/services/work-ability">
+                        כושר עבודה
+                    </a>
+                </li>
+                <li class="menu-item" >
+                    <a routerLink="/he/services/industry-consulting">
+                        ייעוץ לגופים גדולים
+                    </a>
+                </li>
+                <li class="menu-item" >
+                    <a routerLink="/he/services/causal-link-assessment">קביעת קשר סיבתי</a>
+                </li>
+                <li class="menu-item" >
+                    <a routerLink="/he/services/medical-rights">מיצוי זכויות רפואיות</a>
+                </li>
+                <li class="menu-item" >
+                    <a routerLink="/he/services/military-medicine">רפואה צבאית</a>
+                </li>
+                <li class="menu-item" >
+                    <a routerLink="/he/services/medical-administration">מנהל רפואי</a>
+                </li>
+                <li class="menu-item" >
+                    <a routerLink="/he/services/diving-medicine">רפואת צלילה</a>
+                </li>
+                <li class="menu-item" >
+                    <a routerLink="/he/services/aviation-medicine">רפואה תעופתית</a>
+                </li>
+            </ul>
+
+            }
+            
+        </li>
+
+        <li class="menu-item">
+            <a routerLink="/he/location" routerLinkActive="active" >המרפאה</a>
+        </li>
+
+    </ul>
+
+    <div class="language-toggle" >
         <a href="http://localhost:4201/">
             <img src="/assets/heb_eng.svg" alt="english page">
         </a>
-        
-    </li>
-    
-  </ul>
-
+    </div>
 </nav>
 
-<aside 
-  class="side-menu"
-  [class.open]="isMenuOpen"
-  [attr.aria-hidden]="!isMenuOpen"
-  [attr.inert]="!isMenuOpen ? '' : null"
->
-
-  <ul>
-    
-    <li class="nav-item">
-        <a routerLink="/about"
-        routerLinkActive="active"
-        >עלינו
-        </a>
-    </li>
-    <!-- routerLink="/treatments"
-        routerLinkActive="active" -->
-    <li class="nav-item dropdown">
-        <button 
-            (click)="toggleDropdown()" 
-            aria-haspopup="true" 
-            [attr.aria-expanded]="isDropdownOpen"
-            class="dropdown-toggle"
-        >שירותי רפואה ▼
-            <!-- <span class="caret" aria-hidden="true">▼</span> -->
-        </button>
-        <!-- <ul class="dropdown-content"
-            [class.open]="isDropdownOpen"
-            [attr.aria-hidden]="!isDropdownOpen"
-            [attr.inert]="!isDropdownOpen ? '' : null"
-
-
-        >
-            <li class="nav-item" >
-                כושר עבודה
-            </li>
-            <li class="nav-item" >
-              ייעוץ לגופים גדולים
-            </li>
-            <li class="nav-item" >
-            קביעת קשר סיבתי
-            </li>
-            <li class="nav-item" >
-                מיצוי זכויות רפואיות
-            </li>
-            <li class="nav-item" >
-                רפואה צבאית
-            </li>
-            <li class="nav-item" >
-                מנהל רפואי
-            </li>
-            <li class="nav-item" >
-                רפואת צלילה
-            </li>
-            <li class="nav-item">
-                רפואה תעופתית
-            </li>
-            
-        </ul> -->
-    </li>
-    
-    <li class="nav-item">
-        <a routerLink="/location" routerLinkActive="active"
-        >המרפאה
-        </a>
-    </li>
-    
-  </ul>
-
-</aside>
 
