@@ -12,7 +12,7 @@ export class CardComponent {
   @Input() imageUrl = '';
   @Input() title = '';
   @Input() description = '';
-  @Input() anchorId = ''; // ID of the element in /treatments to scroll to
+  @Input() routeTo = ''; 
 
 
 }
