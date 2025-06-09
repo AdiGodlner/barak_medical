@@ -90,8 +90,7 @@ nav {
     margin-inline-start: auto;
     display: flex;
     align-items: center;
-    height: clamp(44px, 44px + 5vw, 80px);
-    min-width: 68px; 
+    height: clamp(44px, 44px + 5vw, 70%);
 
     a {
 
@@ -104,7 +103,7 @@ nav {
         display: block;
         width: auto;
         height: 100%;
-
+        aspect-ratio: 202/60;
       }
 
     }
