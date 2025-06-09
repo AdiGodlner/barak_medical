@@ -10,6 +10,7 @@
     <div class="logo">
         <a 
             routerLink="/" 
+            (click)="closeMenus()"
             aria-label="Go to home page" >
             <img src="/assets/logo.svg" alt="">
         </a>
@@ -23,7 +24,10 @@
     >
 
         <li class="menu-item">
-                <a routerLink="/he/about" routerLinkActive="active" >עלינו</a>
+                <a 
+                routerLink="/he/about"
+                routerLinkActive="active"
+                (click)="closeMenus()" >עלינו</a>
         </li>
 
         <li class="menu-item dropdown-menu-item">
@@ -39,32 +43,56 @@
                 <ul class="submenu"
             >
                 <li class="menu-item" >
-                    <a routerLink="/he/services/work-ability">
+                    <a 
+                    routerLink="/he/services/work-ability"
+                    (click)="closeMenus()"
+                    >
                         כושר עבודה
                     </a>
                 </li>
                 <li class="menu-item" >
-                    <a routerLink="/he/services/industry-consulting">
+                    <a 
+                    routerLink="/he/services/industry-consulting"
+                    (click)="closeMenus()"
+                    >
                         ייעוץ לגופים גדולים
                     </a>
                 </li>
                 <li class="menu-item" >
-                    <a routerLink="/he/services/causal-link-assessment">קביעת קשר סיבתי</a>
+                    <a 
+                    routerLink="/he/services/causal-link-assessment"
+                    (click)="closeMenus()"
+                    >קביעת קשר סיבתי</a>
                 </li>
                 <li class="menu-item" >
-                    <a routerLink="/he/services/medical-rights">מיצוי זכויות רפואיות</a>
+                    <a 
+                    routerLink="/he/services/medical-rights"
+                    (click)="closeMenus()"
+                    >מיצוי זכויות רפואיות</a>
                 </li>
                 <li class="menu-item" >
-                    <a routerLink="/he/services/military-medicine">רפואה צבאית</a>
+                    <a 
+                    routerLink="/he/services/military-medicine"
+                    (click)="closeMenus()"
+                    >רפואה צבאית</a>
                 </li>
                 <li class="menu-item" >
-                    <a routerLink="/he/services/medical-administration">מנהל רפואי</a>
+                    <a 
+                    routerLink="/he/services/medical-administration"
+                    (click)="closeMenus()"
+                    >מנהל רפואי</a>
                 </li>
                 <li class="menu-item" >
-                    <a routerLink="/he/services/diving-medicine">רפואת צלילה</a>
+                    <a 
+                    routerLink="/he/services/diving-medicine"
+                    (click)="closeMenus()"
+                    >רפואת צלילה</a>
                 </li>
                 <li class="menu-item" >
-                    <a routerLink="/he/services/aviation-medicine">רפואה תעופתית</a>
+                    <a 
+                    routerLink="/he/services/aviation-medicine"
+                    (click)="closeMenus()"
+                    >רפואה תעופתית</a>
                 </li>
             </ul>
 
@@ -73,7 +101,11 @@
         </li>
 
         <li class="menu-item">
-            <a routerLink="/he/location" routerLinkActive="active" >המרפאה</a>
+            <a 
+            routerLink="/he/location"
+            routerLinkActive="active"
+            (click)="closeMenus()" 
+            >המרפאה</a>
         </li>
 
     </ul>

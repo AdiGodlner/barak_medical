@@ -14,8 +14,8 @@ import { RouterModule } from '@angular/router';
 
 export class NavbarComponent {
   
-  isMainMenuOpen:boolean = false;
-  isSubMenuOpen: boolean = false;
+  isMainMenuOpen : boolean = false;
+  isSubMenuOpen : boolean = false;
 
   toggleMenu() {
 
@@ -32,9 +32,14 @@ export class NavbarComponent {
   toggleSubMenuOpen() {
     
     this.isSubMenuOpen = !this.isSubMenuOpen;
-    console.log(" this submenu is ", this.isSubMenuOpen);
 
   }
 
+  closeMenus(){
+    
+    this.isSubMenuOpen = false ;
+    this.isMainMenuOpen = false;
+
+  }
 
 }
