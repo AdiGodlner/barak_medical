@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { LocationComponent } from './location/location.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-import { TreatmentsComponent } from './treatments/treatments.component';
 import { CausalLinkAssessmentComponent } from './treatments/occupational-medicine/causal-link-assessment/causal-link-assessment.component';
 import { MilitaryMedicineComponent } from './treatments/additional-services/military-medicine/military-medicine.component';
 import { MedicalAdministrationComponent } from './treatments/additional-services/medical-administration/medical-administration.component';
