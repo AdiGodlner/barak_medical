@@ -33,7 +33,7 @@
           "options": {
             "baseHref": "/",
             "localize":false,
-            "outputPath": "dist",
+            "outputPath": "dist/cloudflare",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
