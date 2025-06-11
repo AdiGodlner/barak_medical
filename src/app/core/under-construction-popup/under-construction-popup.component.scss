@@ -1,0 +1,59 @@
+@use 'styles/variables.scss' as *;
+
+
+.popup-backdrop {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background: white;
+    color: black;
+    padding: 50px;
+    border-radius: 8px;
+    max-width: 90%;
+    min-width: 300px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    text-align: center;
+    
+    h2{
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    p{
+        font-size: 1.5rem;
+    }
+
+    button{
+        margin-top: 30px;
+        display: inline-block;
+        width: 10rem;
+        border-radius: 9999px;
+        text-align: center;
+        font-size: $font-size-md;
+        font-weight: bold;
+        padding: calc($space-sm / 4) $space-sm;
+        text-decoration: none;
+        color: $mid-dark-blue;
+        background-color: $light-blue;
+
+        &:hover{
+
+        color: $light-blue;
+        background-color: $mid-dark-blue;
+
+        }
+    }
+
+}
