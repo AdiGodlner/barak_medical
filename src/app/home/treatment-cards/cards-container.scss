@@ -45,7 +45,7 @@ h2{
 
 }
 
-@container cardContainerWrap ( width > 1500px) {
+@container cardContainerWrap ( width > 1300px) {
   
 
   .cards-container {
@@ -58,7 +58,7 @@ h2{
 
 }
 
-@container cardContainerWrap ( width  <= 1500px  ) {
+@container cardContainerWrap ( width  <= 1300px  ) {
   
 
   .cards-container {
@@ -73,7 +73,7 @@ h2{
 }
 
 
-@container cardContainerWrap ( width <= 820px   ) {
+@container cardContainerWrap ( width <= 700px   ) {
   .cards-container {
     max-width: 600px;
     grid-template-columns: 1fr;

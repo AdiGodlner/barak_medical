@@ -1,3 +1,4 @@
+@use 'styles/variables.scss' as *;
 
 // ===========================================
 // ===========================================
@@ -45,6 +46,18 @@
 
 button, input { all: unset; }
 
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid $dark-yellow;
+  outline-offset: 2px;
+  border-color: $mid-dark-blue;
+  background-color: $dark-yellow;
+}
+
 html, body {
 
   font-family: 'Almoni', sans-serif;
@@ -65,7 +78,7 @@ ul, ol, li{
 }
 
 
-/* Optional: Apply box-sizing globally */
+/* Apply box-sizing globally */
 *, *::before, *::after {
   box-sizing: border-box;
 }
