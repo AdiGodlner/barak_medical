@@ -10,6 +10,7 @@ import { AviationMedicineComponent } from './pages/services/additional-services/
 import { WorkAbilityComponent } from './pages/services/occupational-medicine/work-ability/work-ability.component';
 import { MedicalRightsComponent } from './pages/services/occupational-medicine/medical-rights/medical-rights.component';
 import { IndustryConsultingComponent } from './pages/services/occupational-medicine/industry-consulting/industry-consulting.component';
+import { AccessibilityComponent } from './pages/accessibility/accessibility.component';
 
 export const routes: Routes = [
     
@@ -22,6 +23,7 @@ export const routes: Routes = [
             
             { path: 'about', component: AboutComponent },
             { path: 'location', component: LocationComponent },
+            { path: 'accessibility-statement', component:AccessibilityComponent },
             { path: 'services',
                  children:[
                     { path: 'causal-link-assessment', component: CausalLinkAssessmentComponent },

@@ -1,8 +1,2 @@
 @use 'styles/variables.scss' as *;
-
-main{
-
-    min-height: 100vh;
-    width: 100%;
-    background: $bg-white;
-}
+@use 'app/pages/services/service_pages.scss';
