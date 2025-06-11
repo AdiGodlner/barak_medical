@@ -1,17 +1,19 @@
 import { Routes } from '@angular/router';
-import { LocationComponent } from './location/location.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { CausalLinkAssessmentComponent } from './treatments/occupational-medicine/causal-link-assessment/causal-link-assessment.component';
-import { MilitaryMedicineComponent } from './treatments/additional-services/military-medicine/military-medicine.component';
-import { MedicalAdministrationComponent } from './treatments/additional-services/medical-administration/medical-administration.component';
-import { DivingMedicineComponent } from './treatments/additional-services/diving-medicine/diving-medicine.component';
-import { AviationMedicineComponent } from './treatments/additional-services/aviation-medicine/aviation-medicine.component';
-import { WorkAbilityComponent } from './treatments/occupational-medicine/work-ability/work-ability.component';
-import { MedicalRightsComponent } from './treatments/occupational-medicine/medical-rights/medical-rights.component';
-import { IndustryConsultingComponent } from './treatments/occupational-medicine/industry-consulting/industry-consulting.component';
+import { LocationComponent } from './pages/location/location.component';
+import { AboutComponent } from './pages/about/about.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CausalLinkAssessmentComponent } from './pages/services/occupational-medicine/causal-link-assessment/causal-link-assessment.component';
+import { MilitaryMedicineComponent } from './pages/services/additional-services/military-medicine/military-medicine.component';
+import { MedicalAdministrationComponent } from './pages/services/additional-services/medical-administration/medical-administration.component';
+import { DivingMedicineComponent } from './pages/services/additional-services/diving-medicine/diving-medicine.component';
+import { AviationMedicineComponent } from './pages/services/additional-services/aviation-medicine/aviation-medicine.component';
+import { WorkAbilityComponent } from './pages/services/occupational-medicine/work-ability/work-ability.component';
+import { MedicalRightsComponent } from './pages/services/occupational-medicine/medical-rights/medical-rights.component';
+import { IndustryConsultingComponent } from './pages/services/occupational-medicine/industry-consulting/industry-consulting.component';
 
 export const routes: Routes = [
+    
+    //  TODO add lazy load to routes
 
     { path: '', component: HomeComponent },
     {

@@ -12,7 +12,6 @@ export class UnderConstructionPopupComponent implements OnInit{
 
   ngOnInit(): void {
     const dismissed = localStorage.getItem('underConstructionDismissed');
-    // const dismissed = false;
     if (!dismissed) {
       this.visible = true;
     }
