@@ -4,7 +4,9 @@
     class="hamburger"  
     aria-label="toggle menu"
     (click)="toggleMenu()"  >
-        <img src="/assets/images/hamburger.svg" alt="" class="hamburger-image"  >
+        <img src="/assets/images/hamburger.svg"
+         alt=""
+         class="hamburger-image"  >
     </button>
 
     <div class="logo">
@@ -20,7 +22,7 @@
     <ul
         class="menu-list"
         [class.open]="isMainMenuOpen" 
-        [attr.aria-hidden]="!(isMainMenuOpen) "
+        [attr.aria-hidden]="!(isMainMenuOpen)"
     >
 
         <li class="menu-item">
@@ -40,8 +42,7 @@
               
             @if (isSubMenuOpen) {
 
-                <ul class="submenu"
-            >
+                <ul class="submenu">
                 <li class="menu-item" >
                     <a 
                     routerLink="/he/services/work-ability"

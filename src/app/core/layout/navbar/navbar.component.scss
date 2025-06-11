@@ -263,7 +263,7 @@ nav {
       top: 80px;
       
       will-change: transform;
-      transform: translateX(-100%);
+      transform: translateX(0);
       transition: transform 0.3s ease;
 
       // background-color: red;
@@ -281,7 +281,7 @@ nav {
       padding-block: 20px;
 
         &.open {
-          transform: translateX(0);
+          transform: translateX(-100%);
         }
 
 
