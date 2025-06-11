@@ -1,12 +1,3 @@
 @use 'styles/variables.scss' as *;
+@use 'app/pages/services/service_pages.scss';
 
-
-
-.location{
-
-    height: 100vh;
-    width: 100%;
-    background-color: $bg-white;
-
-
-}
