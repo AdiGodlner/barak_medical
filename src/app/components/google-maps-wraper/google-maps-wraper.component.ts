@@ -1,16 +1,14 @@
 import { Component, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 
 @Component({
   selector: 'app-google-maps-wraper',
   imports: [
-    CommonModule,
     GoogleMap,
     MapMarker,
     MapInfoWindow
-
-  ],
+],
   templateUrl: './google-maps-wraper.component.html',
   styleUrl: './google-maps-wraper.component.scss'
 })
