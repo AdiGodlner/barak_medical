@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-
-import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
+// import { GoogleMapsWraperComponent } from '../../components/google-maps-wraper/google-maps-wraper.component';
 
 @Component({
   selector: 'app-location',
-  imports: [
-    GoogleMap,
-    MapInfoWindow,
-    MapMarker
-],
+  imports: [ 
+    // GoogleMapsWraperComponent
+  ],
   templateUrl: './location.component.html',
   styleUrl: './location.component.scss'
 })

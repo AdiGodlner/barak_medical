@@ -1,6 +1,6 @@
 <div class="map-container">
   <!-- Display only if map options and center are ready AND map has loaded successfully -->
-  @if (mapLoaded) {
+  @if ( mapLoaded ) {
     <google-map
       height="450px"
       width="100%"
@@ -11,18 +11,18 @@
       (mapInitialized)="onMapInitialized()"
     >
       <!-- Marker for the clinic location -->
-      <map-marker
+      <!-- <map-marker
         #markerRef="mapMarker"
         [position]="markerPosition"
         [options]="markerOptions"
         (mapClick)="openInfoWindow(markerRef)"
-      ></map-marker>
+      ></map-marker> -->
 
       <!-- Info window for the marker -->
-      <map-info-window #infoWindowRef="mapInfoWindow">
+      <!-- <map-info-window #infoWindowRef="mapInfoWindow">
         <div class="info-window-content">
-          <h3 >{{ clinicName }}</h3>
-          <p >{{ clinicAddress }}</p>
+          <h3 >{{ name }}</h3>
+          <p >{{ address }}</p>
           <a 
             [href]="directionsUrl"
             target="_blank"
@@ -31,7 +31,7 @@
               Get Directions
           </a>
         </div>
-      </map-info-window>
+      </map-info-window> -->
     </google-map>
 
   } @else if (isLoading) {
@@ -42,15 +42,15 @@
     } @else {
       <!-- Fallback (if interactive map fails to load or API key is missing/invalid) -->
       <div>
-      <a 
+      <!-- <a 
         [href]="directionsUrl"
         target="_blank"
         rel="noopener noreferrer"
         class="directions-button">
           Get Directions to Barak Medical Clinic
-      </a>
-      <p >
-        Opens directions in your default map application.
+      </a> -->
+      <p>
+        failed to load map.
       </p>
     </div>
   }

@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './core/layout/navbar/navbar.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
 import { UnderConstructionPopupComponent } from './core/under-construction-popup/under-construction-popup.component';
-
+import { ButtomFixdCallUsBannerComponent } from './components/buttom-fixd-call-us-banner/buttom-fixd-call-us-banner.component';
 @Component({
   selector: 'app-root',
   standalone:true,
@@ -11,7 +11,8 @@ import { UnderConstructionPopupComponent } from './core/under-construction-popup
     RouterOutlet,
     NavbarComponent,
     FooterComponent,
-    UnderConstructionPopupComponent
+    UnderConstructionPopupComponent,
+    ButtomFixdCallUsBannerComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

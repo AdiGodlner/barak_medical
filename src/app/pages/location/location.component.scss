@@ -1,3 +1,10 @@
 @use 'styles/variables.scss' as *;
 @use 'app/pages/services/service_pages.scss';
 
+.map-wrap{
+
+    min-height: 450px;
+    width: 100%;
+    background-color: red;
+
+}

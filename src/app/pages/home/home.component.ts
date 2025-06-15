@@ -4,6 +4,7 @@ import { AdditionalTreatmentsComponent } from './treatment-cards/additional-trea
 import { OccupationalMedicineComponent } from './treatment-cards/occupational-medicine/occupational-medicine.component';
 import { Meta, Title } from '@angular/platform-browser';
 
+
 @Component({
   selector: 'app-home',
   imports: [

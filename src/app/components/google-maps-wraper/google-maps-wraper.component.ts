@@ -6,26 +6,33 @@ import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
   selector: 'app-google-maps-wraper',
   imports: [
     GoogleMap,
-    MapMarker,
-    MapInfoWindow
+    // MapMarker,
+    // MapInfoWindow
 ],
   templateUrl: './google-maps-wraper.component.html',
   styleUrl: './google-maps-wraper.component.scss'
 })
 export class GoogleMapsWraperComponent implements OnInit, AfterViewInit {
-  @Input() clinicName: string = 'Barak Medical Clinic';
-  @Input() clinicAddress: string = '123 Main St, Jerusalem, Israel';
-  @Input() latitude!: number;
-  @Input() longitude!: number;
-  @Input() zoomLevel: number = 17;
 
-  @ViewChild(GoogleMap) map!: GoogleMap;
-  @ViewChild(MapInfoWindow) infoWindow!: MapInfoWindow;
+  // @Input() name !: string;
+  // @Input() address !: string ;
+  // @Input() latitude !: number;
+  // @Input() longitude !: number;
+  // @Input() zoomLevel : number = 17;
+
+  name      : string  = "ברק מדיקל";
+  address   : string  = "הדובדבן 9, קריית אונו";
+  latitude  : number  = 32.06901560849636;
+  longitude : number  = 34.86471295400901;
+  zoomLevel : number  = 17;
+
+  // @ViewChild(GoogleMap) map!: GoogleMap;
+  // @ViewChild(MapInfoWindow) infoWindow!: MapInfoWindow;
 
   center!: google.maps.LatLngLiteral;
   mapOptions!: google.maps.MapOptions;
   markerPosition!: google.maps.LatLngLiteral;
-  // markerOptions!: google.maps.Advnc;
+  // markerOptions!: google.maps.;
   directionsUrl: string = '';
 
   isLoading: boolean = true;
@@ -33,6 +40,8 @@ export class GoogleMapsWraperComponent implements OnInit, AfterViewInit {
   private mapLoadTimeout: any;
 
   ngOnInit(): void {
+
+    console.log(" in on init");
     // Basic input validation
     if (this.latitude === undefined || this.longitude === undefined) {
       console.error(`MapLocationComponent: Latitude or Longitude is missing.
@@ -65,7 +74,10 @@ export class GoogleMapsWraperComponent implements OnInit, AfterViewInit {
     // };
 
     // Generate the direct Google Maps URL (free, no API key)
+    console.log(" before generate map");
     this.generateDirectionsUrl();
+    console.log(" after generate map");
+    
 
   }
 
@@ -78,7 +90,7 @@ export class GoogleMapsWraperComponent implements OnInit, AfterViewInit {
         // Stop loading state, trigger fallback
         this.isLoading = false;
       }
-    }, 5000);
+    }, 15000);
 
   }
 
@@ -96,11 +108,11 @@ export class GoogleMapsWraperComponent implements OnInit, AfterViewInit {
    * Opens the info window associated with the clicked marker.
    * @param marker The MapMarker instance that was clicked.
    */
-  openInfoWindow(marker: MapMarker): void {
-    if (this.infoWindow) {
-      this.infoWindow.open(marker);
-    }
-  }
+  // openInfoWindow(marker: MapMarker): void {
+  //   if (this.infoWindow) {
+  //     this.infoWindow.open(marker);
+  //   }
+  // }
 
   /**
    * Generates the URL to open Google Maps directly for directions.
@@ -110,8 +122,11 @@ export class GoogleMapsWraperComponent implements OnInit, AfterViewInit {
    * On desktop, it will open in the browser.
    */
   private generateDirectionsUrl(): void {
-    const encodedQuery = encodeURIComponent(`${this.clinicName}, ${this.clinicAddress}`);
+
+    console.log(" started generateDirectionsUrl ");
+    const encodedQuery = encodeURIComponent(`${this.name}, ${this.address}`);
     this.directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`;
+  
   }
 
   /**
