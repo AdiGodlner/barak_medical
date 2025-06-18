@@ -7,6 +7,7 @@
     align-items: center;
     justify-items: center;
     height: 100%;
+
   a {
 
     display: block;
@@ -40,7 +41,6 @@
   
   }
 
-
 }
 
 
@@ -54,16 +54,18 @@ nav {
   background-color: $bg-white;
   padding: 0 2rem 0 2rem;
   
-  height: clamp(44px, 44px + 5vw, 80px); 
+  height: clamp(44px, 44px + 5vw, 70px); 
 
   position:fixed;
   z-index: 999;
 
   .logo {
 
+    flex: initial;
     display: flex;
     align-items: center;
-    height: clamp(44px, 44px + 5vw, 80px);
+    justify-content: center;
+    height: clamp(44px, 44px + 5vw, 70px);
     min-width: 100px; 
 
     a {
@@ -84,35 +86,7 @@ nav {
 
   }
 
-
-  .language-toggle{
-
-    margin-inline-start: auto;
-    display: flex;
-    align-items: center;
-    height: clamp(44px, 44px + 5vw, 70%);
-
-    a {
-
-      padding: 0;
-      display: block;
-      height: 100%;
-
-      img {
-
-        display: block;
-        width: auto;
-        height: 100%;
-        aspect-ratio: 202/60;
-      }
-
-    }
-
-  }
-
-
   .hamburger{
-
     display: none;
     width: 44px;
     height: 44px;
@@ -120,14 +94,18 @@ nav {
     border: 0;
     cursor: pointer;
 
+    
     .hamburger-image{
-      width: 100%;
-      height: 100%;
+      width: 30px;
+      height: 30px;
     }
 
 
   }
 
+  .left-spacer{
+    display: none;
+  }
 
   .menu-list {
       
@@ -143,6 +121,7 @@ nav {
       
       .submenu{
 
+        display: none;
         position: absolute;
         top: 100%;
         right: 0;
@@ -150,7 +129,11 @@ nav {
         border-radius: 15px;
         border: 2px solid $mid-dark-blue;
         padding: 1rem ;
-
+        
+        &.open{
+          display: block;
+        }
+        
       }
 
 
@@ -204,8 +187,8 @@ nav {
 
     .logo {
 
-      height: clamp(44px, 44px + 5vw, 80px);
-      width: clamp(100px, 30vw, 200px);
+      height: clamp(44px, 44px + 5vw, 70px);;
+      flex: 1;
       
       a {
 
@@ -220,39 +203,27 @@ nav {
 
     }
 
-
-    .language-toggle{
-
-      height: clamp(44px, 44px + 5vw, 80px);
-      width: clamp(68px, 30vw, 200px);
-      
-      a {
-
-        img{
-
-          height: 100%;
-          width: 100%;
-          // aspect-ratio: ;
-        
-        }
-
-      }
+    .left-spacer{
+      display: block;
+      height: 44px;
+      width: 44px;
 
     }
-
+    
     .hamburger{
 
+      height: 44px;
+      width: 44px;
       display: flex;
       align-items: center;
+      justify-content: center;
 
+      img{
+        width: 50%;
+        height: 50%; 
+      }
     }
 
-
-    .hamburger,
-    .logo,
-    .language-toggle {
-      align-items: center;
-    }
 
     .menu-list {
       
@@ -260,7 +231,7 @@ nav {
       position: fixed;
     
       left: 100%;
-      top: 80px;
+      top: 62px;
       
       will-change: transform;
       transform: translateX(0);
@@ -271,7 +242,7 @@ nav {
       width: 70%;
       max-width: 300px;
       min-width: 200px;
-      height: calc(100dvh -  clamp(44px, 44px + 5vw, 80px));
+      height: calc(100dvh -  clamp(44px, 44px + 5vw, 70px));
             
       display: flex;
       flex-direction: column;
@@ -297,8 +268,7 @@ nav {
 
             background-color: #f5f5f5;
             position: static;
-            
-            display: flex;
+            display: none;
             flex-direction: column;
             gap: 20px;
             align-items: center;
@@ -306,6 +276,9 @@ nav {
             padding: 0;
             border-radius: 0;
 
+            &.open{
+              display: flex;
+            }
           }
 
         }

@@ -1,0 +1,44 @@
+<div class="chat-wrap"
+    [class.open]="isChatOpen">
+    
+    <div class="title-wrap"
+    [class.open]="isChatOpen">
+
+
+        <button class="chat-button"
+        (click)="toggleChat()"
+        [class.open]="isChatOpen"
+        >
+        c
+        </button>
+        <div class="chat-bot-title">
+            chat bot
+        </div>
+        
+    </div>
+    
+    <div class="chat-body"
+    [class.open]="isChatOpen">
+
+        @for (message of messages; track message){
+            
+            <div class="message">some text</div>
+
+        }
+<!-- 
+        <form class="interact-bar"
+            (submit)="sendMessage($event)" >
+            <input type="text"
+                [(ngModel)]="message" 
+                name="chat" 
+                required 
+                placeholder="Type your question..." 
+            /> 
+            <button type="submit" > send </button>
+        </form> -->
+
+    </div>
+
+
+
+</div>

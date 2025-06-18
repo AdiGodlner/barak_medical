@@ -8,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class ChatbotComponent {
 
+  
+  isChatOpen : boolean = false;
+  messages : string[] = [];
+
+
+  toggleChat() : void {
+    
+    this.isChatOpen = !this.isChatOpen;
+
+  }
+
 }
