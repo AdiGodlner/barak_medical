@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SeoData } from '../../../../models/seo.model';
+import { SeoService } from '../../../../services/seo.service';
 
 @Component({
   selector: 'app-diving-medicine',
@@ -6,6 +8,27 @@ import { Component } from '@angular/core';
   templateUrl: './diving-medicine.component.html',
   styleUrl: './diving-medicine.component.scss'
 })
-export class DivingMedicineComponent {
+export class DivingMedicineComponent implements OnInit{
 
+
+    constructor(private seo: SeoService){
+
+    }
+  
+  
+    ngOnInit(): void {
+  
+      const pageSeo : SeoData ={
+        title: "רפואת צלילה",
+        description: "רפואת צלילה",
+      };
+  
+      this.seo.updateSeoPageData(pageSeo);
+  
+    }
+
+
+
+    
+  
 }

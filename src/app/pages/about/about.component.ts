@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from '../../services/seo.service';
+import { SeoData } from '../../models/seo.model';
 
 @Component({
   selector: 'app-about',
@@ -7,14 +9,27 @@ import { Meta, Title } from '@angular/platform-browser';
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit{
+
+
+    constructor(private seo: SeoService){
+      
+    }
+  
+  
+    ngOnInit(): void {
+  
+      const pageSeo : SeoData ={
+        title: "אודותינו",
+        description: "אודותינו",
+      };
+  
+      this.seo.updateSeoPageData(pageSeo);
+  
+    }
 
 
 
-  constructor(private meta: Meta, private titleService: Title) {
-
-    this.titleService.setTitle('About Barak Medical');
-
-  }
+    
 
 }
