@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './core/layout/navbar/navbar.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
 import { UnderConstructionPopupComponent } from './core/under-construction-popup/under-construction-popup.component';
-import { ButtomFixdCallUsBannerComponent } from './components/buttom-fixd-call-us-banner/buttom-fixd-call-us-banner.component';
+import { BottomCallUsBannerComponent } from './components/bottom-call-us-banner/bottom-call-us-banner.component';
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import { ChatbotComponent } from './components/chatbot/chatbot.component';
     NavbarComponent,
     FooterComponent,
     UnderConstructionPopupComponent,
-    ButtomFixdCallUsBannerComponent,
+    BottomCallUsBannerComponent,
     ChatbotComponent,
     
   ],
