@@ -9,7 +9,7 @@ import { SeoData } from '../../models/seo.model';
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent implements OnInit{
+export default class AboutComponent implements OnInit{
 
 
     constructor(private seo: SeoService){

@@ -9,7 +9,7 @@ import { SeoData } from '../../../../models/seo.model';
   templateUrl: './work-ability.component.html',
   styleUrl: './work-ability.component.scss'
 })
-export class WorkAbilityComponent implements OnInit{
+export default class WorkAbilityComponent implements OnInit{
 
 
   constructor(private seo: SeoService){

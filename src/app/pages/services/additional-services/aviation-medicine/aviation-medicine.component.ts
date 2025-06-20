@@ -8,7 +8,7 @@ import { SeoService } from '../../../../services/seo.service';
   templateUrl: './aviation-medicine.component.html',
   styleUrl: './aviation-medicine.component.scss'
 })
-export class AviationMedicineComponent implements OnInit{
+export default class AviationMedicineComponent implements OnInit{
 
 
     constructor(private seo: SeoService){

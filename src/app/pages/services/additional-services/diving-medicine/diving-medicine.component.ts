@@ -8,7 +8,7 @@ import { SeoService } from '../../../../services/seo.service';
   templateUrl: './diving-medicine.component.html',
   styleUrl: './diving-medicine.component.scss'
 })
-export class DivingMedicineComponent implements OnInit{
+export default class DivingMedicineComponent implements OnInit{
 
 
     constructor(private seo: SeoService){

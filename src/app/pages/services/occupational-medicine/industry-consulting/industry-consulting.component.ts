@@ -8,7 +8,7 @@ import { SeoService } from '../../../../services/seo.service';
   templateUrl: './industry-consulting.component.html',
   styleUrl: './industry-consulting.component.scss'
 })
-export class IndustryConsultingComponent implements OnInit{
+export default class IndustryConsultingComponent implements OnInit{
 
 
     constructor(private seo: SeoService){

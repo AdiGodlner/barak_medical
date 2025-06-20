@@ -8,7 +8,7 @@ import { SeoData } from '../../models/seo.model';
   templateUrl: './accessibility.component.html',
   styleUrl: './accessibility.component.scss'
 })
-export class AccessibilityComponent implements OnInit{
+export default class AccessibilityComponent implements OnInit{
 
 
     constructor(private seo: SeoService){

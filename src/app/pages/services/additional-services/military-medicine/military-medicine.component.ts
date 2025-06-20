@@ -8,7 +8,7 @@ import { SeoData } from '../../../../models/seo.model';
   templateUrl: './military-medicine.component.html',
   styleUrl: './military-medicine.component.scss'
 })
-export class MilitaryMedicineComponent implements OnInit{
+export default class MilitaryMedicineComponent implements OnInit{
 
 
     constructor(private seo: SeoService){

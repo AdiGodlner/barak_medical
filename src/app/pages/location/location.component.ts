@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from '../../services/seo.service';
 import { SeoData } from '../../models/seo.model';
 // import { GoogleMapsWraperComponent } from '../../components/google-maps-wraper/google-maps-wraper.component';
@@ -12,7 +11,7 @@ import { SeoData } from '../../models/seo.model';
   templateUrl: './location.component.html',
   styleUrl: './location.component.scss'
 })
-export class LocationComponent implements OnInit{
+export default class LocationComponent implements OnInit{
 
 
     constructor(private seo: SeoService){

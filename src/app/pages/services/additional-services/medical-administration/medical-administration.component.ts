@@ -8,7 +8,7 @@ import { SeoData } from '../../../../models/seo.model';
   templateUrl: './medical-administration.component.html',
   styleUrl: './medical-administration.component.scss'
 })
-export class MedicalAdministrationComponent implements OnInit{
+export default class MedicalAdministrationComponent implements OnInit{
 
 
     constructor(private seo: SeoService){
