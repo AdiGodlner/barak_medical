@@ -1,111 +1,167 @@
-
+@use 'styles/variables.scss' as *;
 
 .chat-wrap{
 
-    background-color: green;
-    height: 44px;
-    width: 44px;
-    border-radius: 99999px;
-    border: 1px solid rgb(11, 141, 11);
+    height: 56px;
+    width: 56px;
+    
     position : fixed;
-    bottom: 2vw;
-    right: 2vw;
+    bottom: 30px;
+    right: 30px;
 
-    &.open{
+    z-index: $z-index-chatbot;
 
-    border-radius: 10px;
-    background-color: red;
-    width: min(300px, 90% );
-    border: 2px solid black;
-    height: auto;
-    bottom: 2vh;
-    }
-
-}
-
-.title-wrap{
-
-    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: black;
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.16);
     
     &.open{
-        display: flex;
-        
-    }
 
-    .chat-bot-title{
-        display: none;
-        background-color: antiquewhite;
-
-        &.open{
-        
-            // display: block;
-            flex: 1;
-        
-        }
+        border-radius: 10px;
+        background-color: red;
+        width: min(300px, 90% );
+        border: 2px solid black;
+        height: auto;
+        min-height: 70dvh;
 
     }
 
-
-    .chat-button{
+    .open-button{
 
         width: 100%;
         height: 100%;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        &.open{
-            height: 44px;
-            width: 44px;
+        svg{
+
+            overflow: hidden;
+
         }
-     
-        
+
+        &.hide{
+            display: none;
+        }
+
+    }
+
+}
+
+.title-bar{
+
+    display: flex;
+    
+    .close-button{
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        background-color: black;
+        color: rgb(209, 209, 209);
+        font-size: 1.4rem;
+
         &:hover{
-            background-color: rgb(0, 167, 0);
+            color: white;
+            background-color: rgb(59, 59, 59);
         }
+    }
+
+    .title{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        flex:1;
+        background-color: antiquewhite;
 
     }
 
 
 }
-
-
-
 
 
 .chat-body {
    
-    background-color: blue;
+    background-color: white;
+    padding: 10px;
     width: 100%;
-    height: calc(70dvh - 44px);
-    border-radius: 10px; 
-    display: none;
-
-    &.open{
-
-        display: flex;
-    
-    }
+    height: calc(70dvh - 100px);
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
 
     .message{
 
+        font-size: 1.1rem;
+        max-width: 80%;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        padding: 15px 10px;
+        text-wrap: stable;
 
+        &.user{
+            background-color: aquamarine;
+            align-self: flex-start;
+            border-bottom-right-radius: 0;
+        }
+
+        &.bot{
+
+            background-color: rgb(192, 206, 206);
+            align-self: flex-end;
+            border-bottom-left-radius: 0;
+        }
 
     }
-    .interact-bar{
+    
+}
+
+
+.interact-bar{
 
         display: flex;
+     
         input{
-            
-            width: calc(100% - 44px);
-            height: 100%;
+
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex:1;
+
         }
 
         button{
+            
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            background-color: black;
+            color: rgb(209, 209, 209);
+            font-size: 1.4rem;
 
-            height: 44px;
-            width: 44px;
+            &:hover{
+                color: white;
+                background-color: rgb(59, 59, 59);
+            }
         }
 
 
     }
+
+.chat{
+
+    display: flex;
+    flex-direction: column;
+
+    &.closed{
+
+        display: none;
+
+    }
 }
+
 

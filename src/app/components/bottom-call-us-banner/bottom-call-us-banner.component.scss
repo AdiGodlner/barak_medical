@@ -12,8 +12,9 @@
   
         position: sticky;
         bottom: 0;
-  
-        display: flex;
+        z-index: $z-index-call-banner;
+        // display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;

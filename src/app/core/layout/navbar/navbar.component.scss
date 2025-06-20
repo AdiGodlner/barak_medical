@@ -57,7 +57,7 @@ nav {
   height: clamp(44px, 44px + 5vw, 70px); 
 
   position:fixed;
-  z-index: 999;
+  z-index: $z-index-nav;
 
   .logo {
 
