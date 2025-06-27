@@ -9,7 +9,7 @@ import { SeoData } from '../models/seo.model';
 export class SeoService {
 
   clinicName :string = "י.ד ברק מדיקל";
-  location :string = "גבעתיים";
+  location :string = "קריית אונו";
   titleSuffix:string = `${this.clinicName} | ${this.location}`;
 
   constructor(private title: Title, private meta: Meta) {
