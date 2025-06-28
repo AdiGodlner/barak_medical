@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
+  standalone:true,
   imports: [
     RouterModule
   ],
@@ -15,29 +16,40 @@ import { RouterModule } from '@angular/router';
 export class NavbarComponent {
   
   isMainMenuOpen : boolean = false;
-  isSubMenuOpen : boolean = false;
+  isSubMenu1Open : boolean = false;
+  isSubMenu2Open : boolean = false;
 
-  toggleMenu() {
+  openMenu() {
 
     //  TODO add overlay so if user click of menu menu closes
-
-    this.isMainMenuOpen = !this.isMainMenuOpen;
+    this.isMainMenuOpen = true;
     
-    if ( !this.isMainMenuOpen ) {
-      this.isSubMenuOpen = false;
-    }
+  }
+
+  closeMenu(){
+
+    this.isMainMenuOpen = false;
+
+    this.isSubMenu1Open = false;
+    this.isSubMenu2Open = false;
 
   }
 
-  toggleSubMenuOpen() {
+  toggleSubMenuOpen(id: number) {
     
-    this.isSubMenuOpen = !this.isSubMenuOpen;
+    if(id === 1){
+      this.isSubMenu1Open = !this.isSubMenu1Open;
+    }else {
+      this.isSubMenu2Open = !this.isSubMenu2Open;
+    }
+    
 
   }
 
   closeMenus(){
     
-    this.isSubMenuOpen = false ;
+    this.isSubMenu1Open = false;
+    this.isSubMenu2Open = false;
     this.isMainMenuOpen = false;
 
   }

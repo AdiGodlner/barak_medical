@@ -1,9 +1,9 @@
 <nav>
-    
+
     <button
     class="hamburger"  
-    aria-label="toggle menu"
-    (click)="toggleMenu()"  >
+    aria-label="open menu"
+    (click)="openMenu()"  >
 
         <img src="/assets/images/hamburger.svg"
          alt=""
@@ -26,6 +26,18 @@
         [attr.aria-hidden]="!(isMainMenuOpen)"
     >
 
+
+        <button
+        class="close-btn"  
+        aria-label="close menu"
+        (click)="closeMenu()"  >
+
+            <img src="/assets/images/x.svg"
+            alt=""
+            class="hamburger-image"  />
+        
+        </button>
+
         <li class="menu-item">
                 <a 
                 routerLink="/about"
@@ -33,17 +45,17 @@
                 (click)="closeMenus()" >עלינו</a>
         </li>
 
+
         <li class="menu-item dropdown-menu-item">
             
             <button
              class="submenu-btn"
-              (click)="toggleSubMenuOpen()" >
-                שירותי רפואה
+              (click)="toggleSubMenuOpen(1)" >
+                רפואה תעסוקתית
             </button>
-              
 
             <ul class="submenu"
-            [class.open] = "isSubMenuOpen">
+            [class.open] = "isSubMenu1Open">
 
                 <li class="menu-item" >
                     <a 
@@ -75,21 +87,51 @@
                 </li>
                 <li class="menu-item" >
                     <a 
-                    routerLink="/services/military-medicine"
+                    routerLink="/services/medical-administration"
                     (click)="closeMenus()"
-                    >רפואה צבאית</a>
+                    >מנהל רפואי</a>
                 </li>
+            </ul>
+
+            
+        </li>
+
+
+        <li class="menu-item">
+            <a 
+            routerLink="/services/military-medicine"
+            routerLinkActive="active"
+            (click)="closeMenus()" 
+            >רפואה צבאית</a>
+        </li>
+
+
+        <li class="menu-item">
+            <a 
+            routerLink="/services/diving-medicine"
+            routerLinkActive="active"
+            (click)="closeMenus()" 
+            >רפואת צלילה</a>
+        </li>
+
+
+        <li class="menu-item dropdown-menu-item">
+            
+            <button
+             class="submenu-btn"
+              (click)="toggleSubMenuOpen(2)" >
+                תחומים נוספים
+            </button>
+              
+
+            <ul class="submenu"
+            [class.open] = "isSubMenu2Open">
+
                 <li class="menu-item" >
                     <a 
                     routerLink="/services/medical-administration"
                     (click)="closeMenus()"
                     >מנהל רפואי</a>
-                </li>
-                <li class="menu-item" >
-                    <a 
-                    routerLink="/services/diving-medicine"
-                    (click)="closeMenus()"
-                    >רפואת צלילה</a>
                 </li>
                 <li class="menu-item" >
                     <a 
@@ -102,15 +144,20 @@
             
         </li>
 
-        <li class="menu-item">
+
+
+
+        <li class="menu-item end">
             <a 
             routerLink="/location"
             routerLinkActive="active"
             (click)="closeMenus()" 
-            >המרפאה</a>
+            >צור קשר</a>
         </li>
 
     </ul>
+
+
 
     <div class="left-spacer"></div>
 

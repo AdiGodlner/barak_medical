@@ -4,33 +4,35 @@
 .menu-item{
 
     display: flex;
+
     align-items: center;
-    justify-items: center;
     height: 100%;
-
-  a {
-
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    color: $mid-dark-blue;
-    font-size: $font-size-md;
-    padding: 2px $space-sm;
-    
-    border-radius: 15px;
-    border: 2px solid transparent; // reserve space!
-    
-    transition: border-color 0.2s ease, color 0.2s ease;
-
-    min-height: 24px;
-    min-width: 44px;
-
-    &:hover {
-
-      border-color: $mid-dark-blue;
-      color: $mid-light-blue;
-
+  
+    &.end{
+      margin-inline-start: auto;
     }
+    a {
+
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      color: $mid-dark-blue;
+      font-size: $font-size-md;
+      padding: 2px $space-sm;
+      
+      border-radius: 15px;
+      border: 2px solid transparent; // reserve space!
+      
+      transition: border-color 0.2s ease, color 0.2s ease;
+
+
+      &:hover {
+
+        border-color: $mid-dark-blue;
+        // background:  $light-blue;
+        color: $mid-light-blue;
+
+      }
 
   }
 
@@ -54,7 +56,7 @@ nav {
   background-color: $bg-white;
   padding: 0 2rem 0 2rem;
   
-  height: clamp(44px, 44px + 5vw, 70px); 
+  height: clamp(44px, 44px + 2vw, 70px); 
 
   position:fixed;
   z-index: $z-index-nav;
@@ -65,7 +67,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: clamp(44px, 44px + 5vw, 70px);
+    height: clamp(44px, 44px + 2vw, 70px);
     min-width: 100px; 
 
     a {
@@ -95,9 +97,9 @@ nav {
     cursor: pointer;
 
     
-    .hamburger-image{
-      width: 30px;
-      height: 30px;
+    image{
+      width: 100%;
+      height: 100%;
     }
 
 
@@ -111,10 +113,24 @@ nav {
       
     display: flex;
     align-items: center;
+
+    flex: 1;
     gap: 20px;
     height: 100%;
 
-    
+    .close-btn{
+      display: none;
+      width: 44px;
+      height: 44px;
+      background-color: #fff;
+      border: 0;
+      cursor: pointer;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+
     .dropdown-menu-item{
 
       position: relative;
@@ -127,9 +143,24 @@ nav {
         right: 0;
         background-color: $bg-white;
         border-radius: 15px;
-        border: 2px solid $mid-dark-blue;
-        padding: 1rem ;
-        
+        border: 2px solid $light-blue;
+        padding: 16px ;
+        text-align: start;
+
+        width: max-content;
+        white-space: nowrap;
+
+
+        a{
+          text-align: start;
+          padding-inline: 7px ;
+          padding-block: 5px;
+          display: block;
+          &:hover{
+            background-color: $light-blue;
+            border-color: transparent;
+          }
+        }
         &.open{
           display: block;
         }
@@ -147,14 +178,11 @@ nav {
         color: $mid-dark-blue;
         font-size: $font-size-md;
         padding: 2px $space-sm;
-        
         border-radius: 15px;
-        border: 2px solid transparent; // reserve space!
+        border: 2px solid transparent;
         
         transition: border-color 0.2s ease, color 0.2s ease;
 
-        min-height: 24px;
-        min-width: 44px;
 
         &:hover {
 
@@ -162,6 +190,7 @@ nav {
           color: $mid-light-blue;
 
         }
+
 
       }
 
@@ -173,21 +202,52 @@ nav {
 
 }
 
+@media screen and (min-width: 1049px) and (max-width: 1300px) {
 
-@media only screen and  ( max-width : 1000px ) {
+  nav{
+
+    gap: 10px;
+    
+    .menu-list {
+
+      gap: 10px;
+
+      .dropdown-menu-item{
+        .submenu-btn{
+          font-size: calc($font-size-md - 0.25rem);
+          padding: 2px calc($space-sm - 0.25rem);
+        }
+      }
+    }
+
+
+  }
+  .menu-item{
+    a{
+    
+      font-size: calc($font-size-md - 0.25rem);
+      padding: 2px calc($space-sm - 0.25rem);
+
+    }
+  }
+}
+
+@media only screen and  ( max-width : 1048px ) {
 
 
   .menu-item{
     
     height: auto;
-    
+    &.end{
+      margin-inline-start: 0;
     }
+  }
 
   nav {
 
     .logo {
 
-      height: clamp(44px, 44px + 5vw, 70px);;
+      height: clamp(44px, 44px + 2vw, 70px);;
       flex: 1;
       
       a {
@@ -219,8 +279,8 @@ nav {
       justify-content: center;
 
       img{
-        width: 50%;
-        height: 50%; 
+        width: 100%;
+        height: 100%; 
       }
     }
 
@@ -231,8 +291,9 @@ nav {
       position: fixed;
     
       left: 100%;
-      top: 62px;
-      
+      top: 0;
+      z-index: $z-index-nav-mobile;
+
       will-change: transform;
       transform: translateX(0);
       transition: transform 0.3s ease;
@@ -242,17 +303,26 @@ nav {
       width: 70%;
       max-width: 300px;
       min-width: 200px;
-      height: calc(100dvh -  clamp(44px, 44px + 5vw, 70px));
+      height: 100dvh;
+
             
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: start;
 
       padding-inline:20px;
       padding-block: 20px;
 
         &.open {
           transform: translateX(-100%);
+        }
+
+        .close-btn{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2px 1rem;
+
         }
 
 
