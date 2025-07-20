@@ -9,7 +9,19 @@
     height: 100%;
   
     &.end{
+      
       margin-inline-start: auto;
+      a{
+        background-color: $light-blue;
+        color: $mid-dark-blue;
+        border: 2px solid transparent;
+
+        &:hover{
+          background-color: $mid-dark-blue;
+          color: $light-blue;
+          border: 2px solid transparent;
+        }
+      }
     }
     a {
 
