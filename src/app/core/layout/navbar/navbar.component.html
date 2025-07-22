@@ -6,8 +6,8 @@
     (click)="openMenu()"  >
 
         <img src="/assets/images/hamburger.svg"
-         alt=""
-         class="hamburger-image"  />
+            alt=""
+            class="hamburger-image"  />
     
     </button>
 
@@ -24,7 +24,12 @@
         class="menu-list"
         [class.open]="isMainMenuOpen" 
         [attr.aria-hidden]="!(isMainMenuOpen)"
-    >
+
+        appClickedOutside 
+        (appClickedOutside)="closeMenu()"
+        [isListening]="isMainMenuOpen"
+
+        >
 
 
         <button
@@ -55,7 +60,11 @@
             </button>
 
             <ul class="submenu"
-            [class.open] = "isSubMenu1Open">
+                [class.open] = "isSubMenu1Open"
+                appClickedOutside 
+                (appClickedOutside)="onOutsideClick(1)" 
+                [isListening]="isSubMenu1Open"
+                >
 
                 <li class="menu-item" >
                     <a 
@@ -118,14 +127,18 @@
         <li class="menu-item dropdown-menu-item">
             
             <button
-             class="submenu-btn"
-              (click)="toggleSubMenuOpen(2)" >
+                class="submenu-btn"
+                (click)="toggleSubMenuOpen(2)" >
                 תחומים נוספים
             </button>
               
 
             <ul class="submenu"
-            [class.open] = "isSubMenu2Open">
+            [class.open] = "isSubMenu2Open"
+            appClickedOutside 
+            (appClickedOutside)="onOutsideClick(2)"
+            [isListening]="isSubMenu2Open" 
+            >
 
                 <li class="menu-item" >
                     <a 

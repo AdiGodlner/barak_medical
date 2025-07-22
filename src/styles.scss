@@ -52,17 +52,14 @@ button{
 
 }
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible,
-[tabindex]:focus-visible {
-  outline: 2px solid $dark-yellow;
-  outline-offset: 2px;
-  border-color: $mid-dark-blue;
-  background-color: $dark-yellow;
+*:focus-visible {
+  outline: 2px solid $dark-yellow !important;
+  outline-offset: 2px !important;
+  border: 2px solid $dark-blue !important;
+  background-color: $dark-yellow !important ;
+
 }
+
 
 html, body {
 

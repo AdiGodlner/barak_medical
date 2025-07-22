@@ -1,11 +1,12 @@
 import { Component} from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { ClickedOutsideDirective } from '../../../directives/clicked-outside.directive';
 @Component({
   selector: 'app-navbar',
   standalone:true,
   imports: [
-    RouterModule
+    RouterModule,
+    ClickedOutsideDirective
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
@@ -35,6 +36,8 @@ export class NavbarComponent {
 
   }
 
+
+  // TODO open and close submenus by id with a name not a number
   toggleSubMenuOpen(id: number) {
     
     if(id === 1){
@@ -45,6 +48,26 @@ export class NavbarComponent {
     
 
   }
+
+  onOutsideClick(id: number) {
+  
+      console.log("closing submenu " + id);
+    
+    
+    if(id === 1){
+
+      console.log("closing submenu 1");
+      this.isSubMenu1Open = false;
+    }else {
+
+        console.log("closing submenu 2");
+        this.isSubMenu2Open = false;
+
+    }
+    
+
+}
+
 
   closeMenus(){
     
