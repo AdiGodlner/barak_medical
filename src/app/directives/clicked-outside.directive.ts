@@ -12,7 +12,7 @@ import {
 })
 export class ClickedOutsideDirective {
 
-  @Output() appClickedOutside = new EventEmitter<Event>();
+  @Output() outsideEmitter = new EventEmitter<Event>();
   constructor(private elementRef: ElementRef) { }
   @Input() isListening = true;
 
@@ -24,7 +24,7 @@ export class ClickedOutsideDirective {
     const clickedInside = this.elementRef.nativeElement.contains(event.target);
 
     if (!clickedInside) {
-      this.appClickedOutside.emit(event);
+      this.outsideEmitter.emit(event);
     }
 
   }

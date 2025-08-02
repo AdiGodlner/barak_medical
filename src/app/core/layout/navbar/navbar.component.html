@@ -25,8 +25,11 @@
         [class.open]="isMainMenuOpen" 
         [attr.aria-hidden]="!(isMainMenuOpen)"
 
+        [appFocusTrap]="isMainMenuOpen"
+
         appClickedOutside 
-        (appClickedOutside)="closeMenu()"
+        (outsideEmitter)="closeMenu()"
+        
         [isListening]="isMainMenuOpen"
 
         >
@@ -62,7 +65,7 @@
             <ul class="submenu"
                 [class.open] = "isSubMenu1Open"
                 appClickedOutside 
-                (appClickedOutside)="onOutsideClick(1)" 
+                (outsideEmitter)="onOutsideClick(1)" 
                 [isListening]="isSubMenu1Open"
                 >
 
@@ -135,8 +138,10 @@
 
             <ul class="submenu"
             [class.open] = "isSubMenu2Open"
+            
             appClickedOutside 
-            (appClickedOutside)="onOutsideClick(2)"
+            (outsideEmitter)="onOutsideClick(2)"
+            
             [isListening]="isSubMenu2Open" 
             >
 
