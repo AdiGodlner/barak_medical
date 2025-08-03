@@ -3,7 +3,12 @@ import {   Directive,
   HostListener,
   Input,
   OnDestroy,
-  OnInit } from '@angular/core';
+  OnInit , 
+  Inject,
+  PLATFORM_ID, 
+  SimpleChanges} from '@angular/core';
+  import { isPlatformBrowser } from '@angular/common';
+import e from 'express';
 
 @Directive({
   selector: '[appFocusTrap]'
@@ -15,35 +20,93 @@ export class FocusTrapDirective {
   @Input('appFocusTrap') isActive = true;
 
   private focusableElements: HTMLElement[] = [];
-  private observer: MutationObserver | null = null;
+  private observer?: MutationObserver;
+  private previouslyFocusedElement: HTMLElement | null = null;
+  private originalTabIndices = new Map<HTMLElement, string | null>();
+
+  private handleResize = (): void => {
+    console.log("in handle resize ");
+    if (isPlatformBrowser(this.platformId)) {
+      this.syncTabIndexState();
+    }
+  };
 
 
-  constructor(private elementRef: ElementRef<HTMLElement>) {
-    console.log("in constractor");
+  constructor( private elementRef: ElementRef<HTMLElement>,
+    @Inject(PLATFORM_ID) private platformId: Object) {
    }
 
 
   ngOnInit(): void {
-    this.updateFocusableElements();
 
-    // Watch for DOM changes (e.g., submenus opening/closing)
-    this.observer = new MutationObserver(() => this.updateFocusableElements());
-    this.observer.observe(this.elementRef.nativeElement, {
-      childList: true,
-      subtree: true
-    });
+    if (isPlatformBrowser(this.platformId)) {
 
+      this.updateFocusableElements();
+      // Watch for DOM changes (e.g., submenus opening/closing)
+      this.observer = new MutationObserver(() => this.updateFocusableElements());
+      this.observer.observe(this.elementRef.nativeElement, {
+        childList: true,
+        subtree: true
+      });
+
+      window.addEventListener('resize', this.handleResize);
+    
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    if ('isActive' in changes) {
+      const current = changes['isActive'].currentValue;
+      const previous = changes['isActive'].previousValue;
+
+      if (current && !previous) {
+        // Just activated
+        this.previouslyFocusedElement = document.activeElement as HTMLElement;
+        this.updateFocusableElements();
+        this.focusFirstElement();
+      } else if (!current && previous) {
+        // Just deactivated
+        this.observer?.disconnect();
+        if (this.previouslyFocusedElement) {
+          this.previouslyFocusedElement.focus();
+        }
+
+        this.updateFocusableElements(); // << this fixes it
+
+      } else {
+       this.updateFocusableElements(); // safety fallback
+      }
+
+    }
+
+
+  }
+
+  private focusFirstElement(): void {
+    const first = this.focusableElements[0];
+    if (first) {
+      first.focus();
+    }
   }
 
   ngOnDestroy(): void {
     this.observer?.disconnect();
+
+    if (isPlatformBrowser(this.platformId)) {
+      window.removeEventListener('resize', this.handleResize);
+    }
+
   }
 
   @HostListener('keydown', ['$event'])
   handleKeydown(event: KeyboardEvent): void {
-    console.log("on keydown");
+
     if (!this.isActive || event.key !== 'Tab') return;
-    console.log("key down tab");
+    
+    console.log("foo");
+    
     this.updateFocusableElements();
 
     const { activeElement } = document;
@@ -55,12 +118,14 @@ export class FocusTrapDirective {
       if (activeElement === first || !this.elementRef.nativeElement.contains(activeElement)) {
         event.preventDefault();
         last.focus();
+        console.log("last_focus");
       }
     } else {
       // Tab
       if (activeElement === last || !this.elementRef.nativeElement.contains(activeElement)) {
         event.preventDefault();
         first.focus();
+        console.log("first_focus");
       }
     }
   }
@@ -80,8 +145,51 @@ export class FocusTrapDirective {
     const root = this.elementRef.nativeElement;
     this.focusableElements = Array.from(root.querySelectorAll<HTMLElement>(focusableSelectors))
       .filter(el => el.offsetParent !== null); // visible elements only
-  }
+  
+    
+    this.focusableElements.forEach(el => {
+      if (!this.originalTabIndices.has(el)) {
+        this.originalTabIndices.set(el, el.getAttribute('tabindex'));
+      }
+    });
 
+    this.syncTabIndexState();
+
+  }
+    
+
+  private syncTabIndexState(): void {
+
+    if (!isPlatformBrowser(this.platformId)) return;
+    
+    console.log("in syncTabIndexState");
+    const isSmallScreen = window.innerWidth <= 1048;
+
+    this.focusableElements.forEach(el => {
+    
+    
+    if (!this.isActive && isSmallScreen) {
+
+      el.setAttribute('tabindex', '-1');
+
+    } else {
+      
+      console.log(" in else ");
+      const original = this.originalTabIndices.get(el);
+      console.log(original);
+
+      if (original !== null && original !== undefined) {
+        console.log("else if");
+        el.setAttribute('tabindex', original);
+      } else {
+        console.log(el.getAttribute("tabindex"));
+        el.removeAttribute('tabindex');
+        console.log(el.getAttribute("tabindex"));
+        
+      }
+    }
+  });
+}
 
 
 }
