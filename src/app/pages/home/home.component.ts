@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroComponent } from './hero/hero.component';
+import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
 import { AdditionalTreatmentsComponent } from './treatment-cards/additional-treatments/additional-treatments.component';
 import { OccupationalMedicineComponent } from './treatment-cards/occupational-medicine/occupational-medicine.component';
-import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from '../../services/seo.service';
 import { SeoData } from '../../models/seo.model';
 
@@ -11,6 +11,7 @@ import { SeoData } from '../../models/seo.model';
   selector: 'app-home',
   imports: [
     HeroComponent,
+     WhoWeAreComponent,
     AdditionalTreatmentsComponent,
     OccupationalMedicineComponent,
 
