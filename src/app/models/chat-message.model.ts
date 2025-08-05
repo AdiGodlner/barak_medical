@@ -1,41 +1,55 @@
+export enum MessageSender {
+  User = "user",
+  Bot = "bot",
+}
+
+// export enum ButtonType {
+//   Response = "response",
+//   Telephone = "telephone",
+// }
+
+export enum ResponseId {
+  Welcome = "welcome",
+  Repeat = "repeat",
+  BookAppointment = "book_appointment",
+  CancelAppointment = "cancel_appointment",
+  ClinicHours = "clinic_hours",
+  ClinicLocation = "clinic_location",
+  ServicesOffered = "services_offered",
+  InsuranceAccepted = "insurance_accepted",
+  SpeakToStaff = "speak_to_staff",
+  EmergencyContact = "emergency_contact",
+  ThankYou = "thank_you",
+  FollowUp = "follow_up",
+  ContactByPhone = "contact_by_phone",
+}
+
+
+
+export interface ChatResponse {
+
+
+  id : ResponseId;
+  messages : ChatMessage[];
+  isDeadEnd : boolean;
+  
+}
+
+
 export interface ChatMessage {
 
-    from : "user" | "bot";
+    from : MessageSender;
     text : string;
-
-}
-
-type NodeType = 'question' | 'answer';
-
-export interface ChatNodeBase {
-
-  id: string;
-  type: NodeType;
-
-}
-
-export interface AnswerNode extends ChatNodeBase {
-
-    type: 'answer';
-  text: string;
-
-}
-
-export interface nodeButton  {
-
-    label: string;
-    next: string; // reference to another node by ID
+    messageButtons : ChatMessagesButton[];
 
 }
 
 
-export interface QuestionNode extends ChatNodeBase {
+export interface ChatMessagesButton{
 
-    type: 'question';
-    question: string;
-    options: nodeButton [];
+  // type : ButtonType;
+  text : string ;
+  phoneNumber ?: string;
+  responseId ?: ResponseId;
 
 }
-
-
-export type ChatNode = QuestionNode | AnswerNode;

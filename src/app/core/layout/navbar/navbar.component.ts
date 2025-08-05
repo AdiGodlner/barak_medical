@@ -84,21 +84,12 @@ export class NavbarComponent  implements OnInit, OnDestroy{
 
   onOutsideClick(id: number) {
   
-      console.log("closing submenu " + id);
-    
-    
     if(id === 1){
-
-      console.log("closing submenu 1");
       this.isSubMenu1Open = false;
     }else {
-
-        console.log("closing submenu 2");
         this.isSubMenu2Open = false;
-
     }
     
-
 }
 
 

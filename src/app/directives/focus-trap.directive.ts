@@ -25,7 +25,6 @@ export class FocusTrapDirective {
   private originalTabIndices = new Map<HTMLElement, string | null>();
 
   private handleResize = (): void => {
-    console.log("in handle resize ");
     if (isPlatformBrowser(this.platformId)) {
       this.syncTabIndexState();
     }
@@ -105,8 +104,6 @@ export class FocusTrapDirective {
 
     if (!this.isActive || event.key !== 'Tab') return;
     
-    console.log("foo");
-    
     this.updateFocusableElements();
 
     const { activeElement } = document;
@@ -118,14 +115,12 @@ export class FocusTrapDirective {
       if (activeElement === first || !this.elementRef.nativeElement.contains(activeElement)) {
         event.preventDefault();
         last.focus();
-        console.log("last_focus");
       }
     } else {
       // Tab
       if (activeElement === last || !this.elementRef.nativeElement.contains(activeElement)) {
         event.preventDefault();
         first.focus();
-        console.log("first_focus");
       }
     }
   }
@@ -162,7 +157,6 @@ export class FocusTrapDirective {
 
     if (!isPlatformBrowser(this.platformId)) return;
     
-    console.log("in syncTabIndexState");
     const isSmallScreen = window.innerWidth <= 1048;
 
     this.focusableElements.forEach(el => {
@@ -174,18 +168,12 @@ export class FocusTrapDirective {
 
     } else {
       
-      console.log(" in else ");
       const original = this.originalTabIndices.get(el);
-      console.log(original);
 
       if (original !== null && original !== undefined) {
-        console.log("else if");
         el.setAttribute('tabindex', original);
       } else {
-        console.log(el.getAttribute("tabindex"));
         el.removeAttribute('tabindex');
-        console.log(el.getAttribute("tabindex"));
-        
       }
     }
   });

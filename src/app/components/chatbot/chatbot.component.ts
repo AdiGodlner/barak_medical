@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ChatMessage } from '../../models/chat-message.model';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ChatMessage,
+  ChatResponse,
+  ResponseId,
+  MessageSender, 
+  ChatMessagesButton,
+  // ButtonType
+} from '../../models/chat-message.model';
 
 @Component({
   selector: 'app-chatbot',
@@ -8,13 +14,119 @@ import { ChatMessage } from '../../models/chat-message.model';
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.scss'
 })
+
 export class ChatbotComponent {
 
   isChatOpen : boolean = false;
   messages : ChatMessage[] = [];
-  applyForm = new FormGroup({
-    message : new FormControl("")
-  });
+
+
+  clinicHoursBtn : ChatMessagesButton = {
+  
+    text : "שעות פעילות" ,
+    // type : ButtonType.Response,
+    responseId : ResponseId.ClinicHours
+  
+  }
+
+  servicesBtn: ChatMessagesButton = {
+  
+    text : "אילו שירותים" ,
+    // type : ButtonType.Response,
+    responseId : ResponseId.ServicesOffered
+  
+  }
+
+  welcomeResponse : ChatResponse = {
+
+    id : ResponseId.Welcome,
+    isDeadEnd : false,
+    messages :[
+      {
+        from : MessageSender.Bot,
+        text : "שלום במה אוכל לעזור לך?",
+        messageButtons : []
+      },
+      {
+        from : MessageSender.Bot,
+        text : " בחר נושא  ",
+        messageButtons : [ this.servicesBtn, 
+          this.clinicHoursBtn 
+        ]
+      }
+
+    ]
+
+  };
+
+  repeatQuestionResponse : ChatResponse = {
+
+    id : ResponseId.Repeat,
+    isDeadEnd : false,
+    messages :[
+      {
+        from : MessageSender.Bot,
+        text : " בחר נושא  ",
+        messageButtons : [ this.servicesBtn, 
+          this.clinicHoursBtn 
+        ]
+      }
+
+    ]
+
+  } 
+
+  servicesResponse : ChatResponse = {
+
+    id : ResponseId.ServicesOffered,
+    isDeadEnd : true,
+    messages :[
+      {
+        from : MessageSender.User,
+        text : "אילו שירותים מציע ברקמדיקל ?",
+        messageButtons : []
+      },
+      {
+        from : MessageSender.Bot,
+        text : " תשובה כלשהיא .... ",
+        messageButtons : [ this.servicesBtn, 
+          this.clinicHoursBtn 
+        ]
+      }
+
+    ]
+
+  };
+
+  clinicHoursResponse : ChatResponse = {
+
+    id : ResponseId.ClinicHours,
+    isDeadEnd : true,
+    messages :[
+      {
+        from : MessageSender.User,
+        text : "מתי פתוחה המרפאה ",
+        messageButtons : []
+      },
+      {
+        from : MessageSender.Bot,
+        text : " שעות פעילות ... ",
+        messageButtons : []
+
+      }
+
+    ]
+
+  };
+
+  responseOptions : ChatResponse[] =[
+
+    this.welcomeResponse,
+    this.repeatQuestionResponse,
+    this.servicesResponse,
+    this.clinicHoursResponse
+
+  ] 
 
   close():void {
     this.isChatOpen = false;
@@ -22,31 +134,40 @@ export class ChatbotComponent {
 
   open():void{
     this.isChatOpen = true;
+    
+    if(this.messages.length == 0 ){
+      this.handleOnButtonClick(ResponseId.Welcome);
+    }
+
   }
 
-    sendMessage(){
+  handleOnButtonClick(responseId:ResponseId){
 
-      const user_msg = (this.applyForm.value.message ?? '').trim();
-
-      if(user_msg !== ''){
-        const message : ChatMessage = {
-          from: "user",
-          text: user_msg
-        }
-      
-        this.messages.push(message);
-      
-        const botMessage : ChatMessage = {
-          from: "bot",
-          text: "some text"
-        }
-      
-        this.messages.push(botMessage);
-      
-      }
-      
-      this.applyForm.reset();
+    console.log(`responseID : ${responseId} `);
+    const possibleResponse = this.responseOptions.filter(option => option.id === responseId);
     
+    if( !possibleResponse ){
+      
+      console.warn(`no matching response for responseId ${responseId}`);
+      return;
+
     }
+
+    const response = possibleResponse[0];
+    response.messages.forEach(message => {
+      
+      this.messages.push(message);
+      if(message.messageButtons){
+        message.messageButtons.forEach( btn => {
+
+          console.log(btn.text);
+
+        })
+      }
+
+    });
+
+
+  }
 
 }

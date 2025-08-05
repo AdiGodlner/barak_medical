@@ -1,21 +1,18 @@
 # TODO
 
 # NOW
+-chatbot:
+- add a call us button that is a special button 
 
-
-- ### nav bar
-
-
-- complete chatbot functionality
-- chatbot aria label
-
-- ⁠לוגואים של חברות שעובדים איתנו- בתחתית
-- ⁠הירו סקשן - ליצירת קשר
-
+- hero section background image cover 
 - F&Q ????
 - footer
 - google maps place after GBP
-- check robot.txt 
+- all aria labels in hebrew 
+- make navbar sticky 
+- ⁠לוגואים של חברות שעובדים איתנו- בתחתית
+- esc listener
+
 
 ====================
 

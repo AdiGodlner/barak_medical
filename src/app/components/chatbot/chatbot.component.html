@@ -40,32 +40,43 @@
                 
                 @if (message.from === 'user') {
 
-                    <div class="message user">{{ message.text }}</div>
+                    <div class="message user">
+                        <span> {{ message.text }} </span>
+                        
+                    </div>
 
                 } @else {
+                    
+                    <div class="message bot">
+                        <span>{{ message.text }}</span>
+                    @for ( chatButton of message.messageButtons; track chatButton) {
+                        <div class="btns-flex">
 
-                    <div class="message bot">{{ message.text }}</div>
+                        @if ( chatButton.responseId ) {
+                        <button class="message-button"
+                        (click)="handleOnButtonClick(chatButton.responseId)">
+                            {{chatButton.text}}
+                        </button>
+                        } @else{
+                        
+                        <a href="tel: +9720528723566">
+                            <button class="message-button" >
+                                {{chatButton.text}}
+                            </button>
+                        </a>
+                        }
+                        </div>
+                    }
+                 
+                    </div>
+
+                 
 
                 }
 
             }
     
         </div>
-
-        <form 
-            [formGroup]="applyForm"
-            class="interact-bar"
-            (submit)="sendMessage()" >
-
-            <button type="submit" class="send-message" > send </button>
-
-            <input type="text"
-                id="message"
-                formControlName="message"
-                placeholder="Type your question..." 
-            /> 
-
-        </form> 
 
     </div>
 
