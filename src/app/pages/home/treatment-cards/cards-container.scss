@@ -1,27 +1,8 @@
 @use 'styles/variables.scss' as *;
 
-
-h2{
-
-
-    font-weight: bold;
-    color: $mid-light-blue;
-    font-size: 3rem;
-    margin-bottom: $space-lg;
-    padding: 0  2.5rem 0 0 ;
-
-}
-
-.cards-section {
-
-  padding-block: 4rem;
-
-}
-
-
-.cards-container-warp{
+.cards-container-warp {
     
-    container-type: inline-size; 
+    container-type: inline-size;
     container-name: cardContainerWrap;
     
 }

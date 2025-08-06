@@ -13,7 +13,7 @@
 - make navbar sticky 
 - ⁠לוגואים של חברות שעובדים איתנו- בתחתית
 - esc listener
-
+- fix foucos visable on chatbot button yellow completly ?
 
 ====================
 
