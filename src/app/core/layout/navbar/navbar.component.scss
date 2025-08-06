@@ -235,6 +235,7 @@ nav {
 
   }
   .menu-item{
+    
     a{
     
       font-size: calc($font-size-md - 0.25rem);
@@ -337,9 +338,11 @@ nav {
 
         }
 
-
+        .menu-item{
+          padding-top: 2px;
+        }
         .dropdown-menu-item{
-
+          
           position: static;
           display: flex;
           flex-direction: column;
