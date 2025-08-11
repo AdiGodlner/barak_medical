@@ -30,24 +30,24 @@ footer {
     font-weight: bold;
     color: $mid-dark-blue;
     
-    h2{
+    h3{
         font-size: clamp(1rem, 1.5vw, 2rem);
         margin-bottom: 20px;
         font-weight: bold;
     }
     
     a{
-        font-size: clamp(0.5rem, 1.5vw, 1.1rem);
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
         text-decoration: none;
         color: $mid-dark-blue;
     }
 
 }
 
-.social{
+.socials{
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
