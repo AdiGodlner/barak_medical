@@ -38,13 +38,13 @@
     h3 {
       text-align: center;
       font-weight: bold;
-      font-size: clamp(0.5rem, 0.5rem + 5cqw, 1.8rem);
+      font-size: clamp(0.5rem,calc( (0.5rem + 5cqw) * 2 ) , 2.8rem);
       margin-bottom: $space-xs;
       color: $mid-dark-blue;
     }
   
     p {
-      font-size: $font-size-xs;
+      font-size: $font-size-md;
       color: $mid-dark-blue;
       margin-bottom: $space-sm;
     }
