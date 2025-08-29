@@ -51,15 +51,28 @@
       max-width: 30ch;
     }
 
-    a{
-      color: black;
-      text-decoration: none;
-    }
 
   }
 
 }
 
+a{
+
+  text-decoration: none;
+
+}
+
+.dr-name{
+  color: black;
+
+  a:visited{
+    color: black;
+  }
+}
+
+.title{
+  a:visited{color: $mid-dark-blue;}
+}
 
 .reverse{
 
