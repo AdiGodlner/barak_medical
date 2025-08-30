@@ -1,6 +1,9 @@
-<img [src]="imageUrl" [alt]="title" class="card-image" />
-<div class="title-wrap">
-  <h3>{{ title }}</h3>
-</div>
-<p>{{ description }}</p>
-<a [routerLink]="routeTo" class="focus-able" >להרחבה</a>
+<a [routerLink]="routeTo">
+  <img [src]="imageUrl" [alt]="title" class="card-image" />
+  <div class="title-wrap">
+    <h3>{{ title }}</h3>
+  </div>
+  <p>{{ description }}</p>
+  <a [routerLink]="routeTo" class="a-btn focus-able" >להרחבה</a>
+
+</a>

@@ -11,8 +11,9 @@
 
   padding: 1rem;
   display: grid;
-  margin: 1rem auto;
-  gap: 1rem;
+  // margin: 1rem auto;
+  gap: 3rem;
+  width: 100%;
   max-width: 100%;
   justify-items: center;
 
@@ -23,7 +24,7 @@
   display: flex;
   justify-content: center;
   // border: 2px solid blue;
-
+  
 }
 
 @container cardContainerWrap ( width > 1300px) {
@@ -32,7 +33,6 @@
   .cards-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    // background-color: red;
 
   }
 
@@ -43,11 +43,10 @@
   
 
   .cards-container {
-    max-width: 800px;
+    // max-width: 800px;
     padding-inline: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    // background-color: purple;
 
   }
 
@@ -56,9 +55,9 @@
 
 @container cardContainerWrap ( width <= 700px   ) {
   .cards-container {
-    max-width: 600px;
+    // max-width: 600px;
     grid-template-columns: 1fr;
-    // background-color: blue;
+
   }
 
 }
