@@ -59,7 +59,7 @@
         width: 50px;
         text-align: center;
         background-color: $light-blue;
-        color: black;
+        color: $mid-dark-blue;
         font-size: 1.4rem;
 
         &:hover{
@@ -104,7 +104,7 @@
 
         &.user{
             background-color: $bright-yellow;
-            color: black;
+            color: $mid-dark-blue;
             align-self: flex-start;
             border-bottom-right-radius: 0;
         }
