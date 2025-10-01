@@ -68,9 +68,9 @@ nav {
   gap: 20px;
   width: 100%;
   background-color: $bg-white;
-  padding: 0 2rem 0 2rem;
+  padding: 10px 2rem 0 2rem;
   
-  height: clamp(44px, 44px + 2vw, 70px); 
+  height: clamp(44px, 44px + 2vw, 70px);
 
   position:fixed;
   z-index: $z-index-nav;
