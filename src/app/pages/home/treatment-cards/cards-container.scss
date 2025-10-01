@@ -27,19 +27,24 @@
   
 }
 
-@container cardContainerWrap ( width > 1300px) {
+@container cardContainerWrap ( width > 1200px) {
   
 
   .cards-container {
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
   }
 
+  h3{
+
+    color: red;
+  }
 
 }
 
-@container cardContainerWrap ( width  <= 1300px  ) {
+@container cardContainerWrap ( width  <= 1200px  ) {
   
 
   .cards-container {
