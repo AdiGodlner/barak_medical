@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy  } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChatMessage,
   ChatResponse,
@@ -8,6 +8,9 @@ import { ChatMessage,
   // ButtonType
 } from '../../models/chat-message.model';
 
+import { Subscription } from 'rxjs';
+import { ChatbotService } from '../../services/chatbot.service';
+
 @Component({
   selector: 'app-chatbot',
   imports: [ReactiveFormsModule],
@@ -15,12 +18,12 @@ import { ChatMessage,
   styleUrl: './chatbot.component.scss'
 })
 
-export class ChatbotComponent {
+export class ChatbotComponent implements OnInit, OnDestroy {
 
   isChatOpen : boolean = false;
   messages : ChatMessage[] = [];
 
-
+  
   clinicHoursBtn : ChatMessagesButton = {
   
     text : "שעות פעילות" ,
@@ -127,6 +130,20 @@ export class ChatbotComponent {
     this.clinicHoursResponse
 
   ] 
+  
+  private sub!: Subscription;
+
+  constructor(private chatbotService: ChatbotService) {}
+
+  ngOnInit() {
+    this.sub = this.chatbotService.triggerCallUs$.subscribe(() => {
+      this.open();
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 
   close():void {
     this.isChatOpen = false;
@@ -143,7 +160,6 @@ export class ChatbotComponent {
 
   handleOnButtonClick(responseId:ResponseId){
 
-    console.log(`responseID : ${responseId} `);
     const possibleResponse = this.responseOptions.filter(option => option.id === responseId);
     
     if( !possibleResponse ){
@@ -157,13 +173,7 @@ export class ChatbotComponent {
     response.messages.forEach(message => {
       
       this.messages.push(message);
-      if(message.messageButtons){
-        message.messageButtons.forEach( btn => {
 
-          console.log(btn.text);
-
-        })
-      }
 
     });
 

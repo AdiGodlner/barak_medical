@@ -1,17 +1,6 @@
 @use 'styles/variables.scss' as *;
 
 
-a{
-  
-  text-decoration: none;
-
-}
-
-.wrap-link{
-  // height: 100%;
-  // width: 100%;
-}
-
 :host {
 
     border: 3px solid $mid-dark-blue;
@@ -93,7 +82,6 @@ a{
 
       color: $light-blue;
       background-color: $mid-dark-blue;
-      text-decoration: underline;
 
     }
 
