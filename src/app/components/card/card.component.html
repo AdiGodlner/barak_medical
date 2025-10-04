@@ -1,9 +1,9 @@
 <div (click)="goTo()" class="wrap-link" >
   <img [src]="imageUrl" [alt]="title" class="card-image" />
   <div class="title-wrap">
-    <h3>{{ title }}</h3>
+    <h3 class="card-title">{{ title }}</h3>
   </div>
-  <p>{{ description }}</p>
+  <p class="card-text" >{{ description }}</p>
   <a [routerLink]="routeTo" class="a-btn focus-able" >קרא עוד</a>
 
 </div>

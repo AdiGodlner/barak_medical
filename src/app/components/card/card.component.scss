@@ -10,10 +10,6 @@
     padding: $space-sm;
     transition: all 0.2s ease-in-out;
     
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
     background: $bg-white;
     box-shadow: 0 1px 2px rgba(13,71,161,.08);
 
@@ -25,43 +21,51 @@
 
     }
   
-    .card-image {
-      width: 100%;
-      border-radius: $radius-md;
-      object-fit: cover;
-      max-height: 180px;
-      margin-bottom: $space-sm;
+}
 
-    }
-    
-    .title-wrap{
-      container: foo / inline-size;
-    }
-
-    h3 {
-
-      text-align: center;
-      font-weight: bold;
-      font-size: 2rem;
-      
-      margin-bottom: $space-xs;
-      color: $mid-dark-blue;
-
-    }
+.wrap-link{
   
-    p {
+  height: 100%;
 
-      font-size: $font-size-sm;
-      color: $mid-dark-blue;
-      margin-bottom: $space-sm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    }
-  
+  .card-image {
+    width: 100%;
+    border-radius: $radius-md;
+    object-fit: cover;
+    max-height: 180px;
+    margin-bottom: $space-sm;
+
   }
 
+  .title-wrap{
+    container: foo / inline-size;
+  }
 
+  .card-title {
 
-  .a-btn {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    
+    margin-bottom: $space-xs;
+    color: $mid-dark-blue;
+
+  }
+
+  .card-text {
+
+    font-size: $font-size-sm;
+    color: $mid-dark-blue;
+    margin-bottom: $space-sm;
+
+  }
+
+}
+
+.a-btn {
 
     color: $mid-dark-blue;
     display: block;
@@ -76,7 +80,7 @@
     transition: all 0.2s ease-in-out;
     border: 2px solid transparent;
     align-self: end;
-    // justify-self: flex-start;
+    justify-self: flex-start;
 
     &:hover {
 

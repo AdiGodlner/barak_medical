@@ -1,12 +1,11 @@
 @use 'styles/variables.scss' as *;
 
-footer {
+.footer {
 
     background-color: $light-blue;
     padding: $space-lg;
     // gap: $space-xxl;
     min-height: 10dvh;
-
 }
 
 .top {
@@ -27,16 +26,15 @@ footer {
     min-width: 100px;
     // background-color: red;
     text-align: center;
-    font-weight: bold;
     color: $mid-dark-blue;
     
-    h3{
+    .footer-title{
         font-size: clamp(1rem, 1.5vw, 2rem);
         margin-bottom: 20px;
-        font-weight: bold;
+        font-weight: normal;
     }
     
-    a{
+    .footer-link{
         font-size: clamp(1rem, 1.5vw, 1.5rem);
         text-decoration: none;
         color: $mid-dark-blue;
@@ -85,7 +83,6 @@ footer {
 }
 .a11y{
 
-    font-weight: bold;
     font-size: clamp(1rem, 1.5vw, 2rem);
 
 }
