@@ -1,5 +1,5 @@
 @use 'styles/variables.scss' as *;
-
+@use 'app/pages/home/home.component.scss';
 
 .about-wrap{
 
@@ -28,7 +28,7 @@
 
     max-width: 50%;
     aspect-ratio: 1 / 1;
-    min-height: clamp(200px, calc( 50px + 15vw ),  500px);
+    height: clamp(200px, calc( 50px + 15vw ),  300px);
     
     img{
 
@@ -47,7 +47,7 @@
     display: flex;
     flex-direction: column;
 
-    p{
+    .dr-description{
       max-width: 30ch;
     }
 
@@ -56,18 +56,18 @@
 
 }
 
-a{
 
-  text-decoration: none;
-
-}
 
 .dr-name{
   color: $mid-dark-blue;
 
+  .dr-link{
+    text-decoration: none;
+  }
   a:visited{
     color: $mid-dark-blue;
   }
+
 }
 
 .title{

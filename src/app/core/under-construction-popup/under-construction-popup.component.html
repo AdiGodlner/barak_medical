@@ -3,15 +3,18 @@
 <div class="popup-backdrop" >
   <div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="under-construction-heading">
     
-    <h2 id="under-construction-heading">Site Under Construction | האתר כרגע בבניה</h2>
-    <p>
+    <h2 class="under-construction-title" 
+    id="under-construction-heading">Site Under Construction | האתר כרגע בבניה</h2>
+    <p class="under-construction-btn">
          האתר כרגע בבניה יתכן שחלקו עדיין לא מונגש לכל המשתמשים עמכם הסליחה
     </p>
-    <p>
+    <p class="under-construction-btn">
         This website is currently under construction and may not be fully accessible.
     </p>
     
-    <button (click)="dismiss()">OK</button>
+    <button 
+    class="under-construction-btn"
+    (click)="dismiss()">OK</button>
 
   </div>
 </div>

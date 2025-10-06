@@ -18,7 +18,7 @@
   padding: 0  2.5rem 0 0 ;
   text-align: right;
 
-  h1{
+  .hero-title{
     font-size: clamp(1rem, 1.5rem + 2vw ,4.5rem);
     line-height: 0.8;
     font-weight: bold;
@@ -27,7 +27,7 @@
   }
 
 
-  p {
+  .hero-paragraph {
     
     font-size: $font-size-md;
     margin-bottom: $space-xxxl;
@@ -134,7 +134,7 @@
     justify-content: start;
 
 
-    h1{
+    .hero-title{
       
       font-size: clamp(1.5rem, 1.5rem + 2vw ,2rem);
       line-height: 0.8;
@@ -144,7 +144,7 @@
     }
 
 
-    p {
+    .hero-paragraph {
       
       font-size: clamp(1rem, 1rem + 2vw ,2rem);
       margin-bottom: 0px;

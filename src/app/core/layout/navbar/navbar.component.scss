@@ -13,7 +13,7 @@
       margin-inline-start: auto;
       padding-top: 0;
       
-      a{
+      .contact-us-link{
         background-color: $light-blue;
         color: $mid-dark-blue;
         border: 2px solid transparent;
@@ -25,7 +25,7 @@
         }
       }
     }
-    a {
+    .link {
 
       display: block;
       text-decoration: none;
@@ -84,7 +84,7 @@ nav {
     height: clamp(44px, 44px + 2vw, 70px);
     min-width: 100px; 
 
-    a {
+    .link {
 
       padding: 0;
       display: block;
@@ -165,7 +165,7 @@ nav {
         white-space: nowrap;
 
 
-        a{
+        .link{
           text-align: start;
           padding-inline: 7px ;
           padding-block: 5px;
@@ -238,7 +238,7 @@ nav {
   }
   .menu-item{
     
-    a{
+    .link{
     
       font-size: calc($font-size-md - 0.25rem);
       padding: 2px calc($space-sm - 0.25rem);
@@ -265,7 +265,7 @@ nav {
       height: clamp(44px, 44px + 2vw, 70px);;
       flex: 1;
       
-      a {
+      .link {
 
         img{
 

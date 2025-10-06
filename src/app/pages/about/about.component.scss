@@ -1,5 +1,8 @@
 @use 'styles/variables.scss' as *;
 
+
+
+
 .about{
 
     min-height: 100vh;
@@ -7,5 +10,30 @@
     background-color: $bg-white;
     color: $mid-dark-blue;
     padding: $space-xxxl;
+
+}
+
+.title{
+
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+
+}
+
+.title-introduction{
+
+    font-size: 2.8rem;
+    max-width: 70ch;
+
+}
+
+
+
+.about-dr-grid{
+
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 
 }
