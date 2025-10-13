@@ -1,0 +1,12 @@
+/
+about
+location
+accessibility-statement
+services/work-ability
+services/industry-consulting
+services/causal-link-assessment
+services/medical-rights
+services/military-medicine
+services/medical-administration
+services/diving-medicine
+services/aviation-medicine

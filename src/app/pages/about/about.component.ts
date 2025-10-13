@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from '../../services/seo.service';
 import { SeoData } from '../../models/seo.model';
 

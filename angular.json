@@ -31,6 +31,10 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "prerender":{
+              "discoverRoutes": true,
+              "routesFile": "./prerender-routes.txt"
+            },
             "baseHref": "/",
             "localize":false,
             "outputPath": "dist/cloudflare",
