@@ -49,11 +49,12 @@ export default class GenericComponent implements OnInit{
 
         if (isPlatformBrowser(this.platformId)) {
           // ✅ Works in browser
+          console.log("loading from browser");
           data = await firstValueFrom(
             this.http.get(`/assets/content/${slug}.json`)
           );
         } else {
-          
+          console.log("prerendering");
           // ✅ Works during prerender (SSR/SSG)
           const fs = await import('fs');
           const path = await import('path');
