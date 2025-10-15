@@ -28,18 +28,19 @@ export default class GenericComponent implements OnInit{
   
     ngOnInit(): void {
   
-    this.slug = this.route.snapshot.paramMap.get('slug') ?? '';
-    console.log(this.slug);
+      this.route.paramMap.subscribe(params => {
+        const newSlug = params.get('slug') ?? '';
+        if (newSlug !== this.slug) {
+          this.slug = newSlug;
+          this.loadPageData(this.slug);
 
-    this.loadPageData(this.slug);
-
-    const pageSeo : SeoData ={
-      title: this.slug,
-      description: this.slug,
-    };
-
-    this.seo.updateSeoPageData(pageSeo);
-  
+          const pageSeo: SeoData = {
+            title: this.slug,
+            description: this.slug,
+          };
+          this.seo.updateSeoPageData(pageSeo);
+        }
+      });
     }
 
     async loadPageData(slug: string) {
