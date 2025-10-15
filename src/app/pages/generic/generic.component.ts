@@ -44,13 +44,32 @@ export default class GenericComponent implements OnInit{
 
     async loadPageData(slug: string) {
       try {
-        console.log(slug);
-        const data = await firstValueFrom(
-          this.http.get(`/assets/content/${slug}.json`)
-        );        
 
-      this.pageData = data;
-      console.log(this.pageData);
+        let data: any;
+
+        if (isPlatformBrowser(this.platformId)) {
+          // ✅ Works in browser
+          data = await firstValueFrom(
+            this.http.get(`/assets/content/${slug}.json`)
+          );
+        } else {
+          
+          // ✅ Works during prerender (SSR/SSG)
+          const fs = await import('fs');
+          const path = await import('path');
+          const { fileURLToPath } = await import('url');
+
+          const __dirname = path.dirname(fileURLToPath(import.meta.url));
+          const projectRoot = path.resolve(__dirname, '../../..');
+          const filePath = path.join(projectRoot, 'dist/cloudflare/browser/assets/content', `${slug}.json`);
+          console.log('Reading file from:', filePath); // ✅ to verify
+          const file = fs.readFileSync(filePath, 'utf-8');
+          data = JSON.parse(file);
+
+        }
+
+        this.pageData = data;
+        console.log('Loaded data:', this.pageData);
       
       } catch (err) {
         this.error = true;
