@@ -1,9 +1,24 @@
-<main>
+@if ( pageData  ){
 
-    <h1>foo {{slug}}</h1>
+<main class="main">
 
+    <h1 class="title"> {{pageData.h1}}</h1>
     
+    @for (section of pageData['sections']; track $index) {
+        <section class="sub-section">
+            <div class="big-card">
 
+                <h2 class="h2-title">{{ section.h2 }}</h2>
+                @for (item of section.content; track $index) {
+                    @if (item.type === 'p') {
+                    <p>{{ item.content }}</p>
+                    } @else if (item.type === 'image') {
+                    <img [src]="item.url" alt="" />
+                    }
+                }
+            </div>
+        </section>
+    }
 
 </main>
 
@@ -11,3 +26,6 @@
 
 
 
+
+
+}

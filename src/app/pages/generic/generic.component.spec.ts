@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import GenericComponent from './generic.component';
 
-import { GenericComponent } from './generic.component';
 
 describe('GenericComponent', () => {
   let component: GenericComponent;

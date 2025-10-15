@@ -1,12 +1,15 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { SeoService } from '../../services/seo.service';
 import { SeoData } from '../../models/seo.model';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient,HttpClientModule  } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-generic',
-  imports: [CommonModule ],
+  standalone:true,
+  imports: [CommonModule, HttpClientModule ],
   templateUrl: './generic.component.html',
   styleUrl: './generic.component.scss'
 })
@@ -20,8 +23,8 @@ export default class GenericComponent implements OnInit{
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private seo = inject(SeoService);
-
-  
+  private http = inject(HttpClient)
+  private platformId = inject(PLATFORM_ID);
   
     ngOnInit(): void {
   
@@ -41,15 +44,21 @@ export default class GenericComponent implements OnInit{
 
     async loadPageData(slug: string) {
       try {
+        console.log(slug);
+        const data = await firstValueFrom(
+          this.http.get(`/assets/content/${slug}.json`)
+        );        
 
-        const res = await fetch(`/assets/${slug}.json`);
-        // this.pageData = await res.json();
-        // console.log(this.pageData);
+      this.pageData = data;
+      console.log(this.pageData);
       
       } catch (err) {
         this.error = true;
-        console.log(err)
-      
+        console.error('Failed to load page data:', err);
+
+        if (isPlatformBrowser(this.platformId)) {
+          this.router.navigate(['/']);
+        }
       }
     }
 
