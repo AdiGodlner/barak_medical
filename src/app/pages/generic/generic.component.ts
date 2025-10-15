@@ -51,14 +51,11 @@ export default class GenericComponent implements OnInit{
           // ✅ Works in browser
           console.log("loading from browser");
           console.log(this.pageData);
+          console.log("no data");
+          data = await firstValueFrom(this.http.get(`/assets/content/${slug}.json`));
+          this.pageData = data;
+          console.log('Loaded data:', this.pageData);
 
-          if(!this.pageData){
-            console.log("no data");
-            data = await firstValueFrom(this.http.get(`/assets/content/${slug}.json`));
-            this.pageData = data;
-            console.log('Loaded data:', this.pageData);
-
-          }
           
         } else {
           console.log('✅ PRERENDER PHASE');
