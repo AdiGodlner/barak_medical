@@ -53,7 +53,7 @@ export default class GenericComponent implements OnInit{
           console.log(this.pageData);
 
           if(!this.pageData){
-    
+            console.log("no data");
             data = await firstValueFrom(this.http.get(`/assets/content/${slug}.json`));
             this.pageData = data;
             console.log('Loaded data:', this.pageData);
@@ -61,7 +61,11 @@ export default class GenericComponent implements OnInit{
           }
           
         } else {
-          console.log("prerendering");
+          console.log('✅ PRERENDER PHASE');
+          console.log('✅ PRERENDER PHASE');
+          console.log('✅ PRERENDER PHASE');
+          console.log('✅ PRERENDER PHASE');
+
           // ✅ Works during prerender (SSR/SSG)
           const fs = await import('fs');
           const path = await import('path');
