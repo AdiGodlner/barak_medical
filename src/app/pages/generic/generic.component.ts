@@ -50,9 +50,16 @@ export default class GenericComponent implements OnInit{
         if (isPlatformBrowser(this.platformId)) {
           // ✅ Works in browser
           console.log("loading from browser");
-          data = await firstValueFrom(
-            this.http.get(`/assets/content/${slug}.json`)
-          );
+          console.log(this.pageData);
+
+          if(!this.pageData){
+    
+            data = await firstValueFrom(this.http.get(`/assets/content/${slug}.json`));
+            this.pageData = data;
+            console.log('Loaded data:', this.pageData);
+
+          }
+          
         } else {
           console.log("prerendering");
           // ✅ Works during prerender (SSR/SSG)
@@ -66,11 +73,11 @@ export default class GenericComponent implements OnInit{
           console.log('Reading file from:', filePath); // ✅ to verify
           const file = fs.readFileSync(filePath, 'utf-8');
           data = JSON.parse(file);
+          this.pageData = data;
+          console.log('Loaded data:', this.pageData);
 
         }
 
-        this.pageData = data;
-        console.log('Loaded data:', this.pageData);
       
       } catch (err) {
         this.error = true;
