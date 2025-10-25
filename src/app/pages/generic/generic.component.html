@@ -11,9 +11,12 @@
                     <h2 class="h2-title">{{ section.h2 }}</h2>
                     @for (item of section.content; track $index) {
                         @if (item.type === 'p') {
-                        <p>{{ item.content }}</p>
+                        <p class="big-card-text"
+                        >{{ item.content }}</p>
                         } @else if (item.type === 'image') {
-                        <img [src]="item.url" alt="" />
+                        <img class="big-card-img"
+                            [src]="item.url"
+                            alt="" />
                         }
                     }
                 </section>

@@ -1,2 +1,32 @@
 @use 'styles/variables.scss' as *;
 
+.split-section{
+
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.h3-title{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+.location-card-text{
+    font-size: 3rem;
+
+}
+.bold {
+
+    font-weight: bolder;
+
+}
+
+.dash-list li::before {
+  content: '– '; /* the dash */
+  color: currentColor; /* matches text color */
+}
+
+.map-image{
+    font-size: 3rem;
+}
