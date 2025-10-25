@@ -1,12 +1,14 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
-const SLUGS = ["aviation-medicine",
-"medical-administration",
-"causal-link-assessment",
-"medical-rights",
-"diving-medicine",
-"military-medicine",
-"industry-consulting"];
+const SLUGS = [
+  "aviation-medicine",
+  "medical-administration",
+  "causal-link-assessment",
+  "medical-rights",
+  "diving-medicine",
+  "military-medicine",
+  "work-ability",
+  "industry-consulting"];
 
 export const serverRoutes: ServerRoute[] = [
   {

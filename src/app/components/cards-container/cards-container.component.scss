@@ -1,0 +1,73 @@
+@use 'styles/variables.scss' as *;
+
+
+.cards-container-warp {
+    
+    container-type: inline-size;
+    container-name: cardContainerWrap;
+        
+    .cards-container-title{
+
+        font-weight: bold;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        padding-inline-start: 2.5rem ;
+        color: $mid-dark-blue;
+
+    }
+
+    .cards-container {
+
+        padding: 1rem;
+        display: grid;
+        gap: 3rem;
+        width: 100%;
+        max-width: 100%;
+        justify-items: center;
+
+    }
+
+}
+
+
+@container cardContainerWrap ( width > 1200px) {
+  
+
+  .three-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .four-cards{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+}
+
+@container cardContainerWrap ( width  <= 1200px  ) {
+  
+
+  .cards-container {
+    padding-inline: 20px;
+
+  }
+
+
+  .three-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .four-cards{
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+}
+
+
+@container cardContainerWrap ( width <= 700px   ) {
+  .cards-container {
+    max-width: 600px;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+
+  }
+
+}

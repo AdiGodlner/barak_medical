@@ -5,19 +5,25 @@
     <h1 class="title"> {{pageData.h1}}</h1>
     
     @for (section of pageData['sections']; track $index) {
-        <section class="sub-section">
-            <div class="big-card">
-
-                <h2 class="h2-title">{{ section.h2 }}</h2>
-                @for (item of section.content; track $index) {
-                    @if (item.type === 'p') {
-                    <p>{{ item.content }}</p>
-                    } @else if (item.type === 'image') {
-                    <img [src]="item.url" alt="" />
+        <div class="inner-padding">
+            @if (section.type === "large-card") {
+                <section class="big-card">
+                    <h2 class="h2-title">{{ section.h2 }}</h2>
+                    @for (item of section.content; track $index) {
+                        @if (item.type === 'p') {
+                        <p>{{ item.content }}</p>
+                        } @else if (item.type === 'image') {
+                        <img [src]="item.url" alt="" />
+                        }
                     }
-                }
-            </div>
-        </section>
+                </section>
+            }@else if(section.type === "cards-container") {
+                <app-cards-container [cardsContainerData]="section" ></app-cards-container>
+            }@else {
+                <h1 class="title">  there was an error </h1>
+            }
+            
+        </div>
     }
 
 </main>
