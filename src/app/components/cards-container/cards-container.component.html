@@ -6,7 +6,9 @@
             [class.four-cards]="cardsContainerData.cards.length == 4"
         >
             @for(card of cardsContainerData.cards; track $index){
-                <app-card [card]="card" ></app-card>
+                <li>
+                    <app-card [card]="card" ></app-card>
+                </li>
             }
         </ul>
     </div>
