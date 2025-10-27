@@ -61,12 +61,18 @@ button, a,  input, textarea, select,
   transition : all 0.2s ease;
 }
 
+/* 1. Reset default focus styles */
+:focus {
+  outline: none;
+}
 
 *:focus-visible {
+  
   outline: 2px solid $dark-yellow !important;
   outline-offset: 2px !important;
   border: 2px solid $dark-blue !important;
   background-color: $dark-yellow !important ;
+  color: $mid-dark-blue !important;
 
 }
 

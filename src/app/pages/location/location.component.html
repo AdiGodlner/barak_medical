@@ -4,7 +4,120 @@
   <div class="inner-padding">
     <section class="big-card">
       <h1 class="h2-title"> צור קשר </h1>
-      
+      <form
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        novalidate>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label
+            class="label" 
+            for="fullName">שם מלא</label>
+          <input
+            class="input"
+            id="fullName"
+            type="text"
+            formControlName="fullName"
+            aria-describedby="fullNameError"
+            [class.is-invalid]="(f['fullName'].touched || submitted()) && f['fullName'].invalid"
+          />
+
+          @if ((f['fullName'].touched || submitted()) && f['fullName'].errors) {
+            <div id="fullNameError" class="error" aria-live="polite">
+              @if (f['fullName'].errors['required']) {
+                <small>שם מלא הוא שדה חובה</small>
+              }
+              @if (f['fullName'].errors['minlength']) {
+                <small>שם חייב להיות באורך של 3 אותיות לפחות.</small>
+              }
+            </div>
+          }
+        </div>
+
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label 
+          class="label" 
+          for="phone">טלפון</label>
+          <input
+            class="input"
+            id="phone"
+            type="tel"
+            formControlName="phone"
+            aria-describedby="phoneError"
+            [class.is-invalid]="(f['phone'].touched || submitted()) && f['phone'].invalid"
+          />
+
+          @if ((f['phone'].touched || submitted()) && f['phone'].errors) {
+            <div id="phoneError" class="error" aria-live="polite">
+              @if (f['phone'].errors['required']) {
+                <small>טלפון הוא שדה חובה</small>
+              }
+              @if (f['phone'].errors['pattern']) {
+                <small>פורמט טלפטון שגוי יש להשתמש ב + ומספרים בלבד </small>
+              }
+            </div>
+          }
+        </div>
+
+
+        <!-- Email -->
+        <div class="form-group">
+          <label 
+          class="label" 
+          for="email">דוא"ל</label>
+          <input
+            class="input" 
+            id="email"
+            type="email"
+            formControlName="email"
+            aria-describedby="emailError"
+            [class.is-invalid]="(f['email'].touched || submitted()) && f['email'].invalid"
+          />
+
+          @if ((f['email'].touched || submitted()) && f['email'].errors) {
+            <div id="emailError" class="error" aria-live="polite">
+              @if (f['email'].errors['required']) {
+                <small>אימייל הוא שדה חובה.</small>
+              }
+              @if (f['email'].errors['email']) {
+                <small>כתובת האימיל אינה בפורמט אימייל</small>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+          <label 
+          class="label"
+          for="message">פנייה</label>
+          <textarea
+            class="text-area"
+            id="message"
+            rows="4"
+            formControlName="message"
+            aria-describedby="messageError"
+            [class.is-invalid]="(f['message'].touched || submitted()) && f['message'].invalid"
+          ></textarea>
+
+          @if ((f['message'].touched || submitted()) && f['message'].errors) {
+            <div id="messageError" class="error" aria-live="polite">
+              @if (f['message'].errors['required']) {
+                <small>שדה פנייה הוא שדה חובה</small>
+              }
+              @if (f['message'].errors['minlength']) {
+                <small>שדה פנייה חייב להחיל לפחות 10 אותיות </small>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Submit Button -->
+        <button class="submit" type="submit">שלח מייל</button>
+      </form>
+
     </section>
 
 

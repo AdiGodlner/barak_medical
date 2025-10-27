@@ -34,3 +34,79 @@
     height: 400px;
     
 }
+
+
+.form-group{
+
+    display: flex;
+    font-size: 3rem;
+    gap: 40px;
+    padding-block: 20px;
+    .label{
+        width: 8ch;
+    
+    }
+
+    .input{
+
+        background-color: $light-blue;
+        height: 40px;
+        border-radius: 9999px;
+        padding-inline: 2rem ;
+        padding-block: 1rem;
+    }
+
+    .text-area{
+
+        font-size: 3rem;
+        
+        background-color: $light-blue;
+        resize: none;
+        
+        width: 100%;
+        min-height: 400px;
+        
+        border-radius: 45px;
+        padding-inline: 45px;
+        padding-block: 45px;
+
+    }
+
+}
+
+
+.is-invalid{
+
+    border-color: #e74c3c;
+
+}
+
+
+.error small {
+    
+    color: #e74c3c;
+    display: block;
+    margin-top: 0.25rem;
+
+}
+
+
+
+.submit{
+    margin-top: 45px;
+    background-color: $light-blue;
+    color: $mid-dark-blue;
+    border-radius: 9999px;
+    margin-inline: auto;
+    font-size: 3rem;
+    padding-inline: 45px;
+    padding-block: 5px;
+    display: block;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+    
+        background-color: $mid-dark-blue;
+        color: $light-blue;
+
+    }
+}   
