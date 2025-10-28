@@ -3,6 +3,37 @@
 
 :host {
 
+    // border: 3px solid $mid-dark-blue;
+    // border-radius: 30px;
+
+    // height: 100%;
+    // padding: $space-sm;
+    // transition: all 0.2s ease-in-out;
+    
+    // background: $bg-white;
+    // box-shadow: 0 1px 2px rgba(13,71,161,.08);
+
+
+    // &:hover {
+    //   box-shadow: 0 18px 40px rgba(13,71,161,.08);
+    //   transform: scale(1.05);
+    //   cursor: pointer;
+
+    // }
+  
+}
+
+.wrap-link{
+  
+
+
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
     border: 3px solid $mid-dark-blue;
     border-radius: 30px;
 
@@ -20,16 +51,7 @@
       cursor: pointer;
 
     }
-  
-}
 
-.wrap-link{
-  
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
   .card-image {
     width: 100%;
