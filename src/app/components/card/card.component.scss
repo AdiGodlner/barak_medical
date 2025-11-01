@@ -34,9 +34,12 @@
   flex-direction: column;
   justify-content: space-between;
 
-    border: 3px solid $mid-dark-blue;
-    border-radius: 30px;
-
+    border: 3px solid $light-blue;
+    border-top-left-radius: 99999px;
+    border-top-right-radius: 99999px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
     height: 100%;
     padding: $space-sm;
     transition: all 0.2s ease-in-out;
@@ -54,6 +57,7 @@
 
 
   .card-image {
+
     width: 100%;
     border-radius: $radius-md;
     object-fit: cover;
@@ -96,7 +100,7 @@
     text-align: center;
     background-color: $light-blue;
 
-    border-radius: 12px;
+    border-radius: 9999px;
     padding: 0.75rem 1.5rem;
     width: 100%;
     transition: all 0.2s ease-in-out;
