@@ -17,7 +17,7 @@
         background-color: $light-blue;
         color: $mid-dark-blue;
         border: 2px solid transparent;
-
+        transition: all 0.2s ease-in-out;
         &:hover{
           background-color: $mid-dark-blue;
           color: $light-blue;
@@ -34,17 +34,17 @@
       font-size: $font-size-md;
       padding: 2px $space-sm;
       
-      border-radius: 15px;
+      border-radius: 99999px;
       border: 2px solid transparent; // reserve space!
       
-      transition: border-color 0.2s ease, color 0.2s ease;
+      transition: all 0.2s ease-in-out;
 
 
       &:hover {
 
-        border-color: $mid-dark-blue;
-        // background:  $light-blue;
-        color: $mid-light-blue;
+        // border-color: $mid-dark-blue;
+        background:  $light-blue;
+        color: $mid-dark-blue;
 
       }
 
@@ -53,7 +53,7 @@
   a.active {
   
     font-weight: bold;
-    color: $mid-light-blue; 
+    color: $mid-dark-blue; 
   
   }
 
@@ -192,16 +192,15 @@ nav {
         color: $mid-dark-blue;
         font-size: $font-size-md;
         padding: 2px $space-sm;
-        border-radius: 15px;
+        border-radius: 999px;
         border: 2px solid transparent;
         
-        transition: border-color 0.2s ease, color 0.2s ease;
+        transition: all 0.2s ease-in-out;
 
 
         &:hover {
 
-          border-color: $mid-dark-blue;
-          color: $mid-light-blue;
+          background-color: $light-blue;
 
         }
 
@@ -311,7 +310,7 @@ nav {
 
       will-change: transform;
       transform: translateX(0);
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
 
       // background-color: red;
       background-color: $bg-white;

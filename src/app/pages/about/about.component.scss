@@ -1,16 +1,14 @@
 @use 'styles/variables.scss' as *;
 
 
-
-
 .about{
 
     min-height: 100vh;
     width: 100%;
     background-color: $bg-white;
     color: $mid-dark-blue;
-    padding: $space-xxxl;
-
+    padding-block: 80px;
+    padding-inline: 80px;
 }
 
 .title{
@@ -36,9 +34,9 @@
 
 
     display: grid;
-    grid-template-columns: 1fr 2fr;
-
-
+    grid-template-columns: 2fr 3fr;
+    width: 80%;
+    margin-inline: auto;
     .dr-summary{
         
         .summary-title{

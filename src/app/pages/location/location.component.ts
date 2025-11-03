@@ -21,7 +21,7 @@ export default class LocationComponent implements OnInit{
   contactForm = this.fb.group({
     fullName: [
       '',
-      [Validators.required, Validators.pattern(/^[A-Za-z\s]+$/)]
+      [Validators.required]
     ],
     phone: [
       '',

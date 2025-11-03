@@ -2,7 +2,6 @@
 
 .split-section{
 
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
@@ -39,10 +38,12 @@
 .form-group{
 
     display: flex;
-    font-size: 3rem;
+    font-size: 2rem;
     gap: 40px;
     padding-block: 20px;
+    
     .label{
+
         width: 8ch;
     
     }
@@ -53,22 +54,25 @@
         height: 40px;
         border-radius: 9999px;
         padding-inline: 2rem ;
-        padding-block: 1rem;
+        padding-block: 0.5rem;
     }
 
     .text-area{
 
-        font-size: 3rem;
-        
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: inherit;
+
         background-color: $light-blue;
         resize: none;
         
-        width: 100%;
-        min-height: 400px;
+        width: 60%;
+        min-height: 200px;
         
         border-radius: 45px;
         padding-inline: 45px;
-        padding-block: 45px;
+        padding-block-end: 450px;
 
     }
 
