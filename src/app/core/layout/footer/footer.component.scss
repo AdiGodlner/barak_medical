@@ -3,9 +3,9 @@
 .footer {
 
     background-color: $light-blue;
-    padding-inline: 80px;
+    padding-inline: 100px;
     padding-top: 40px;
-    padding-bottom: 100px;
+    padding-bottom: 40px;
     display: flex;
 
 }
@@ -84,6 +84,5 @@
     text-align: end;
     font-size: 1rem;
     font-size: 1.5rem;
-    padding-top: 1.5rem;
-
+    margin-top: auto;
 }

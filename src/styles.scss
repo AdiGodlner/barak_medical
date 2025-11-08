@@ -71,7 +71,7 @@ button, a,  input, textarea, select,
   outline: 2px solid $dark-yellow !important;
   outline-offset: 2px !important;
   border: 2px solid $dark-blue !important;
-  background-color: $dark-yellow !important ;
+  background-color: $bright-yellow !important ;
   color: $mid-dark-blue !important;
 
 }
@@ -144,10 +144,10 @@ flex: 1;
   margin-top: 100px;
   position: relative;
   border: 4px solid $light-blue;
-  border-radius: 80px 0 80px 80px ;
+  border-radius: 80px 80px 80px 80px ;
   padding-inline: 45px;
   padding-block: 60px;
-  font-size: 2.5rem;
+  font-size: 1.3rem;
 
   .big-card-text{
     max-width: 70ch ;
