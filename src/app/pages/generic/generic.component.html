@@ -9,28 +9,37 @@
         </p>
     }
     @for (section of pageData['sections']; track $index) {
-        <div class="inner-padding">
-            @if (section.type === "large-card") {
-                <section class="big-card">
-                    <h2 class="h2-title">{{ section.h2 }}</h2>
-                    @for (item of section.content; track $index) {
-                        @if (item.type === 'p') {
-                        <p class="big-card-text"
-                        >{{ item.content }}</p>
-                        } @else if (item.type === 'image') {
-                        <img class="big-card-img"
-                            [src]="item.url"
-                            alt="" />
-                        }
+        @if (section.type === "large-card") {
+            <section class="big-card">
+                <h2 class="h2-title">{{ section.h2 }}</h2>
+                @for (item of section.content; track $index) {
+                    @if (item.type === 'p') {
+                    <p class="big-card-text"
+                    >{{ item.content }}</p>
+                    } @else if (item.type === 'image') {
+                    <img class="big-card-img"
+                        [src]="item.url"
+                        alt="" />
                     }
-                </section>
-            }@else if(section.type === "cards-container") {
-                <app-cards-container [cardsContainerData]="section" ></app-cards-container>
-            }@else {
-                <h1 class="title">  there was an error </h1>
-            }
-            
-        </div>
+                    @else if (item.type === 'li') {
+
+
+                        <ul>
+                            @for (listItem of item.content; track $index) {
+                                <li class="list-item">
+                                    {{listItem}}
+                                </li>
+                            }
+                        </ul>
+
+                    }
+                }
+            </section>
+        }@else if(section.type === "cards-container") {
+            <app-cards-container [cardsContainerData]="section" ></app-cards-container>
+        }@else {
+            <h1 class="title">  there was an error </h1>
+        }
     }
 
 </main>
