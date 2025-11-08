@@ -3,7 +3,11 @@
 <main class="homepage-section">
 
     <h1 class="title"> {{pageData.h1}}</h1>
-    
+    @if(pageData.subHeader){
+        <p class="subheader">
+            {{ pageData.subHeader }}
+        </p>
+    }
     @for (section of pageData['sections']; track $index) {
         <div class="inner-padding">
             @if (section.type === "large-card") {

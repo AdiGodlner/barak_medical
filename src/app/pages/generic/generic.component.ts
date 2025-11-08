@@ -5,6 +5,7 @@ import { CommonModule} from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { pageDataMap } from '../../data/page.data';
 import { CardsContainerComponent } from '../../components/cards-container/cards-container.component';
+import { PageData } from '../../models/page-data';
 
 @Component({
   selector: 'app-generic',
@@ -17,7 +18,7 @@ export default class GenericComponent implements OnInit{
 
   slug:string = "";
   error:boolean = false;
-  pageData:any = null;
+  pageData:PageData | null = null;
 
 
   private route = inject(ActivatedRoute);
