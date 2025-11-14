@@ -3,32 +3,27 @@
 
 .about-wrap{
 
-  width: fit-content;
-  
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  //TODO maybe add max width for extreamly large screens
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   margin-inline: auto;
 
 }
+
 .dr-wrap{
 
-  min-height: 200px;
-
-  // width: calc(50% - 161px );
   display: flex;
-  font-size: clamp(0.1rem, calc(0.1rem + 1.5vw) , 1.5rem);
-
+  
   .dr-image{
 
-    max-width: 50%;
-    aspect-ratio: 1 / 1;
-    height: clamp(200px, calc( 100px + 15vw ),  300px);
+    max-width: 33%;
     
     img{
 
       width: 100%;
       height: 100%;
+      aspect-ratio: 1 / 1;
 
     }
   }
@@ -37,10 +32,27 @@
 
     padding-inline-start: 14px; 
     overflow-wrap: break-word;
-    width: 30ch;    
     .dr-description{
-      font-size: 32px;
+
+      max-width: 30ch;
+      font-size: clamp(1rem, calc(1rem + 0.4vw), 3rem);
       letter-spacing: 0.00em;
+
+    }
+
+    .dr-name{
+
+      font-weight: 900;
+      font-size: clamp(2rem, 1rem + 0.8vw, 53px);
+      color: $mid-dark-blue;
+
+      .dr-link{
+        text-decoration: none;
+      }
+      a:visited{
+        color: $mid-dark-blue;
+      }
+
     }
 
 
@@ -49,30 +61,24 @@
 }
 
 
-
-.dr-name{
-
-  font-weight: 900;
-  font-size: 63px;
-  padding-top: 33px;
-  color: $mid-dark-blue;
-
-  .dr-link{
-    text-decoration: none;
-  }
-  a:visited{
-    color: $mid-dark-blue;
-  }
-
-}
-
 .title{
 
   a:visited{color: $mid-dark-blue;}
+
 }
 
-.reverse{
 
-  flex-direction: row-reverse;
+@media only screen and  ( max-width : 1048px ) {
+
+
+  .about-wrap{
+
+    //TODO maybe add max width for extreamly large screens
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-inline: auto;
+
+  }
 
 }
