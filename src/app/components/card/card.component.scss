@@ -9,12 +9,11 @@
   border: 3px solid $light-blue;
   border-top-left-radius: 999px;
   border-top-right-radius: 999px;
-  border-bottom-left-radius: 400px;
-  border-bottom-right-radius: 400px;
+  border-bottom-left-radius: 300px;
+  border-bottom-right-radius: 300px;
   
   height: 100%;
-  min-height: 540px;
-  padding-top: 80px;
+  padding-top: 20px;
   padding-left: $space-sm;
   padding-right: $space-sm;
 
@@ -40,7 +39,6 @@
     border-radius: $radius-md;
     object-fit: cover;
     max-height: 180px;
-    margin-bottom: 40px;
 
   }
 
@@ -53,10 +51,8 @@
     text-align: center;
     font-weight: bold;
     font-size: 2rem;
-    
-    margin-bottom: $space-xs;
     color: $mid-dark-blue;
-
+    padding-bottom: 10px;
   }
 
   .card-text {
@@ -65,7 +61,6 @@
     font-size: $font-size-sm;
     color: $mid-dark-blue;
     margin-bottom: $space-sm;
-    margin-top: auto;
   }
 
 }
@@ -80,12 +75,12 @@
     background-color: $light-blue;
 
     border-radius: 9999px;
-    padding: 0.75rem 1.5rem;
+    padding-block: 4px ;
     width: 100%;
     transition: all 0.2s ease-in-out;
     border: 2px solid transparent;
     margin-top: auto;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     &:hover {
 
       color: $light-blue;
