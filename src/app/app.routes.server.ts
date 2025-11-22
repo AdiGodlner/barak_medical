@@ -8,7 +8,8 @@ const SLUGS = [
   "diving-medicine",
   "military-medicine",
   "work-ability",
-  "industry-consulting"];
+  "industry-consulting",
+  "ocupational-medicine"];
 
 export const serverRoutes: ServerRoute[] = [
   {
