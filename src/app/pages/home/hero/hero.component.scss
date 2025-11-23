@@ -3,14 +3,21 @@
 
 .hero{
   
-  display: grid;
-  grid-template-columns: 1fr 2fr;
   min-height:90dvh ;
+  position: relative;
 
 }
 
 .hero-text {
 
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: transparent;
+  // background-color: red;
+  width: 33%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,10 +48,18 @@
 
 
 .background-image-wrap {
-  
-  background: $bright-yellow;
+
+  position: absolute;
+  left:  clamp(
+    -30vw,
+    calc(-30vw + ((100vw - 1400px)*0.8 ) ),
+    0%);
+  z-index: 1;
   height: 100%;
+
+  background: $bright-yellow;
   background-image: linear-gradient(90deg, $bright-yellow 0%, rgba(255, 255, 255, 1) 70%);
+  
   .hero-image{
     height: 100%;
     width: 100%;
@@ -77,35 +92,43 @@
     
   }
 }
-// TODO add a @media for background image or change background 
-// to an img tag
 
- @media only screen and (max-width: 800px) {
+.laptop-btn{
+  display: block;
+}
+.mobile-call-us-wrap{
+  display: none;
+  padding: 2rem;
+  width: 100%;
 
+  .mobile-btn{
+    margin-inline: auto;
+  }
+}
+
+@media only screen and (max-width: 1149px) {
 
   .hero {
-    
-    display: grid;
-    grid-template-columns: none;
-    grid-template-rows: 1fr 3fr;
-    grid-template-areas:
-      "text"
-      "image";
-    height: calc(100dvh - 100px);
 
-
+    position: static;
+    min-height: calc(100dvh - 100px);
 
   }
 
 
-  .cta-btn{
+  .laptop-btn{
     display: none;
+  }
+  .mobile-call-us-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
   }
 
   .hero-text{
-
+    position: static;
     padding: 1rem;
-    grid-area: text;
     width: 100%;
     justify-content: start;
 
@@ -131,8 +154,7 @@
   }
 
   .background-image-wrap{
-    width: 100%;
-    grid-area: image;
+    all: unset;
 
   }
 
@@ -143,7 +165,6 @@
   }
 
   .hero-image {
-    height: 100%;
     width: 100%;
   }
 

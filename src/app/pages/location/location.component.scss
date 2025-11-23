@@ -8,9 +8,12 @@
     .column{
 
         // padding-inline: 20px;
-        img{
+        svg{
             width: 100%;
             height: 100%;
+        }
+        svg * {
+            vector-effect: non-scaling-stroke;
         }
     }
 }
