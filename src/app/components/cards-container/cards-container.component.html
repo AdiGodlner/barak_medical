@@ -1,15 +1,17 @@
 <section class="homepage-section" >
     <div class="cards-container-warp">
         <h2 class="cards-container-title" > {{cardsContainerData.h2 || "נושאים קשורים"}}</h2>
-        <ul class="cards-container" 
-            [class.three-cards]="cardsContainerData.cards.length == 3"
-            [class.four-cards]="cardsContainerData.cards.length == 4"
-        >
-            @for(card of cardsContainerData.cards; track $index){
-                <li>
-                    <app-card [card]="card" ></app-card>
-                </li>
-            }
-        </ul>
+        <div class="ul-wrap">
+            <ul class="cards-container" 
+                [class.three-cards]="cardsContainerData.cards.length == 3"
+                [class.four-cards]="cardsContainerData.cards.length == 4">
+                @for(card of cardsContainerData.cards; track $index){
+                    <li>
+                        <app-card [card]="card" ></app-card>
+                    </li>
+                }
+            </ul>
+        </div>
+
     </div>
 </section>

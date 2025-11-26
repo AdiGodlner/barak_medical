@@ -5,7 +5,7 @@
     
     container-type: inline-size;
     container-name: cardContainerWrap;
-        
+    
     .cards-container-title{
 
         font-weight: bold;
@@ -15,24 +15,35 @@
         color: $mid-dark-blue;
 
     }
+    .ul-wrap{
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    .cards-container {
+      .cards-container {
 
         padding: 1rem;
         display: grid;
         gap: 20px;
         width: 100%;
-        max-width: 100%;
+        // max-width: 100%;
         justify-items: center;
 
     }
+
+    }
+    
 
 }
 
 
 @container cardContainerWrap ( width > 1200px) {
   
-
+  .cards-container{
+    
+    max-width: 1400px;
+  
+  }
   .three-cards {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -47,7 +58,7 @@
 
   .cards-container {
     padding-inline: 20px;
-
+    max-width: 700px;
   }
 
 
