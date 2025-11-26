@@ -7,6 +7,7 @@
     padding-top: 40px;
     padding-bottom: 40px;
     display: flex;
+    flex-direction: row;
 
 }
 
@@ -23,7 +24,6 @@
        
     .footer-link{
 
-        // background-color: red;
         min-height: 44px;
         min-width: 44px;
         width: fit-content;
@@ -49,10 +49,10 @@
 
 .img-wrap{
 
-    min-height: 44px;
-    min-width: 44px;
+    min-height: 60px;
+    min-width: 60px;
     aspect-ratio: 1 / 1;
-    width: clamp(44px, 4.5vw ,100px);
+    width: clamp(60px, 4.8vw  ,80px);
 
     svg{
         
@@ -85,4 +85,35 @@
     font-size: 1rem;
     font-size: 1.5rem;
     margin-top: auto;
+
+}
+
+@media screen and (max-width: 1000px){
+
+    .footer{
+        flex-direction: column;
+        padding-inline: 40px;
+        padding-bottom: 100px;
+    }
+
+    .credits{
+
+        text-align: center;
+
+    }
+
+    .socials{
+
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        
+        
+    }
+
+
 }
