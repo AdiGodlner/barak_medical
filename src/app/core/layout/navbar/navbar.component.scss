@@ -333,11 +333,14 @@ nav {
         }
 
         .close-btn{
+          border-radius: 9999px;
+          background-color: $light-blue;
+          height: 44px;
+          width: 44px;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 2px 1rem;
-
+          
         }
 
         .menu-item{

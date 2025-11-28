@@ -18,8 +18,6 @@
 
 }
 
-
-
 .title-introduction{
 
     font-size: 2.8rem;
@@ -27,6 +25,54 @@
 
 }
 
+.mobile{
+    display: none;
+}
+.desktop{
+    display: block;
+}
+.dr-header{
+
+    padding-bottom: 1rem;
+    padding-top: 60px;
+    .contact {
+        padding-bottom: 10px;   
+        span {
+            padding-inline-end: 2ch;
+        }
+    }
+
+    .links{
+        display: flex;
+        gap: 1rem;
+        .svg-link{
+            height: 44px;
+            width: 44px;
+            display: block;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+        }
+
+        .E-card{
+
+            font-size: 1.5rem;
+            background-color: $light-blue;
+            color: $mid-dark-blue;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            padding-block: 5px;
+            width: 130px;
+            text-align: center;
+                &:hover{
+                    background-color: $mid-dark-blue;
+                    color: $light-blue;
+                    border: 2px solid transparent;
+                }
+            }
+    }
+}
 
 
 .about-dr-grid{
@@ -41,6 +87,12 @@
             font-weight: bold;
             padding-top: 1rem;
         }
+        .specialties-wrap{
+            display: block;
+            .mobile-comma{
+                display: none;
+            }
+        }
 
         img{
 
@@ -52,48 +104,7 @@
     .dr-description{
         max-width: 75ch;
         padding: 1.5rem;
-        .dr-header{
 
-            padding-bottom: 1rem;
-            padding-top: 60px;
-            .contact {
-                padding-bottom: 10px;   
-                span {
-                    padding-inline-end: 2ch;
-                }
-            }
-
-            .links{
-                display: flex;
-                gap: 1rem;
-                .svg-link{
-                    height: 44px;
-                    width: 44px;
-                    display: block;
-                    padding: 0;
-                    border: 0;
-                    outline: 0;
-                    cursor: pointer;
-                }
-
-                .E-card{
-
-                    font-size: 1.5rem;
-                    background-color: $light-blue;
-                    color: $mid-dark-blue;
-                    border: 2px solid transparent;
-                    border-radius: 15px;
-                    padding-block: 5px;
-                    width: 130px;
-                    text-align: center;
-                        &:hover{
-                            background-color: $mid-dark-blue;
-                            color: $light-blue;
-                            border: 2px solid transparent;
-                        }
-                    }
-            }
-        }
 
 
         .dr-text{
@@ -125,4 +136,150 @@
         background-color: red;
 
     }
+}
+
+
+
+
+
+
+
+@media screen and ( max-width: 720px ) {
+
+    .about{
+
+        padding-block: 20px;
+        padding-inline: 20px;
+
+    }
+
+    .title{
+
+        text-align: center;
+    }
+
+    .title-introduction{
+        font-size: 1.5rem;
+    }
+    
+    .dr-header{
+
+        padding-bottom: 1rem;
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .contact {
+            padding-bottom: 10px;
+            display: flex;
+            font-size: 0.9rem;
+            span {
+                padding-inline-end: 2ch;
+            }
+        }
+
+        .links{
+
+            justify-content: center;
+            
+            .E-card{
+
+                font-size: 1.5rem;
+                border-radius: 999px;
+                padding-block: 2px;
+
+            }
+        }
+    }
+
+    .mobile{
+        
+        display: block;
+
+    }
+    .desktop{
+
+        display: none;
+        background-color: red;
+        
+    }
+
+    .about-dr-grid{
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+        .dr-summary{
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .summary-title{
+                font-weight: bold;
+                padding-top: 1rem;
+            }
+            .specialties-wrap{
+                
+                display: flex;
+                gap: 0.5ch;
+                
+                .mobile-comma{
+                    display: inline;
+                }
+            }
+            img{
+
+                width: 50%;
+
+            }
+        }
+
+        .dr-description{
+
+            max-width: 75ch;
+            padding-top: 1.5rem;
+            padding-bottom: 0;
+            padding-inline: 0;
+
+            .dr-text{
+
+                padding-bottom: 1.5rem;
+                font-size: 1.3rem;
+            }
+        }
+
+    }
+
+
+    .svg-link{
+
+        color: $light-blue;
+        fill: $light-blue;
+        stroke: $light-blue;
+        &:hover{
+
+            color: $mid-dark-blue;
+
+        }
+    }
+    .inner-light-blue .outer-light-blue{
+
+        
+        &:hover{
+
+            background-color: red;
+
+        }
+    }
+
+
+
+
+
+
+    
+
 }
