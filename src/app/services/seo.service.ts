@@ -8,7 +8,7 @@ import { SeoData } from '../models/seo.model';
 })
 export class SeoService {
 
-  clinicName :string = "י.ד ברק מדיקל";
+  clinicName :string = "ברק מדיקל";
   location :string = "קריית אונו";
   titleSuffix:string = `${this.clinicName} | ${this.location}`;
 

@@ -51,7 +51,7 @@ var SeoService = function () {
         function SeoService_1(title, meta) {
             this.title = title;
             this.meta = meta;
-            this.clinicName = "י.ד ברק מדיקל";
+            this.clinicName = "ברק מדיקל";
             this.location = "קריית אונו";
             this.titleSuffix = "".concat(this.clinicName, " | ").concat(this.location);
         }
