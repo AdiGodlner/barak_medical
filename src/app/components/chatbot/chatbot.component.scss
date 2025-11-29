@@ -13,15 +13,19 @@
     z-index: $z-index-chatbot;
 
     border-radius: 50%;
-    overflow: hidden;
     box-shadow: 0 1px 2px rgba(13,71,161,.08);
 
     &.open{
 
-        border-radius: 10px;
+        right: 5%;
+        border-top-left-radius: 99px;
+        border-top-right-radius: 99px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+
         background-color: $bg-white;
         width: min(400px, 90% );
-        border: 2px solid $mid-dark-blue;
+        border: 4px solid $light-blue;
         height: auto;
         min-height: 70dvh;
 
@@ -36,10 +40,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        svg{
-            // opacity: 0;
-            overflow: hidden;
 
+        svg{
+            overflow: hidden;
         }
         
         &.hide{
@@ -50,82 +53,52 @@
 
 }
 
-.title-bar{
-
-    display: flex;
-    
-    .close-button{
-        height: 50px;
-        width: 50px;
-        text-align: center;
-        background-color: $light-blue;
-        color: $mid-dark-blue;
-        font-size: 1.2rem;
-
-        &:hover{
-            color: $light-blue;
-            background-color: $mid-dark-blue;
-        }
-    }
-
-    .title{
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex:1;
-
-        padding-inline-end: 50px;
-
-        font-size: 1.4rem;
-        background-color: $light-blue;
 
 
-    }
+.chat-body-wrap{
 
+    overflow: hidden;
+    padding-top: 50px;
 
-}
-
-
-.chat-body {
+    .chat-body {
    
-    background-color: $bg-white;
-    padding: 10px;
-    width: 100%;
-    height: 70dvh ;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
+        background-color: $bg-white;
+        padding-inline: 5px;
+        width: 100%;
+        height: 70dvh ;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
 
-    .message{
+        .message{
 
-        font-size: 1.5rem;
-        max-width: 80%;
-        margin-bottom: 1rem;
-        border-radius: 15px;
-        padding: 15px 10px;
-        text-wrap: stable;
+            font-size: 1.3rem;
+            max-width: 80%;
+            margin-bottom: 1rem;
+            border-radius: 999px;
+            padding: 15px 10px;
+            text-wrap: stable;
+            padding-inline: 1ch;
+            &.user{
 
-        &.user{
-
-            background-color: $light-blue;
-            color: $mid-dark-blue;
-            align-self: flex-start;
-            border-bottom-right-radius: 0;
-        
-        }
-
-        &.bot{
-
-            background-color: $bg-white;
-            align-self: flex-end;
-            border-bottom-left-radius: 0;
+                background-color: $light-blue;
+                color: $mid-dark-blue;
+                align-self: flex-start;
             
+            }
+
+            &.bot{
+
+                background-color: $bg-white;
+                align-self: flex-end;
+                
+            }
 
         }
-
+        
     }
-    
+
+
 }
 
 .btns-flex{
@@ -140,7 +113,7 @@
         background-color: $mid-dark-blue;
         color: $bg-white;
         padding: 0.8rem 1rem;
-        border-radius: 14px;
+        border-radius: 999px;
         font-size: 1.5rem;
         cursor: pointer;
         text-align: center;
@@ -158,8 +131,52 @@
 
 .chat{
 
+    position: relative;
     display: flex;
     flex-direction: column;
+
+    .title{
+
+        position: absolute;
+        top: calc(-3rem + 10px);
+        right: -30px;
+        
+        width: fit-content;
+        padding-block: 0.5rem;
+        padding-inline-start: 45px;
+        padding-inline-end: 1ch;
+        font-size: 3rem;
+        font-weight: bold;
+        border-end-end-radius: 999px;
+        border-start-end-radius: 999px;
+
+        background-color: $light-blue;
+        color: $mid-dark-blue;
+
+
+    }
+
+
+    .close-button{
+
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        border-radius: 9999px;
+        
+        top: calc(-3rem + 10px);
+        left: 0px;
+
+        background-color: $light-blue;
+        color: $mid-dark-blue;
+
+        &:hover{
+            color: $light-blue;
+            background-color: $mid-dark-blue;
+        }
+    }
+
+
 
     &.closed{
 

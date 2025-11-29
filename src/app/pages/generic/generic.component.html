@@ -24,9 +24,9 @@
                     @else if (item.type === 'li') {
 
 
-                        <ul>
+                        <ul class="dash-list">
                             @for (listItem of item.content; track $index) {
-                                <li class="list-item">
+                                <li class="list-item big-card-text">
                                     {{listItem}}
                                 </li>
                             }

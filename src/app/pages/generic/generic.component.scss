@@ -11,6 +11,10 @@
 
 }
 
+.dash-list li::before {
+  content: '– ';
+  color: currentColor;
+}
 
 .subheader{
 

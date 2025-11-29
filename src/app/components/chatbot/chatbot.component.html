@@ -7,8 +7,6 @@
         aria-label="open chatbot"
         >
 
-        <!-- preserveAspectRatio="xMidYmid meet" -->
-        <!-- <div class="svg-wrap"> -->
             <svg
             width="33.6px"
             height="46.667px"
@@ -20,69 +18,70 @@
             </g>
         </svg>
 
-        <!-- </div> -->
         
     </button>
 
     <div class="chat"
         [class.closed] = "!isChatOpen">
-        <div class="title-bar">
 
-            <button class="close-button"
-                (click)="close()">
-                    X
-            </button>
+        <h2 class="title">
+             צ'אט בוט
+        </h2>
 
-            <span class="title">
-                מודיעין דיגיטלי
-            </span>
+        <button class="close-button"
+            (click)="close()">
+                X
+                <!-- TODO add SVG insted of X  -->
+        </button>
 
-        </div>
 
-        <div class="chat-body">
+        <div class="chat-body-wrap">
+           <div class="chat-body">
 
-            @for (message of messages; track message){
-                
-                @if (message.from === 'user') {
-
-                    <div class="message user">
-                        <span> {{ message.text }} </span>
-                        
-                    </div>
-
-                } @else {
+                @for (message of messages; track message){
                     
-                    <div class="message bot">
-                        <span>{{ message.text }}</span>
-                    @for ( chatButton of message.messageButtons; track chatButton) {
-                        <div class="btns-flex">
+                    @if (message.from === 'user') {
 
-                        @if ( chatButton.responseId ) {
-                        <button class="message-button"
-                        (click)="handleOnButtonClick(chatButton.responseId)">
-                            {{chatButton.text}}
-                        </button>
-                        } @else{
+                        <div class="message user">
+                            <span> {{ message.text }} </span>
+                            
+                        </div>
+
+                    } @else {
                         
-                        <a href="tel: +9720528723566">
-                            <button class="message-button" >
+                        <div class="message bot">
+                            <span>{{ message.text }}</span>
+                        @for ( chatButton of message.messageButtons; track chatButton) {
+                            <div class="btns-flex">
+
+                            @if ( chatButton.responseId ) {
+                            <button class="message-button"
+                            (click)="handleOnButtonClick(chatButton.responseId)">
                                 {{chatButton.text}}
                             </button>
-                        </a>
+                            } @else{
+                            
+                            <a href="tel: +9720528723566">
+                                <button class="message-button" >
+                                    {{chatButton.text}}
+                                </button>
+                            </a>
+                            }
+                            </div>
                         }
+                    
                         </div>
-                    }
-                 
-                    </div>
 
-                 
+                    
+
+                    }
 
                 }
+        
+            </div>
 
-            }
-    
         </div>
-
+       
     </div>
 
 </div>

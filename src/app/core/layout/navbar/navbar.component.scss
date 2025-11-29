@@ -133,16 +133,19 @@ nav {
     gap: 20px;
     height: 100%;
 
-    .close-btn{
+    .close-btn {
+
       display: none;
       width: 44px;
       height: 44px;
-      background-color: #fff;
       border: 0;
       cursor: pointer;
-        img{
-          width: 100%;
-          height: 100%;
+
+      img{
+         
+          width: 50%;
+          height: 50%;
+          // TODO add hover 
         }
       }
 
@@ -319,6 +322,7 @@ nav {
       max-width: 300px;
       min-width: 200px;
       height: 100dvh;
+      overflow-y: scroll;
 
             
       display: flex;
@@ -326,21 +330,22 @@ nav {
       align-items: start;
 
       padding-inline:20px;
-      padding-block: 20px;
+      padding-top: 20px;
+      padding-bottom: 50px;
 
         &.open {
           transform: translateX(-100%);
         }
 
         .close-btn{
-          border-radius: 9999px;
-          background-color: $light-blue;
-          height: 44px;
-          width: 44px;
+
           display: flex;
-          align-items: center;
-          justify-content: center;
           
+          &:hover{
+          
+            background-color: $mid-dark-blue;
+            //TODO change stroke to light blue
+          }
         }
 
         .menu-item{
@@ -356,7 +361,7 @@ nav {
           
           .submenu{
 
-            background-color: #f5f5f5;
+            // background-color: #f5f5f5;
             position: static;
             display: none;
             flex-direction: column;
