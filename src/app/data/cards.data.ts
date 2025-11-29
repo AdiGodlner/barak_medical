@@ -8,7 +8,7 @@ export const militaryMedicine: Card = {
 };
 
 export const medicalAdministration: Card = {
-  imageUrl: '/assets/images/placeholder.jpg',
+  imageUrl: '/assets/images/cards/med-admin.svg',
   title: 'מנהל רפואי',
   description: 'ייעוץ וליווי מקצועי למערכות בריאות וארגונים בבניית נהלים רפואיים, תקנים מקצועיים ותהליכי קבלת החלטות רפואיות ותעסוקתיות.',
   routeTo: '/services/medical-administration'
@@ -29,7 +29,7 @@ export const aviationMedicine: Card = {
 };
 
 export const workAbility: Card = {
-  imageUrl: '/assets/images/placeholder.jpg',
+  imageUrl: '/assets/images/cards/work-ability.svg',
   title: 'כושר עבודה',
   description: ' הערכת כשירות רפואית לעבודה, התאמת עובדים לתפקידם ומתן חוות דעת רפואיות מקצועיות בהתאם לדרישות מקום העבודה ולרגולציה.',
   routeTo: '/services/work-ability'
@@ -43,7 +43,7 @@ export const industryConsulting: Card = {
 };
 
 export const causalLinkAssessment: Card = {
-  imageUrl: '/assets/images/placeholder.jpg',
+  imageUrl: '/assets/images/cards/cause.svg',
   title: 'קשר סיבתי',
   description: 'חוות דעת מומחיות לקביעת הקשר שבין המצב הרפואי לבין תנאי העבודה, מחלות מקצוע או אירועים חריגים.',
   routeTo: '/services/causal-link-assessment'

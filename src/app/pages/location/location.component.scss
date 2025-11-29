@@ -4,7 +4,9 @@
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
+    .column-left{
+        padding-inline-start: 62px;
+    }
     .column{
 
         // padding-inline: 20px;
@@ -17,19 +19,18 @@
         }
     }
 }
+
 .h3-title{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-top: 2rem;
 }
 .location-card-text{
-    font-size: 3rem;
+    font-size: 1.5rem;
 
 }
 .bold {
-
     font-weight: bolder;
-
 }
 
 .dash-list li::before {
@@ -51,45 +52,50 @@
 
 .form-group{
 
-    display: flex;
     font-size: 2rem;
-    gap: 40px;
     padding-block: 20px;
+
+    .label-wrap{
+
+        width: 100%;
+        outline: 1px solid black;
+
+        .label{
+            display: inline-block;
+            width: 8ch;
+        }
+
+        .input{
+            display: inline-block;
+            background-color: $light-blue;
+            height: 40px;
+            border-radius: 999px;
+            padding-inline: 2rem ;
+            padding-block: 0.5rem;
+        }
+
+        .text-area{
+
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            font-weight: inherit;
+
+            background-color: $light-blue;
+            resize: none;
+            
+            width: 90%;
+            min-height: 200px;
+            
+            border-radius: 45px;
+            padding-inline: 45px;
+            padding-block-end: 100px;
+
+        }
+
+
+    }
     
-    .label{
-
-        width: 8ch;
-    
-    }
-
-    .input{
-
-        background-color: $light-blue;
-        height: 40px;
-        border-radius: 9999px;
-        padding-inline: 2rem ;
-        padding-block: 0.5rem;
-    }
-
-    .text-area{
-
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        font-weight: inherit;
-
-        background-color: $light-blue;
-        resize: none;
-        
-        width: 60%;
-        min-height: 200px;
-        
-        border-radius: 45px;
-        padding-inline: 45px;
-        padding-block-end: 450px;
-
-    }
-
 }
 
 
@@ -99,11 +105,6 @@
 
 }
 
-.narrow-big-card{
-
-    width: 75%;
-
-}
 .error small {
     
     color: #e74c3c;

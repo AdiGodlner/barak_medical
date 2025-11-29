@@ -12,8 +12,8 @@ import { ChatbotComponent } from './components/chatbot/chatbot.component';
     RouterOutlet,
     NavbarComponent,
     FooterComponent,
-    UnderConstructionPopupComponent,
-    BottomCallUsBannerComponent,
+    // UnderConstructionPopupComponent,
+    // BottomCallUsBannerComponent,
     ChatbotComponent,
     
   ],
