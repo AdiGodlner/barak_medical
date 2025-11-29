@@ -53,12 +53,11 @@
 .form-group{
 
     font-size: 2rem;
-    padding-block: 20px;
+    padding-block: 5px;
 
     .label-wrap{
 
         width: 100%;
-        outline: 1px solid black;
 
         .label{
             display: inline-block;
@@ -66,12 +65,25 @@
         }
 
         .input{
-            display: inline-block;
+            width: min(100%, 300px);
             background-color: $light-blue;
             height: 40px;
             border-radius: 999px;
-            padding-inline: 2rem ;
+            // padding-inline: 2rem ;
             padding-block: 0.5rem;
+
+        }
+
+    }
+    
+    .text-area-wrap{
+        
+        display: flex;
+        flex-direction: row;
+
+        .label{
+            display: inline-block;
+            width: 8ch;
         }
 
         .text-area{
@@ -93,9 +105,14 @@
 
         }
 
-
     }
-    
+
+    .error-wrap{
+        padding-top: 5px; 
+        min-height: calc(2.5rem + 10px);
+        width: 100%;
+    }
+
 }
 
 
@@ -109,7 +126,6 @@
     
     color: #e74c3c;
     display: block;
-    margin-top: 0.25rem;
 
 }
 
@@ -132,4 +148,51 @@
         color: $light-blue;
 
     }
-}   
+}
+
+
+
+
+@media screen and ( max-width: 720px ) {
+
+    .split-section{
+
+        display: grid;
+        grid-template-columns: 1fr;
+        .column-left{
+            padding-inline-start: 0;
+        }
+    }
+
+
+
+
+    .form-group{
+
+        
+        .text-area-wrap{
+
+            flex-direction: column;
+
+            .label{
+
+            }
+
+            .text-area{
+
+                width: 100%;
+                padding-block-end: 100px;
+
+            }
+
+        }
+
+
+    }
+
+
+
+
+
+
+}
