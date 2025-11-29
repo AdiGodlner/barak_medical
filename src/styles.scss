@@ -123,6 +123,14 @@ flex: 1;
 }
 
 
+
+.homepage-section {
+
+    padding-block: 40px;
+    padding-inline: 80px;
+  
+  }
+
 .inner-padding{
 
   padding-bottom: 45px;
@@ -220,6 +228,12 @@ flex: 1;
 }
 
 @media screen and ( max-width: 720px ) {
+
+  .homepage-section{
+
+    padding-inline: 20px;
+
+  }
 
   .side-page-main{
   

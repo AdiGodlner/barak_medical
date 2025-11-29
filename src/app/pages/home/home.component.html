@@ -1,7 +1,9 @@
 <main>
     <app-hero></app-hero>
     <app-who-we-are></app-who-we-are>
-    <app-cards-container [cardsContainerData]="additionalCardsData"  ></app-cards-container>
-    <app-cards-container [cardsContainerData]="occupationalCardsData"  ></app-cards-container>
-
+    <div class="homepage-section">
+        <app-cards-container [cardsContainerData]="additionalCardsData"  ></app-cards-container>
+        <app-cards-container [cardsContainerData]="occupationalCardsData"  ></app-cards-container>
+    </div>
+    
 </main>
