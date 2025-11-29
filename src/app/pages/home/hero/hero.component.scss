@@ -50,10 +50,11 @@
 .background-image-wrap {
 
   position: absolute;
-  left:  clamp(
-    -30vw,
-    calc(-30vw + ((100vw - 1400px)*0.8 ) ),
-    0%);
+  // left:  clamp(
+  //   -30vw,
+  //   calc(-30vw + ((100vw - 1400px)*0.8 ) ),
+  //   0%);
+  left: 0;
   z-index: 1;
   height: 100%;
 
@@ -67,9 +68,6 @@
   }
 
 }
-
-
-
 
 
 .cta-btn{
@@ -169,3 +167,52 @@
   }
 
 }
+
+
+
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 4/3) {
+  /*  devices that are close to square */
+
+  .hero {
+
+    position: static;
+    min-height: calc(100dvh - 100px);
+
+  }
+
+
+  .laptop-btn{
+    display: none;
+  }
+  .mobile-call-us-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+
+  .hero-text{
+    position: static;
+    width: 100%;
+    justify-content: start;
+
+  }
+
+  .background-image-wrap{
+    all: unset;
+
+  }
+
+  .background-image {
+    background-position: 100%;
+    height: 100%;
+    width: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+
+}
+

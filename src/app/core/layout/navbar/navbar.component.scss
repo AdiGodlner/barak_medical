@@ -340,10 +340,14 @@ nav {
         .close-btn{
 
           display: flex;
-          
+          justify-content: center;
+          align-items: center;
+
+          background-color: $light-blue;
+          border-radius: 999px;
           &:hover{
           
-            background-color: $mid-dark-blue;
+            // background-color: $mid-dark-blue;
             //TODO change stroke to light blue
           }
         }
