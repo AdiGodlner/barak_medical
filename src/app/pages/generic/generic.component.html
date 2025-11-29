@@ -11,7 +11,7 @@
     @for (section of pageData['sections']; track $index) {
         @if (section.type === "large-card") {
             <section class="big-card">
-                <h2 class="h2-title">{{ section.h2 }}</h2>
+                <h2 class="h2-title" detectWrapParent="big-card" >{{ section.h2 }}</h2>
                 @for (item of section.content; track $index) {
                     @if (item.type === 'p') {
                     <p class="big-card-text"

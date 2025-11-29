@@ -6,11 +6,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { pageDataMap } from '../../data/page.data';
 import { CardsContainerComponent } from '../../components/cards-container/cards-container.component';
 import { PageData } from '../../models/page-data';
-
+import { DetectWrapParentDirective } from '../../directives/detect-wrap-parent.directive';
 @Component({
   selector: 'app-generic',
   standalone:true,
-  imports: [CommonModule, CardsContainerComponent],
+  imports: [CommonModule, CardsContainerComponent, DetectWrapParentDirective],
   templateUrl: './generic.component.html',
   styleUrl: './generic.component.scss'
 })
