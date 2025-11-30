@@ -3,25 +3,46 @@ export enum MessageSender {
   Bot = "bot",
 }
 
-// export enum ButtonType {
-//   Response = "response",
-//   Telephone = "telephone",
-// }
+export enum ButtonType {
+  Response = "response",
+  Route = "route",
+  Link="link"
+}
 
 export enum ResponseId {
   Welcome = "welcome",
-  Repeat = "repeat",
-  BookAppointment = "book_appointment",
-  CancelAppointment = "cancel_appointment",
-  ClinicHours = "clinic_hours",
-  ClinicLocation = "clinic_location",
-  ServicesOffered = "services_offered",
-  InsuranceAccepted = "insurance_accepted",
-  SpeakToStaff = "speak_to_staff",
-  EmergencyContact = "emergency_contact",
-  ThankYou = "thank_you",
-  FollowUp = "follow_up",
-  ContactByPhone = "contact_by_phone",
+  Repeat="Repeat",
+  contactUs="contactUs",
+  divingForm="divingForm",
+  
+  lossOfWorkCapacityAndPensionFunds ="lossOfWorkCapacityAndPensionFunds",
+  employerCompanyAndFactoryConsulting="employerCompanyAndFactoryConsulting",
+  nationalInsurance="nationalInsurance",
+  
+  occupationalMedicineExpertConsulting="occupationalMedicineExpertConsulting",
+  
+  militaryMedicineProfileConsulting="militaryMedicineProfileConsulting",
+  soldier="soldier",
+  preFirstDraftNoticeCandidate="preFirstDraftNoticeCandidate",
+  
+  postFirstDraftBeforeProfileSet="postFirstDraftBeforeProfileSet",
+  postFirstDraftProfileAssigned="postFirstDraftProfileAssigned",
+  profileChange="profileChange",
+  assignmentChange="assignmentChange",
+
+  divingDoctorExam="divingDoctorExam",
+  diverUnder45="diverUnder45",
+  healthyDiverOver45="healthyDiverOver45",
+  diverWithMedicalIndicationNotAgeRelated="diverWithMedicalIndicationNotAgeRelated",
+
+  clinicArrival="clinicArrival",
+  
+  generalDisability= "generalDisability",
+  workAccidents="workAccidents",
+  occupationalDiseases="occupationalDiseases",
+  hostileActions="hostileActions",
+
+  other="other"
 }
 
 
@@ -47,9 +68,10 @@ export interface ChatMessage {
 
 export interface ChatMessagesButton{
 
-  // type : ButtonType;
+  type : ButtonType;
   text : string ;
-  phoneNumber ?: string;
+  route ?: string;
   responseId ?: ResponseId;
+  link ?:string;
 
 }

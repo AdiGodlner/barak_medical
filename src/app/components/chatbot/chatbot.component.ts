@@ -10,6 +10,7 @@ import { ChatMessage,
 
 import { Subscription } from 'rxjs';
 import { ChatbotService } from '../../services/chatbot.service';
+import { responseOptions } from '../../data/chat.data';
 
 @Component({
   selector: 'app-chatbot',
@@ -22,114 +23,6 @@ export class ChatbotComponent implements OnInit, OnDestroy {
 
   isChatOpen : boolean = false;
   messages : ChatMessage[] = [];
-
-  
-  clinicHoursBtn : ChatMessagesButton = {
-  
-    text : "שעות פעילות" ,
-    // type : ButtonType.Response,
-    responseId : ResponseId.ClinicHours
-  
-  }
-
-  servicesBtn: ChatMessagesButton = {
-  
-    text : "אילו שירותים" ,
-    // type : ButtonType.Response,
-    responseId : ResponseId.ServicesOffered
-  
-  }
-
-  welcomeResponse : ChatResponse = {
-
-    id : ResponseId.Welcome,
-    isDeadEnd : false,
-    messages :[
-      {
-        from : MessageSender.Bot,
-        text : "שלום במה אוכל לעזור לך?",
-        messageButtons : []
-      },
-      {
-        from : MessageSender.Bot,
-        text : " בחר נושא  ",
-        messageButtons : [ this.servicesBtn, 
-          this.clinicHoursBtn 
-        ]
-      }
-
-    ]
-
-  };
-
-  repeatQuestionResponse : ChatResponse = {
-
-    id : ResponseId.Repeat,
-    isDeadEnd : false,
-    messages :[
-      {
-        from : MessageSender.Bot,
-        text : " בחר נושא  ",
-        messageButtons : [ this.servicesBtn, 
-          this.clinicHoursBtn 
-        ]
-      }
-
-    ]
-
-  } 
-
-  servicesResponse : ChatResponse = {
-
-    id : ResponseId.ServicesOffered,
-    isDeadEnd : true,
-    messages :[
-      {
-        from : MessageSender.User,
-        text : "אילו שירותים מציע ברקמדיקל ?",
-        messageButtons : []
-      },
-      {
-        from : MessageSender.Bot,
-        text : " תשובה כלשהיא .... ",
-        messageButtons : [ this.servicesBtn, 
-          this.clinicHoursBtn 
-        ]
-      }
-
-    ]
-
-  };
-
-  clinicHoursResponse : ChatResponse = {
-
-    id : ResponseId.ClinicHours,
-    isDeadEnd : true,
-    messages :[
-      {
-        from : MessageSender.User,
-        text : "מתי פתוחה המרפאה ",
-        messageButtons : []
-      },
-      {
-        from : MessageSender.Bot,
-        text : " שעות פעילות ... ",
-        messageButtons : []
-
-      }
-
-    ]
-
-  };
-
-  responseOptions : ChatResponse[] =[
-
-    this.welcomeResponse,
-    this.repeatQuestionResponse,
-    this.servicesResponse,
-    this.clinicHoursResponse
-
-  ] 
   
   private sub!: Subscription;
 
@@ -160,7 +53,7 @@ export class ChatbotComponent implements OnInit, OnDestroy {
 
   handleOnButtonClick(responseId:ResponseId){
 
-    const possibleResponse = this.responseOptions.filter(option => option.id === responseId);
+    const possibleResponse = responseOptions.filter(option => option.id === responseId);
     
     if( !possibleResponse ){
       

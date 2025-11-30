@@ -207,6 +207,11 @@
         max-width: 80%;
         word-wrap: break-word;
         white-space: normal;
+        
+        &:hover{
+            background-color: $light-blue;
+            color: $mid-dark-blue;
+        }
 
 }
 
