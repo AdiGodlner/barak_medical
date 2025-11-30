@@ -1,31 +1,32 @@
 @use 'styles/variables.scss' as *;
 
-.chat-wrap{
+.chat-container{
 
-    height: 56px;
-    width: 56px;
-    background-color: $mid-dark-blue;
-    
     position : fixed;
     bottom: 30px;
     right: 30px;
+    height: 56px;
+    width: 56px;
+
+    background-color: $mid-dark-blue;
 
     z-index: $z-index-chatbot;
-
-    border-radius: 50%;
+    border-radius: 999px;
     box-shadow: 0 1px 2px rgba(13,71,161,.08);
+    overflow: hidden;
 
     &.open{
 
-        right: 5%;
-        border-top-left-radius: 99px;
-        border-top-right-radius: 99px;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
+        overflow: visible;
 
-        background-color: $bg-white;
+        height: auto;
+        min-height: 70dvh;
         width: min(400px, 90% );
-        border: 4px solid $light-blue;
+
+        border-radius: 0;
+        background-color: transparent;
+
+        width: min(400px, 90% );
         height: auto;
         min-height: 70dvh;
 
@@ -51,55 +52,137 @@
 
     }
 
-}
 
+    .relative-container{
 
+        position: relative;
+        display: none;
+        height: 100%;
+        
+        &.open{
+            display: block;
+        }
+        .title{
 
-.chat-body-wrap{
+            position: absolute;
+            top: calc(-2rem + 10px);
+            right: -30px;
+            z-index: $z-index-chatbot-title;
+            height: 74px;
+            width: fit-content;
+            padding-block: 0.5rem;
+            padding-inline-start: 45px;
+            padding-inline-end: 1ch;
+            font-size: 3rem;
+            font-weight: bold;
+            border-end-end-radius: 999px;
+            border-start-end-radius: 999px;
 
-    overflow: hidden;
-    padding-top: 50px;
+            background-color: $light-blue;
+            color: $mid-dark-blue;
 
-    .chat-body {
-   
-        background-color: $bg-white;
-        padding-inline: 5px;
-        width: 100%;
-        height: 70dvh ;
-        display: flex;
-        flex-direction: column;
-        overflow-y: scroll;
-
-        .message{
-
-            font-size: 1.3rem;
-            max-width: 80%;
-            margin-bottom: 1rem;
-            border-radius: 999px;
-            padding: 15px 10px;
-            text-wrap: stable;
-            padding-inline: 1ch;
-            &.user{
-
-                background-color: $light-blue;
-                color: $mid-dark-blue;
-                align-self: flex-start;
-            
-            }
-
-            &.bot{
-
-                background-color: $bg-white;
-                align-self: flex-end;
-                
-            }
 
         }
-        
+
+
+        .close-button{
+
+            position: absolute;
+            height: 74px;
+            width: 74px;
+            border-radius: 9999px;
+            
+            top: calc(-2rem + 10px);
+            left: 0px;
+
+            z-index: $z-index-chatbot-title;
+
+            background-color: $light-blue;
+            color: $mid-dark-blue;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            // &:hover{
+            //     color: $light-blue;
+            //     background-color: $mid-dark-blue;
+            // }
+
+            .close-x{
+                width: 70%;
+                height: 70%;
+            }
+        }
+
+
+        .chat-wrap{
+
+            overflow: hidden;
+            border-top-left-radius: 99px;
+            border-top-right-radius: 99px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            
+            height: 100%;
+            min-height: 20px;
+            width: 100%;
+            background-color: $bg-white;
+
+            border: 4px solid $light-blue;
+
+
+            
+        }
+
     }
 
-
 }
+
+
+
+
+
+.chat-body {
+
+    padding-top: 70px;
+    background-color: $bg-white;
+    padding-inline: 5px;
+    width: 100%;
+    height: 70dvh ;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    .message{
+
+        font-size: 1.3rem;
+        max-width: 80%;
+        margin-bottom: 1rem;
+        border-radius: 999px;
+        padding: 15px 10px;
+        text-wrap: stable;
+        padding-inline: 1ch;
+        &.user{
+
+            background-color: $light-blue;
+            color: $mid-dark-blue;
+            align-self: flex-start;
+        
+        }
+
+        &.bot{
+
+            background-color: $bg-white;
+            align-self: flex-end;
+            
+        }
+
+    }
+    
+}
+
+
 
 .btns-flex{
 
@@ -134,49 +217,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-
-    .title{
-
-        position: absolute;
-        top: calc(-3rem + 10px);
-        right: -30px;
-        
-        width: fit-content;
-        padding-block: 0.5rem;
-        padding-inline-start: 45px;
-        padding-inline-end: 1ch;
-        font-size: 3rem;
-        font-weight: bold;
-        border-end-end-radius: 999px;
-        border-start-end-radius: 999px;
-
-        background-color: $light-blue;
-        color: $mid-dark-blue;
-
-
-    }
-
-
-    .close-button{
-
-        position: absolute;
-        height: 50px;
-        width: 50px;
-        border-radius: 9999px;
-        
-        top: calc(-3rem + 10px);
-        left: 0px;
-
-        background-color: $light-blue;
-        color: $mid-dark-blue;
-
-        &:hover{
-            color: $light-blue;
-            background-color: $mid-dark-blue;
-        }
-    }
-
-
 
     &.closed{
 
