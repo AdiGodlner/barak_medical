@@ -1,11 +1,7 @@
 # TODO
 
 
-- TODO change slug to relevent data from pageData !
-
-- email ( sercver ? worker ? ) 
-    - check if this is on pages or workers 
-    - check which option is easier workers or a server 
-
+- email cloudfliar worker 
 
 - optimize images
+- TODO chagne metatag image and let MAYA choose descriptions for each page 

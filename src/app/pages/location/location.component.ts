@@ -3,6 +3,7 @@ import { SeoService } from '../../services/seo.service';
 import { SeoData } from '../../models/seo.model';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-location',
@@ -16,7 +17,14 @@ export default class LocationComponent implements OnInit{
   
   private fb = inject(FormBuilder);
   private seo = inject(SeoService);
+  private apiUrl = 'https://contact-form-api.96goldner.workers.dev/';
+
   submitted = signal(false);
+
+  constructor(private http: HttpClient) {
+
+
+   }
 
   contactForm = this.fb.group({
     fullName: [
@@ -53,9 +61,21 @@ export default class LocationComponent implements OnInit{
     
     if (this.contactForm.valid) {
       console.log('Form submitted:', this.contactForm.value);
-      // TODO: send to backend or service
-      alert('Your message has been sent!');
-      this.contactForm.reset();
+      
+    this.http.post(this.apiUrl, this.contactForm.value).subscribe({
+        next: (res) => {
+          console.log('Worker response:', res);
+          alert('Your message has been sent!');
+          this.contactForm.reset();
+          this.submitted.set(false);
+        },
+        error: (err) => {
+          console.error('Error sending form:', err);
+          alert(err.message || 'There was an error sending your message.');
+          this.submitted.set(false);
+        }
+      });
+
     } else {
       this.contactForm.markAllAsTouched();
     }
