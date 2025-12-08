@@ -33,7 +33,11 @@ export default class GenericComponent implements OnInit {
         if (newSlug !== this.slug) {
           this.slug = newSlug;
           this.pageData = pageDataMap[newSlug];
-          //TODO add if pagedata not in slugs then route to homepage
+
+          if (!this.pageData) {
+            this.router.navigate(['/']);
+            return;
+          }
 
 
           const pageSeo: SeoData = {

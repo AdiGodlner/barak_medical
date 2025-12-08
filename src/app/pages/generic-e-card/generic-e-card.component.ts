@@ -35,8 +35,11 @@ export default class GenericECardComponent implements OnInit{
           console.log(ECardDataMap);
           console.log(newSlug);
           this.ECardData = ECardDataMap[newSlug];
-          //TODO add if ECardData not in slugs then route to homepage
 
+          if (!this.ECardData) {
+            this.router.navigate(['/']);
+            return;
+          }
 
           const pageSeo: SeoData = {
             //TODO change slug to relevent data from pageData !?
