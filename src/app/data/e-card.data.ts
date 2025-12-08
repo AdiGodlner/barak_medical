@@ -5,7 +5,7 @@ export const darylECardData : ECard = {
     imageUrl: "/assets/images/about/darya.webp",
     imageAlt: "",
     title: "ד״ר דריה לוי-ברק",
-    specalities:  "וברפואה תעסוקתית מומחית ברפואה פנימית",
+    specalities:  "מומחית ברפואה פנימית וברפואה תעסוקתית",
     phoneNumber: "054-7289592",
     email: "Darya@Barakmedical.com",
     linkedIn: "Darya Levy Barak",
