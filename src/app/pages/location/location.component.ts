@@ -58,7 +58,7 @@ export default class LocationComponent implements OnInit{
   }
 
   onSubmit() {
-    
+    console.log('Submitting form...');
     if (this.contactForm.valid) {
       console.log('Form submitted:', this.contactForm.value);
       
