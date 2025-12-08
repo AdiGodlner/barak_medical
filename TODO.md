@@ -6,3 +6,6 @@
 - email ( sercver ? worker ? ) 
     - check if this is on pages or workers 
     - check which option is easier workers or a server 
+
+
+- optimize images
