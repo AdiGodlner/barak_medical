@@ -145,7 +145,8 @@ nav {
          
           width: 50%;
           height: 50%;
-          // TODO add hover 
+          // TODO add hover ? 
+
         }
       }
 
@@ -345,11 +346,7 @@ nav {
 
           background-color: $light-blue;
           border-radius: 999px;
-          &:hover{
-          
-            // background-color: $mid-dark-blue;
-            //TODO change stroke to light blue
-          }
+
         }
 
         .menu-item{

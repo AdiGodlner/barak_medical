@@ -15,7 +15,6 @@ import { isPlatformBrowser } from '@angular/common';
 export class DetectWrapParentDirective implements AfterViewInit {
   @Input('detectWrapParent') parentClass!: string;
   private observer!: ResizeObserver;
-  private oneLineHeight = 0;
 
   constructor(
     private el: ElementRef,

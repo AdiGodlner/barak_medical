@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../../services/seo.service';
 import { SeoData } from '../../models/seo.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [RouterModule ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

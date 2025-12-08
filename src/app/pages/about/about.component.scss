@@ -58,10 +58,11 @@
         .E-card{
 
             font-size: 1.5rem;
+            cursor: pointer;
             background-color: $light-blue;
             color: $mid-dark-blue;
             border: 2px solid transparent;
-            border-radius: 15px;
+            border-radius: 999px;
             padding-block: 5px;
             width: 130px;
             text-align: center;

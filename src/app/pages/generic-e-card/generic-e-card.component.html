@@ -1,0 +1,52 @@
+
+<main class="side-page-main E-card-main">
+
+    @if ( ECardData ) {
+
+        <div class="wrap-link" >
+
+            <img 
+                [src]="ECardData.imageUrl" 
+                [alt]="ECardData.imageAlt"
+                class="card-image" />
+            
+            <div class="title-wrap">
+                <h1 class="card-title">{{ ECardData.title }}</h1>
+            </div>
+            <p class="specialties">
+                {{ ECardData.specalities}}
+            </p>
+            <div class="card-text"
+                dir="ltr">
+                <div class="contact">
+                    <a  [href]="'tel:' + ECardData.phoneNumber">
+                    <img src="/assets/images/socials/ecard_tel.svg" alt="">
+                    {{ ECardData.phoneNumber }}
+                    </a>
+                </div>
+               
+                <div class="contact">
+                    <a  [href]="'mailto:' + ECardData.email">
+                    <img src="/assets/images/socials/ecard_mail.svg" alt="">
+                        {{ ECardData.email }}
+                    </a>
+                </div>
+                               
+                <div class="contact">
+                    <a  
+                    target="_blank"
+                    [href]="ECardData.linkedIn ">
+                    <img src="/assets/images/socials/ecard_linkdin.svg" alt="">
+                    {{ ECardData.linkedIn }}
+                    </a>
+                </div>
+                
+
+            </div>
+
+        </div>
+
+        
+    }
+    
+</main>

@@ -10,7 +10,6 @@ import { ChatbotService } from '../../../services/chatbot.service';
 })
 export class HeroComponent {
 
-  // TODO check if router moudule is still relevent
   
   constructor(private chatBotService:ChatbotService){}
 

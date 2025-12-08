@@ -4,7 +4,8 @@ import {
   lazyLoadAbout,
   lazyLoadAccessibility,
   lazyLoadLocation,
-  lazyLoadGeneric} from './lazy-loaders';
+  lazyLoadGeneric,
+  lazyLoadECard} from './lazy-loaders';
 
 export const routes: Routes = [
   { 
@@ -26,6 +27,10 @@ export const routes: Routes = [
   { 
     path: 'services/:slug',
     loadComponent: lazyLoadGeneric,
+  },
+  {
+    path: 'e-card/:slug',
+    loadComponent: lazyLoadECard,
   },
   { 
     path: '**', 

@@ -1,25 +1,25 @@
-import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { SeoService } from '../../services/seo.service';
 import { SeoData } from '../../models/seo.model';
 import { CommonModule} from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { pageDataMap } from '../../data/page.data';
-import { CardsContainerComponent } from '../../components/cards-container/cards-container.component';
-import { PageData } from '../../models/page-data';
-import { DetectWrapParentDirective } from '../../directives/detect-wrap-parent.directive';
+import { ECard } from '../../models/e-card';
+import { ECardDataMap } from '../../data/e-card.data';
 
 @Component({
-  selector: 'app-generic',
-  standalone:true,
-  imports: [CommonModule, CardsContainerComponent, DetectWrapParentDirective],
-  templateUrl: './generic.component.html',
-  styleUrl: './generic.component.scss'
+  selector: 'app-generic-e-card',
+  imports: [
+    CommonModule,
+    RouterModule,
+  ],
+  templateUrl: './generic-e-card.component.html',
+  styleUrl: './generic-e-card.component.scss'
 })
-export default class GenericComponent implements OnInit {
+export default class GenericECardComponent implements OnInit{
 
   slug:string = "";
-  pageData:PageData | null = null;
-
+  ECardData:ECard | null = null;
 
   private route = inject(ActivatedRoute);
   private router = inject(Router);
@@ -32,8 +32,10 @@ export default class GenericComponent implements OnInit {
 
         if (newSlug !== this.slug) {
           this.slug = newSlug;
-          this.pageData = pageDataMap[newSlug];
-          //TODO add if pagedata not in slugs then route to homepage
+          console.log(ECardDataMap);
+          console.log(newSlug);
+          this.ECardData = ECardDataMap[newSlug];
+          //TODO add if ECardData not in slugs then route to homepage
 
 
           const pageSeo: SeoData = {
@@ -45,5 +47,7 @@ export default class GenericComponent implements OnInit {
         }
       });
     }
+
+
 
 }

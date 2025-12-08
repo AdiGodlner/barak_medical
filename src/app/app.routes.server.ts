@@ -1,6 +1,6 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
-const SLUGS = [
+const SERVICE_SLUGS = [
   "aviation-medicine",
   "medical-administration",
   "causal-link-assessment",
@@ -11,14 +11,30 @@ const SLUGS = [
   "industry-consulting",
   "ocupational-medicine"];
 
+const ECARD_SLUGS = [
+  "yair-barak",
+  "darya-levi-barak",
+]
+
 export const serverRoutes: ServerRoute[] = [
   {
     path: 'services/:slug',
     renderMode: RenderMode.Prerender,
     async getPrerenderParams(){
       
-      console.log(SLUGS);
-      return SLUGS.map(slug => ({ slug:String(slug) }) );
+      console.log("SERVICE_SLUGS ", SERVICE_SLUGS);
+      return SERVICE_SLUGS.map(slug => ({ slug:String(slug) }) );
+      
+    }
+  
+  },
+  {
+    path: 'e-card/:slug',
+    renderMode: RenderMode.Prerender,
+    async getPrerenderParams(){
+      
+      console.log("ECARD_SLUGS " , ECARD_SLUGS);
+      return ECARD_SLUGS.map(slug => ({ slug:String(slug) }) );
       
     }
   

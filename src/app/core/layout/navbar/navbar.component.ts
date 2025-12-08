@@ -5,8 +5,9 @@ import {
   Inject,
   PLATFORM_ID
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
+import { isPlatformBrowser } from '@angular/common';
 import { ClickedOutsideDirective } from '../../../directives/clicked-outside.directive';
 import { FocusTrapDirective } from '../../../directives/focus-trap.directive';
 @Component({
@@ -56,6 +57,7 @@ export class NavbarComponent  implements OnInit, OnDestroy{
   openMenu() {
 
     //  TODO add overlay so if user click of menu menu closes
+
     this.isMainMenuOpen = true;
     
   }
@@ -70,7 +72,6 @@ export class NavbarComponent  implements OnInit, OnDestroy{
   }
 
 
-  // TODO open and close submenus by id with a name not a number
   toggleSubMenuOpen(id: number) {
     
     if(id === 1){
