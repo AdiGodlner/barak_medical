@@ -15,7 +15,7 @@ export const militaryMedicine: Card = {
 export const medicalAdministration: Card = {
   imageUrl: '/assets/images/cards/minal refui.svg',
   title: 'מנהל רפואי',
-  description: 'ייעוץ וליווי מקצועי למערכות בריאות וארגונים בבניית נהלים רפואיים, תקנים מקצועיים ותהליכי קבלת החלטות רפואיות ותעסוקתיות.',
+  description: 'ייעוץ וליווי מקצועי למערכות בריאות וארגונים בבניית נהלים רפואיים, תקנים מקצועיים ותהליכי קבלת החלטות רפואיות.',
   routeTo: '/services/medical-administration'
 };
 
