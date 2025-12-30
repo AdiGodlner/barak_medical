@@ -35,6 +35,7 @@ export interface ListContent {
   type: 'li';
   content: string[];
   isLink ?:boolean;
+  href ?: string;
 }
 
 export interface ParagraphContent {
