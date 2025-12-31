@@ -195,11 +195,19 @@ export const divingMedicinePage: PageData = {
           type:"p",
           content:"קישורים שימושיים:"
         },
-        {
-          type:"li",
-          content:[""],
-          
-        }
+{
+  type: "li-a",
+  content: [
+    {
+      label: "רשות הצלילה בישראל – מידע רפואי ועדכונים",
+      linkTo: "https://www.gov.il/he/departments/diving_authority"
+    },
+    {
+      label: "ההתאחדות הישראלית לצלילה",
+      linkTo: "https://www.israeldive.org.il/"
+    }
+  ]
+}
 
       ]
     },
