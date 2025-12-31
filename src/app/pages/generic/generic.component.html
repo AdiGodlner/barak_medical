@@ -33,6 +33,19 @@
                         </ul>
 
                     }
+              @else if (item.type === 'li-a') {
+
+  <ul class="dash-list">
+    @for (listItem of item.content; track $index) {
+      <li class="list-item big-card-text">
+        <a [href]="listItem.linkTo" target="_blank" rel="noopener noreferrer">
+          {{ listItem.label }}
+        </a>
+      </li>
+    }
+  </ul>
+
+}
                 }
             </section>
         }@else if(section.type === "cards-container") {
