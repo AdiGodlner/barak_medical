@@ -28,14 +28,25 @@ export interface CardsContainerSection {
 export type SectionContent = 
   | ParagraphContent
   | ImageContent
-  | ListContent;
+  | ListContent
+  | ListHrefs;
 
 
 export interface ListContent {
   type: 'li';
   content: string[];
-  isLink ?:boolean;
-  href ?: string;
+}
+
+export interface HrefListItem {
+
+label: string;
+linkTo: string;
+  
+}
+
+export interface ListHrefs {
+  type: 'li-a';
+  content: HrefListItem[];
 }
 
 export interface ParagraphContent {
