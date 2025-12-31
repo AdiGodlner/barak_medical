@@ -42,7 +42,7 @@ export const workAbility: Card = {
 
 export const industryConsulting: Card = {
   imageUrl: '/assets/images/cards/yeuth legufim gdulim.svg',
-  title: 'ייעוץ לארגונים',
+  title: 'ייעוץ למעסיקים',
   description: ' ליווי רפואי לארגונים ולחברות בתהליכי קבלת החלטות תעסוקתיות, רפואיות וניהול סיכונים בתחום בריאות העובדים.',
   routeTo: '/services/industry-consulting'
 };
