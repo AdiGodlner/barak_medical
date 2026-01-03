@@ -362,12 +362,11 @@ nav {
           
           .submenu{
 
-            // background-color: #f5f5f5;
             position: static;
             display: none;
             flex-direction: column;
             gap: 20px;
-            align-items: center;
+            align-items: start;
             border: 0;
             padding: 0;
             border-radius: 0;
