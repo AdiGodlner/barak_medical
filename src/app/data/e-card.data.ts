@@ -22,7 +22,7 @@ export const yairECardData : ECard = {
     phoneNumber: "052-3400508",
     email: "Yair@Barakmedical.com",
     linkedIn: "Yair Barak",
-    linkedInRoute: "https://www.linkedin.com/company/barakmedical/about"
+    linkedInRoute: "https://www.linkedin.com/in/yair-barak-854b7168/"
 }
 
 
