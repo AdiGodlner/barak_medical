@@ -199,11 +199,11 @@ export const divingMedicinePage: PageData = {
   content: [
     {
       label: "רשות הצלילה בישראל – מידע רפואי ועדכונים",
-      linkTo: "https://www.gov.il/he/departments/diving_authority"
+      linkTo: "https://www.gov.il/he/pages/medical_information_for_divers"
     },
     {
       label: "ההתאחדות הישראלית לצלילה",
-      linkTo: "https://www.israeldive.org.il/"
+      linkTo: "https://www.diving.org.il/"
     }
   ]
 }
