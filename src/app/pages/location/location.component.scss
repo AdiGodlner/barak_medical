@@ -51,6 +51,11 @@
 .dot-list {
     list-style-type: disc !important;
     color: currentColor;
+
+    li {
+        list-style-type: disc !important;
+    }
+
 }
 
 .map-wraper{

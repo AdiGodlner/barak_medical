@@ -12,10 +12,14 @@
 }
 
 .dot-list {
-    list-style-type: disc !important; 
+    list-style-type: disc !important;
     color: currentColor;
-}
 
+    li {
+        list-style-type: disc !important;
+    }
+
+}
 .subheader{
 
     font-size: 2rem;
