@@ -24,7 +24,7 @@
                     @else if (item.type === 'li') {
 
 
-                        <ul class="dash-list">
+                        <ul class="dot-list">
                             @for (listItem of item.content; track $index) {
                                 <li class="list-item big-card-text">
                                     {{listItem}}
@@ -35,7 +35,7 @@
                     }
               @else if (item.type === 'li-a') {
 
-  <ul class="dash-list">
+  <ul class="dot-list">
     @for (listItem of item.content; track $index) {
       <li class="list-item big-card-text">
         <a [href]="listItem.linkTo" target="_blank" rel="noopener noreferrer">

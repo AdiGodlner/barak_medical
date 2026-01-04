@@ -11,9 +11,9 @@
 
 }
 
-.dash-list li::before {
-  content: '– ';
-  color: currentColor;
+.dot-list {
+    list-style-type: disc;
+    color: currentColor;
 }
 
 .subheader{
