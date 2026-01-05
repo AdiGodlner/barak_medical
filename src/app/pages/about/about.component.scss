@@ -11,19 +11,26 @@
     padding-inline: 80px;
 }
 
-.title{
+.header-wrap{
 
-    padding-block-start: 45px;
-    font-size: 3rem;
-    font-weight: bold;
+      padding-inline: 144px;
 
-}
+    .title{
 
-.subheader{
+        padding-block-start: 45px;
+        font-size: 3rem;
+        font-weight: bold;
 
-    font-size: 2rem;
-    padding-block-end: 40px;
-    max-width: 70ch;
+    }
+
+    .subheader{
+
+        font-size: 2rem;
+        padding-block-end: 40px;
+        max-width: 70ch;
+
+    }
+
 
 }
 
@@ -85,6 +92,8 @@
     grid-template-columns: 2fr 3fr;
     width: 80%;
     margin-inline: auto;
+    margin-top: 100px;
+
     .dr-summary{
         
         .summary-title{
