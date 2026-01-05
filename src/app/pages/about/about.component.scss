@@ -13,17 +13,26 @@
 
 .title{
 
-    font-size: 2.8rem;
+    padding-block-start: 45px;
+    font-size: 3rem;
     font-weight: bold;
 
 }
 
-.title-introduction{
+.subheader{
 
-    font-size: 2.8rem;
+    font-size: 2rem;
+    padding-block-end: 40px;
     max-width: 70ch;
 
 }
+
+// .title-introduction{
+
+//     font-size: 2.8rem;
+//     max-width: 70ch;
+
+// }
 
 .mobile{
     display: none;
