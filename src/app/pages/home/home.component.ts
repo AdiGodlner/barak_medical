@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit{
 
   occupationalCardsData: CardsContainerSection = {
     "type":"cards-container",
-    "h2" :"תחומים נוספים",
+    "h2" :"תחומי עיסוק",
     "cards": occupationalCardsList
   }
 
