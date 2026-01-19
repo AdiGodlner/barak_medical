@@ -18,7 +18,7 @@ export const yairECardData : ECard = {
     imageUrl: "/assets/images/about/yair.webp",
     imageAlt: "",
     title: "ד״ר יאיר ברק",
-    specalities: "מומחה ברפואה תעסוקתית, רפואה צבאית, רפואת צלילה, רפואה תעופתית",
+    specalities: "מומחה ברפואה תעסוקתית ובמנהל רפואי, רופא צלילה ורפואה תעופתית, ולשעבר ראש ענף מיון רפואי בחיל הרפואה",
     phoneNumber: "052-3400508",
     email: "Yair@Barakmedical.com",
     linkedIn: "Yair Barak",
