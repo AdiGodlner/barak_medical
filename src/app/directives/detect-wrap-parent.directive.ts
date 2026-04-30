@@ -30,18 +30,14 @@ export class DetectWrapParentDirective implements AfterViewInit {
     // Observe height changes
     this.observer = new ResizeObserver(() => {
 
-      console.log("inside observer");
       const style = getComputedStyle(element);
       const fontSize = parseFloat(style.fontSize);
-      console.log("fontsize ", fontSize *2, "element.offsetHeight", element.offsetHeight);
       const wrapped = element.offsetHeight > fontSize *2;
-      console.log(wrapped);
 
       const parent = this.findParentWithClass(element, this.parentClass);
       if (!parent) return;
 
       if (wrapped) {
-        console.log("wraped");
         this.renderer.addClass(parent, 'wrapped');
       } else {
         this.renderer.removeClass(parent, 'wrapped');

@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { ClickedOutsideDirective } from '../../../directives/clicked-outside.directive';
 import { FocusTrapDirective } from '../../../directives/focus-trap.directive';
+
 @Component({
   selector: 'app-navbar',
   standalone:true,
