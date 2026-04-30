@@ -45,26 +45,22 @@ export default class LocationComponent implements OnInit{
     ]
   });
 
-  
   ngOnInit(): void {
-  
-    const pageSeo : SeoData ={
-      title: "צור קשר",
-      description: "צור קשר",
-    };
+  const contactPageSeo: SeoData = {
+    title: 'צור קשר ודרכי הגעה',
+    description: 'צרו קשר עם מרפאת ברק מדיקל בקריית אונו. מידע על דרכי הגעה, חניה, נגישות וטופס פנייה לתיאום תור אצל ד"ר יאיר ברק וד"ר דריה לוי-ברק.',
+    url: '/location',
+    type: 'website'
+  };
 
-    this.seo.updateSeoPageData(pageSeo);
-
-  }
+  this.seo.updateSeoPageData(contactPageSeo);
+}
 
   onSubmit() {
-    console.log('Submitting form...');
     if (this.contactForm.valid) {
-      console.log('Form submitted:', this.contactForm.value);
       
     this.http.post(this.apiUrl, this.contactForm.value).subscribe({
         next: (res) => {
-          console.log('Worker response:', res);
           alert('Your message has been sent!');
           this.contactForm.reset();
           this.submitted.set(false);

@@ -31,20 +31,23 @@ export default class GenericComponent implements OnInit {
         const newSlug = params.get('slug') ?? '';
 
         if (newSlug !== this.slug) {
-          this.slug = newSlug;
-          this.pageData = pageDataMap[newSlug];
+          const data = pageDataMap[newSlug];
 
-          if (!this.pageData) {
+          if (!data) {
             this.router.navigate(['/']);
             return;
           }
 
+          this.slug = newSlug;
+          this.pageData = data;
 
           const pageSeo: SeoData = {
-            //TODO change slug to relevent data from pageData !?
-            title: this.slug,
-            description: this.slug,
+            title: data.title,
+            description: data.description,
+            url: `/services/${this.slug}`,
+            type: 'article'
           };
+          
           this.seo.updateSeoPageData(pageSeo);
         }
       });

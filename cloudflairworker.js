@@ -145,14 +145,12 @@ async function handleContact(request, env) {
   const body = await parseJson(request);
 
   if (!body) {
-    console.log("no body");
     return jsonResponse({ error: "Invalid JSON" }, 400);
   }
 
   const { fullName, email, phone, message } = body;
 
   if (!fullName || !email || !phone || !message) {
-    console.log("missing fields");
     return jsonResponse(
       { error: "Missing required fields" },
       400
@@ -169,9 +167,6 @@ async function handleContact(request, env) {
 
   if (!result.ok) {
     
-    console.log("result not oky");
-    console.log(result);
-
     return jsonResponse(
       {
         error: "Mailjet send failed",

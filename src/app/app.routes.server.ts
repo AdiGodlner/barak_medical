@@ -22,7 +22,6 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender,
     async getPrerenderParams(){
       
-      console.log("SERVICE_SLUGS ", SERVICE_SLUGS);
       return SERVICE_SLUGS.map(slug => ({ slug:String(slug) }) );
       
     }
@@ -33,7 +32,6 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender,
     async getPrerenderParams(){
       
-      console.log("ECARD_SLUGS " , ECARD_SLUGS);
       return ECARD_SLUGS.map(slug => ({ slug:String(slug) }) );
       
     }

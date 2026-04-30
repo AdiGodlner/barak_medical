@@ -16,16 +16,18 @@ export default class AccessibilityComponent implements OnInit{
     }
   
   
-    ngOnInit(): void {
-  
-      const pageSeo : SeoData ={
-        title: "הצהרת נגישות",
-        description: "הצהרת נגישות",
-      };
-  
-      this.seo.updateSeoPageData(pageSeo);
-  
-    }
+ngOnInit(): void {
+
+  const pageSeo: SeoData = {
+    title: 'הצהרת נגישות',
+    description: 'ברק מדיקל מחויבת למתן שירות נגיש ושוויוני. כאן תוכלו למצוא מידע על נגישות האתר בהתאם לתקן WCAG 2.0 ועל הסדרי הנגישות הפיזיים במרפאה בקריית אונו.',
+    url: '/accessibility-statement',
+    type: 'article'
+  };
+
+  this.seo.updateSeoPageData(pageSeo);
+
+}
 
 
 

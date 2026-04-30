@@ -2,9 +2,13 @@ import { Card } from "./cards";
 
 
 export interface PageData {
+  title:string;
+  description:string;
+  
   h1: string;
   subHeader?:string;
   sections: Section[];
+  
 }
 
 export type Section = 

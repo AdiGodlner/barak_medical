@@ -1,38 +1,71 @@
-import { Injectable } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { Meta } from '@angular/platform-browser';
-import { SeoData } from '../models/seo.model';
+import { Injectable, Inject } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
+import { SeoData, DEFAULT_SEO } from '../models/seo.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SeoService {
 
-  clinicName :string = "ברק מדיקל";
-  location :string = "קריית אונו";
-  titleSuffix:string = `${this.clinicName} | ${this.location}`;
+  private readonly clinicName: string = "ברק מדיקל";
+  private readonly location: string = "קריית אונו";
+  private readonly titleSuffix: string = `${this.clinicName} | ${this.location}`;
+  private readonly baseUrl: string = "https://barakmedical.com"; // Change to your actual domain
 
+  constructor(
+    private title: Title, 
+    private meta: Meta,
+    @Inject(DOCUMENT) private document: Document
+  ) { }
 
-  
-  constructor(private title: Title, private meta: Meta) {
+  /**
+   * Main entry point for updating SEO per page
+   */
+  updateSeoPageData(data: SeoData): void {
+    const seoTitle = data.title ? `${data.title} | ${this.titleSuffix}` : this.titleSuffix;
+    const seoDesc = data.description || DEFAULT_SEO.description;
+    const seoImage = `${this.baseUrl}${data.image || DEFAULT_SEO.image}`;
+    const seoUrl = `${this.baseUrl}${data.url || ''}`;
 
+    // 1. Standard Tags
+    this.title.setTitle(seoTitle);
+    this.meta.updateTag({ name: 'description', content: seoDesc });
+    this.meta.updateTag({ name: 'robots', content: data.robots || 'index, follow' });
+
+    // 2. Open Graph / Facebook / WhatsApp
+    this.meta.updateTag({ property: 'og:type', content: data.type || 'website' });
+    this.meta.updateTag({ property: 'og:title', content: seoTitle });
+    this.meta.updateTag({ property: 'og:description', content: seoDesc });
+    this.meta.updateTag({ property: 'og:image', content: seoImage });
+    this.meta.updateTag({ property: 'og:url', content: seoUrl });
+
+    // 3. Twitter
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: seoTitle });
+    this.meta.updateTag({ name: 'twitter:description', content: seoDesc });
+    this.meta.updateTag({ name: 'twitter:image', content: seoImage });
+
+    // 4. Canonical Link
+    this.updateCanonicalLink(seoUrl);
   }
 
-  updateSeoPageData(data: SeoData): void {
-    // 1. Title
-    this.title.setTitle(`${data.title} | ${this.titleSuffix}`);
-
-    // 2. Standard Meta
-    this.meta.updateTag({ name: 'description', content: data.description });
+  /**
+   * Updates the <link rel="canonical"> tag in the head
+   */
+  private updateCanonicalLink(url: string): void {
+    // Try to find an existing canonical link
+    let link: HTMLLinkElement | null = this.document.querySelector('link[rel="canonical"]');
     
-    // 3. Open Graph (WhatsApp/FB)
-    this.meta.updateTag({ property: 'og:title', content: data.title });
-    this.meta.updateTag({ property: 'og:description', content: data.description });
-    this.meta.updateTag({ property: 'og:image', content: data.image || 'assets/default-clinic-share.jpg' });
-    this.meta.updateTag({ property: 'og:url', content: `https://barakmedical.com${data.url}` });
+    if (!link) {
+      // If it doesn't exist (first time build or render), create it
+      link = this.document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      this.document.head.appendChild(link);
+    }
     
-    // 4. Twitter
-    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    // Set the absolute URL
+    link.setAttribute('href', url);
   }
 
 

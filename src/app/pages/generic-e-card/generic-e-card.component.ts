@@ -32,8 +32,6 @@ export default class GenericECardComponent implements OnInit{
 
         if (newSlug !== this.slug) {
           this.slug = newSlug;
-          console.log(ECardDataMap);
-          console.log(newSlug);
           this.ECardData = ECardDataMap[newSlug];
 
           if (!this.ECardData) {
@@ -41,12 +39,13 @@ export default class GenericECardComponent implements OnInit{
             return;
           }
 
-          const pageSeo: SeoData = {
-            //TODO change slug to relevent data from pageData !?
-            title: this.slug,
-            description: this.slug,
-          };
-          this.seo.updateSeoPageData(pageSeo);
+        const pageSeo: SeoData = {
+          title: this.ECardData.title,
+          description: `${this.ECardData.title} - ${this.ECardData.specalities}. צרו קשר לתיאום תור, חוות דעת מומחה וייעוץ רפואי תעסוקתי במרפאת ברק מדיקל.`,
+          url: `/e-card/${this.slug}`,
+          type: 'profile'
+        };
+        this.seo.updateSeoPageData(pageSeo);
         }
       });
     }

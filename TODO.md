@@ -1,14 +1,5 @@
 # 🏥 Barak Medical - SEO & Metadata Implementation Plan
 
-## 1. Models & Data Structures
-- [ ] **Update `SeoData` Model**: Expand `src/app/models/seo.model.ts` to include:
-    - `title: string`
-    - `description: string`
-    - `image?: string` (URL for Open Graph)
-    - `url?: string` (The page path)
-    - `type?: 'website' | 'article'`
-- [ ] **Define Static Defaults**: Create a constant for the default "fallback" metadata (e.g., clinic logo, default description).
-
 ## 2. SeoService Enhancements
 - [ ] **Expand `updateMeta`**: Add logic to update the following tags:
     - `og:title`, `og:description`, `og:image`, `og:url`
