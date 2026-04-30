@@ -16,28 +16,6 @@ export class SeoService {
   
   constructor(private title: Title, private meta: Meta) {
 
-<<<<<<< HEAD
-   }
-
-
-  private updateTitle(title: string): void {
-    
-    this.title.setTitle(`${title} | ${this.titleSuffix}`);
-  
-  }
-
-  private updateMeta(desc: string): void {
-    
-    this.meta.updateTag({ name: 'description', content: desc });
-    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
-
-  }
-
-  updateSeoPageData(data: SeoData): void {
-    this.updateTitle(data.title);
-    this.updateMeta(data.description);
-
-=======
   }
 
   updateSeoPageData(data: SeoData): void {
@@ -55,7 +33,6 @@ export class SeoService {
     
     // 4. Twitter
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
->>>>>>> 569a741 (temp)
   }
 
 

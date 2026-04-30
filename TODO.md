@@ -1,16 +1,3 @@
-# TODO
-
-<<<<<<< HEAD
-
-- email cloudfliar worker 
-
-- optimize images
-- TODO chagne metatag image and let MAYA choose descriptions for each page 
-=======
-- metadata for each page 
-- image optimization
-
-
 # 🏥 Barak Medical - SEO & Metadata Implementation Plan
 
 ## 1. Models & Data Structures
@@ -68,4 +55,3 @@
 ## 7. Launch & Post-Launch
 - [ ] **Submit Sitemap**: Provide the new `sitemap.xml` to Google Search Console.
 - [ ] **Social Debugging**: Run the live URLs through the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) to ensure the "WhatsApp preview" looks perfect.
->>>>>>> 569a741 (temp)
