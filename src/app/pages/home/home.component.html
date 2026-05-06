@@ -64,10 +64,18 @@
     <!-- who we are -->
     <!-- who we are -->
     <!-- who we are -->
-
     <div class="homepage-section">
-        <app-cards-container [cardsContainerData]="occupationalCardsData"  ></app-cards-container>
-        <app-cards-container [cardsContainerData]="additionalCardsData"  ></app-cards-container>
+        @defer (on viewport; prefetch on idle) {
+            <app-cards-container [cardsContainerData]="occupationalCardsData"  ></app-cards-container>
+            <app-cards-container [cardsContainerData]="additionalCardsData"  ></app-cards-container>
+        } @placeholder {
+            <!-- SSG renders this! Crawlers see this content. -->
+            <div class="homepage-section placeholder-height">
+                <p>Loading our services...</p>
+            </div>
+        } @error {
+            <p>קרתה תקלה בבקשה נסו שנית על ידי רענון הדף או לחיצת על F5 </p>
+        }
     </div>
-    
+
 </main>

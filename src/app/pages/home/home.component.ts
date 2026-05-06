@@ -38,12 +38,12 @@ export class HomeComponent implements OnInit{
   
   ngOnInit(): void {
 
-  const pageSeo: SeoData = {
-    title: 'רפואה תעסוקתית וחוות דעת',
-    description: 'מרכז ברק מדיקל בקריית אונו מספק שירותי רפואה תעסוקתית, חוות דעת מומחה לביטוח לאומי ולבתי משפט, רפואה צבאית, רפואת צלילה ותעופה ע"י ד"ר יאיר ברק וד"ר דריה לוי-ברק.',
-    url: '/',
-    type: 'website'
-  };
+    const pageSeo: SeoData = {
+      title: 'רפואה תעסוקתית וחוות דעת',
+      description: 'מרכז ברק מדיקל בקריית אונו מספק שירותי רפואה תעסוקתית, חוות דעת מומחה לביטוח לאומי ולבתי משפט, רפואה צבאית, רפואת צלילה ותעופה ע"י ד"ר יאיר ברק וד"ר דריה לוי-ברק.',
+      url: '/',
+      type: 'website'
+    };
 
   this.seo.updateSeoPageData(pageSeo);
 
