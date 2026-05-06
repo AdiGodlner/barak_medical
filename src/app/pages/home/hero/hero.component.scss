@@ -55,22 +55,24 @@
     calc(-30vw + ((100vw - 1400px)*0.6 ) ),
     0%);
   z-index: 1;
+
   height: 100%;
 
   background: $bright-yellow;
   background-image: linear-gradient(90deg, $bright-yellow 0%, rgba(255, 255, 255, 1) 70%);
   
-  .hero-image{
+  picture {
     height: 100%;
-    width: 100%;
-    object-fit: cover;
+
+    .hero-image{
+      height: 100%;
+      object-fit: cover;
+      // display: inline-block;
+
+    }
+
   }
-  .desktop-image{
-    display: inline-block;
-  }
-  .mobile-image{
-    display: none;
-  }
+  
 }
 
 
@@ -190,16 +192,14 @@
   .background-image-wrap{
 
     all: unset;
+    picture{
 
-    .hero-image {
-      width: 100%;
+      .hero-image {
+        width: 100%;
+      }
+
     }
-    .desktop-image{
-      display: none;
-    }
-    .mobile-image{
-      display: inline-block;
-    }
+    
   }
 
 }
@@ -236,9 +236,14 @@
 
   .background-image-wrap{
     all: unset;
-    .hero-image {
-      width: 100%;
+    picture{
+
+      .hero-image {
+        width: 100%;
+      }
+
     }
+    
     .desktop-image{
       
       display: none;

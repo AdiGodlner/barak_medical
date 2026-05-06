@@ -1,6 +1,70 @@
 <main>
     <app-hero></app-hero>
-    <app-who-we-are></app-who-we-are>
+    <!-- who we are -->
+    <!-- who we are -->
+    <!-- who we are -->
+    <section class="homepage-section">
+        <h2 class="title">
+            <a routerLink="/about" tabindex="-1" >
+                עלינו
+            </a>
+        </h2>
+        <div class="about-wrap">
+
+            <!-- Yair -->
+            <div class="dr-wrap">
+                <div class="dr-image">
+                    <img src="/assets/images/about/yair.webp" 
+                        loading="lazy"
+                        fetchpriority="low"
+                    alt="">
+                </div>
+                <div class="dr-about-text">
+                    <h3 class="dr-name">
+                        <a class="dr-link" 
+                        routerLink="/about" tabindex="-1">
+                            ד"ר יאיר ברק
+                        </a>
+                    </h3>
+                    <p class="dr-description" >
+                מומחה לרפואה תעסוקתית ולמנהל רפואי. אל״מ במילואים בעל נסיון רב בתחומי הרפואה הצבאית והמיון הרפואי הצבאי רפואת צלילה ורפואה תעופתית וכיועץ לגופים בטחוניים חברות וארגונים.
+
+                    </p>
+                </div>
+            </div>
+        
+
+            <!-- Daria -->
+
+            <div class="dr-wrap" >
+                <div class="dr-image">
+                    <img 
+                    src="/assets/images/about/darya.webp"
+                    loading="lazy"
+                    fetchpriority="low"
+                    alt="" >
+                </div>
+                <div class="dr-about-text">
+                    <h3  class="dr-name" >
+                        <a class="dr-link"
+                        routerLink="/about" tabindex="-1" > 
+                            ד"ר דריה לוי-ברק
+                        </a>
+                    </h3>
+                    <p class="dr-description" >
+    מומחית לרפואה תעסוקתית ולרפואה פנימית, בעלת ניסיון עשיר במערכת הבריאות הציבורית ובייעוץ רפואי לגופים, חברות ואנשים פרטיים.
+                    </p>
+                </div>
+                
+            </div>
+
+        </div>
+        
+    </section>
+    <!-- who we are -->
+    <!-- who we are -->
+    <!-- who we are -->
+
     <div class="homepage-section">
         <app-cards-container [cardsContainerData]="occupationalCardsData"  ></app-cards-container>
         <app-cards-container [cardsContainerData]="additionalCardsData"  ></app-cards-container>

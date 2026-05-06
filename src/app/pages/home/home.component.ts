@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroComponent } from './hero/hero.component';
-import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
 import { SeoService } from '../../services/seo.service';
 import { SeoData } from '../../models/seo.model';
 import { CardsContainerSection } from '../../models/page-data';
 import { additionalCardsList, occupationalCardsList } from '../../data/cards.data';
 import { CardsContainerComponent } from "../../components/cards-container/cards-container.component";
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   imports: [
     HeroComponent,
-    WhoWeAreComponent,
-    CardsContainerComponent
+    CardsContainerComponent,
+    RouterModule
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
