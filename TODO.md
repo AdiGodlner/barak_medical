@@ -1,29 +1,62 @@
-# 🏥 Barak Medical - SEO & Metadata Implementation Plan
+🏥 Barak Medical - Final Launch Checklist
+1. Accessibility & UX
 
-## 0. ARIA HIDDEN EXIT BUTTON ALT AND ACCISSABILATY CHECKS 
-## 1. SeoService Enhancements
-- [ ] **Expand `updateMeta`**: Add logic to update the following tags:
-    - `og:title`, `og:description`, `og:image`, `og:url`
-    - `twitter:card` (set to `summary_large_image`)
-    - `twitter:title`, `twitter:description`, `twitter:image`
-- [ ] **Implement JSON-LD Schema**: 
-    - Create an `updateSchema(data: any)` method.
-    - Use the `DOCUMENT` token to inject a `<script type="application/ld+json">` tag into the `<head>`.
-    - Include `MedicalBusiness` type with: Name, Address (Kiryat Ono), Phone, and `sameAs` linking to the Google Business Profile.
+    [ ] Accessibility Fixes: Add aria-hidden="true" to decorative icons and ensure the "Exit" button has a clear aria-label or alt text.
 
-## 2. Assets & Images
-- [ ] **Prepare OG Images**: Create/Export images ($1200 \times 630$px):
-    - `clinic-main.jpg` (Home/General)
-    - `team.jpg` (About)
-    - `location-map.jpg` (Contact/Location)
-    - Specific images for each service (e.g., `physiotherapy.jpg`).
-- [ ] **Optimize Image Filenames**: Ensure names are SEO-friendly (e.g., `barak-medical-kiryat-ono-clinic.jpg`).
+2. Metadata & Social (Angular SeoService)
 
-## 3. Verification (Local Test)
- [ ] **Schema Validation**: Copy the page source and paste it into the [Schema Markup Validator](https://validator.schema.org/) to check for errors in your JSON-LD.
+    [ ] Expand updateMeta:
 
-## 4. Launch & Post-Launch
-- [ ] **Submit Sitemap**: Provide the new `sitemap.xml` to Google Search Console.
-- [ ] **Social Debugging**: Run the live URLs through the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) to ensure the "WhatsApp preview" looks perfect.
+        [ ] Open Graph: og:title, og:description, og:image (1200x630), og:url.
 
-## 5. light house angular speed optimization
+        [ ] Twitter Cards: twitter:card (summary_large_image), twitter:title, twitter:description, twitter:image.
+
+    [ ] Implement JSON-LD Schema (updateSchema):
+
+        [ ] Inject <script type="application/ld+json"> into <head>.
+
+        [ ] Set type to MedicalBusiness or Physician.
+
+        [ ] Crucial: Include sameAs (The Google Maps link provided by the designer).
+
+    [ ] Canonical Tags: Ensure every page has a link rel="canonical" pointing to the primary URL to fix the Search Console error.
+
+3. Asset Optimization (The Designer Request)
+
+    [ ] Image Sizes:
+
+        [ ] Request Desktop Hero: 1920px width.
+
+        [ ] Request Mobile Hero: 750px width.
+
+        [ ] Request OG Images: 1200x630px (Clinic, Team, Map, Services).
+
+    [ ] Image Format: Request all assets as WebP.
+
+    [ ] Quality Target: Request 77%–80% quality (experiment to find the point where file size drops without visible banding).
+
+    [ ] SEO Naming: Rename files to aviation-medicine-barak-medical.webp etc., before uploading.
+
+4. Angular Performance (Sub-2s Goal)
+
+    [ ] Component Flattening: Move Footer and Hero logic directly into the Homepage component to reduce JS chunk overhead and HTTP requests.
+
+    [ ] Remove Unused JS: Audit and strip any unused libraries or decorative JS.
+
+    [ ] LCP Optimization: Add fetchpriority="high" to the main Hero <img> tag.
+
+    [ ] Defer Scripts: Ensure non-essential scripts (Analytics, Maps) are loaded with defer.
+
+5. Validation & Google Business Profile
+
+    [ ] Designer Sync:
+
+        [ ] Request the Google Maps Public URL for the sameAs tag.
+
+        [ ] Ask them to confirm the Business Address and Category (Medical) are updated on the Google Profile.
+
+    [ ] Schema Validation: Test the live code on validator.schema.org.
+
+    [ ] Social Debugging: Run the URL through the Facebook Sharing Debugger to fix the WhatsApp preview.
+
+    [ ] Search Console: Submit the sitemap.xml and click "Validate Fix" on the duplicate content error.

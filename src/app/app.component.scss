@@ -1,3 +1,5 @@
+@use 'styles/variables.scss' as *;
+
 :host {
     display: flex;
     flex-direction: column;
@@ -11,7 +13,122 @@
 }
 
 
-app-footer {
-  margin-top: auto;
+.footer {
+
+    margin-top: auto;
+
+    background-color: $light-blue;
+    padding-inline: 100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+
+  .column {
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    text-align: start;
+    color: $mid-dark-blue;
+       
+    .footer-link{
+
+        min-height: 44px;
+        min-width: 44px;
+        width: fit-content;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: $mid-dark-blue;
+    }
+
+    .socials{
+
+      margin-top: 50px;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+      
+      .img-wrap{
+
+        min-height: 60px;
+        min-width: 60px;
+        aspect-ratio: 1 / 1;
+        width: clamp(60px, 4.8vw  ,80px);
+
+        .svg-link{
+        
+          height: 100%;
+          width: 100%;
+          display: block;
+          padding: 0;
+          border: 0;
+          outline: 0;
+          cursor: pointer;
+
+          svg{
+              
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              
+          }
+
+        }
+
+      }
+
+      
+    }
+
+    .credits{
+
+        text-align: end;
+        font-size: 1rem;
+        font-size: 1.5rem;
+
+    }
+
+    .credits-top{
+        margin-top: auto;
+    }
+
+  }
+
+
 }
-  
+
+
+@media screen and (max-width: 1000px){
+
+    .footer{
+
+        flex-direction: column;
+        padding-inline: 40px;
+        padding-bottom: 100px;
+    
+      }
+
+    .credits{
+
+        text-align: center;
+
+    }
+
+    .socials{
+
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        
+    }
+
+}  
