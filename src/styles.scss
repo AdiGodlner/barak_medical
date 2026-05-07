@@ -10,25 +10,13 @@
 
 @font-face {
   font-family: 'Almoni';
-  src: url('/assets/fonts/webfont_files/almoni-regular-aaa.eot') format('eot');
+  src: 
+        url('/assets/fonts/webfont_files/almoni-regular-aaa.woff2') format('woff2'),
+        url('/assets/fonts/webfont_files/almoni-regular-aaa.woff') format('woff'),
+        url('/assets/fonts/webfont_files/almoni-regular-aaa.eot') format('eot');
   font-weight: 400;
   font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Almoni';
-  src: url('/assets/fonts/webfont_files/almoni-regular-aaa.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Almoni';
-  src: url('/assets/fonts/webfont_files/almoni-regular-aaa.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
+  font-display: swap;
 }
 
 // ===========================================

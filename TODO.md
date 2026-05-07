@@ -60,3 +60,27 @@
     [ ] Social Debugging: Run the URL through the Facebook Sharing Debugger to fix the WhatsApp preview.
 
     [ ] Search Console: Submit the sitemap.xml and click "Validate Fix" on the duplicate content error.
+
+Quick Wins (Minutes to implement)
+
+    Fix Font Display: Add font-display: swap; to your @font-face CSS rule. This prevents the "flash of invisible text" (FOIT).
+
+    Set Image Dimensions: Hardcode width and height attributes on the Hero and Logo <img> tags in your HTML templates to instantly stabilize CLS.
+
+    Update robots.txt: Open the file and fix the syntax errors (likely missing colons or incorrect paths) to clear the 13 SEO warnings.
+
+Moderate Effort (Config changes)
+
+    Preload the Font: Add the <link rel="preload"> tag to your index.html. This requires verifying the exact path to the .woff2 file to avoid double-loading.
+
+    Extend Caching: Configure your server or Cloudflare Page Rules to set max-age=31536000 for the /assets/ and /webfont_files/ directories.
+
+    SVG Cleanup: Run your logo.svg through an optimizer (like SVGO) to strip metadata and re-upload it.
+
+Deep Optimization (Code architecture)
+
+    Flatten the Request Chain: Investigate why main.js is chaining three chunks deep. You may need to adjust your Angular lazy-loading strategy or angular.json optimization settings to bundle those small chunks (0.89 KiB and 2.31 KiB) into the main bundle.
+
+    Implement @defer: Wrap non-critical components (like the footer or clinic location maps) in Angular @defer blocks to address the "Unused JavaScript" warning.
+
+    Hero Image Logic: If you are using an Angular directive that forces lazy loading, refactor the Hero component to ensure it uses fetchpriority="high" and standard browser rendering to hit that LCP target.
