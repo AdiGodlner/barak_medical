@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroComponent } from './hero/hero.component';
 import { SeoService } from '../../services/seo.service';
 import { SeoData } from '../../models/seo.model';
 import { CardsContainerSection } from '../../models/page-data';
@@ -10,7 +9,6 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-home',
   imports: [
-    HeroComponent,
     CardsContainerComponent,
     RouterModule
 ],
