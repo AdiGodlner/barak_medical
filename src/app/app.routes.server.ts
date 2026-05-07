@@ -20,20 +20,18 @@ export const serverRoutes: ServerRoute[] = [
   {
     path: 'services/:slug',
     renderMode: RenderMode.Prerender,
-    async getPrerenderParams(){
-      
-      return SERVICE_SLUGS.map(slug => ({ slug:String(slug) }) );
-      
+    async getPrerenderParams () {
+      console.log(" in get prerenderParams");
+      return SERVICE_SLUGS.map(slug => ({ slug }) );
     }
   
   },
   {
     path: 'e-card/:slug',
     renderMode: RenderMode.Prerender,
-    async getPrerenderParams(){
-      
-      return ECARD_SLUGS.map(slug => ({ slug:String(slug) }) );
-      
+    async getPrerenderParams() {
+      console.log(" in get prerenderParams");
+      return ECARD_SLUGS.map(slug => ({ slug }) );
     }
   
   },

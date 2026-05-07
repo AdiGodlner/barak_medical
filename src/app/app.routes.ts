@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { ServerRoute } from '@angular/ssr';
+
 import { HomeComponent } from './pages/home/home.component';
 import { 
   lazyLoadAbout,
@@ -27,6 +29,7 @@ export const routes: Routes = [
   { 
     path: 'services/:slug',
     loadComponent: lazyLoadGeneric,
+  
   },
   {
     path: 'e-card/:slug',

@@ -16,15 +16,6 @@
           "style": "scss"
         }
       },
-      
-      "i18n": {
-
-        "sourceLocale":"he",
-        "locales": {
-          "en-US": "src/locales/messages.en.xlf"
-          
-        }
-      },
 
       "architect": {
         
@@ -52,8 +43,8 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "server": "src/main.server.ts",
             "outputMode": "static",
+            "server": "src/main.server.ts",
             "ssr": {
               "entry": "src/server.ts"
             }
@@ -94,10 +85,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
         },
 
         "test": {
