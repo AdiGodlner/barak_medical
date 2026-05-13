@@ -1,8 +1,3 @@
-🏥 Barak Medical - Final Launch Checklist
-1. Accessibility & UX
-
-    [ ] Accessibility Fixes: Add aria-hidden="true" to decorative icons and ensure the "Exit" button has a clear aria-label or alt text.
-
 2. Metadata & Social (Angular SeoService)
 
     [ ] Expand updateMeta:
@@ -21,31 +16,12 @@
 
     [ ] Canonical Tags: Ensure every page has a link rel="canonical" pointing to the primary URL to fix the Search Console error.
 
-3. Asset Optimization (The Designer Request)
-
-    [ ] Image Sizes:
-
-        [ ] Request Desktop Hero: 1920px width.
-
-        [ ] Request Mobile Hero: 750px width.
-
-        [ ] Request OG Images: 1200x630px (Clinic, Team, Map, Services).
-
-    [ ] Image Format: Request all assets as WebP.
-
-    [ ] Quality Target: Request 77%–80% quality (experiment to find the point where file size drops without visible banding).
-
-    [ ] SEO Naming: Rename files to aviation-medicine-barak-medical.webp etc., before uploading.
-
 4. Angular Performance (Sub-2s Goal)
-
-    [ ] Component Flattening: Move Footer and Hero logic directly into the Homepage component to reduce JS chunk overhead and HTTP requests.
 
     [ ] Remove Unused JS: Audit and strip any unused libraries or decorative JS.
 
     [ ] LCP Optimization: Add fetchpriority="high" to the main Hero <img> tag.
 
-    [ ] Defer Scripts: Ensure non-essential scripts (Analytics, Maps) are loaded with defer.
 
 5. Validation & Google Business Profile
 
@@ -63,24 +39,14 @@
 
 Quick Wins (Minutes to implement)
 
-    Fix Font Display: Add font-display: swap; to your @font-face CSS rule. This prevents the "flash of invisible text" (FOIT).
-
     Set Image Dimensions: Hardcode width and height attributes on the Hero and Logo <img> tags in your HTML templates to instantly stabilize CLS.
-
-    Update robots.txt: Open the file and fix the syntax errors (likely missing colons or incorrect paths) to clear the 13 SEO warnings.
-
-Moderate Effort (Config changes)
-
-    Preload the Font: Add the <link rel="preload"> tag to your index.html. This requires verifying the exact path to the .woff2 file to avoid double-loading.
-
-    Extend Caching: Configure your server or Cloudflare Page Rules to set max-age=31536000 for the /assets/ and /webfont_files/ directories.
-
-    SVG Cleanup: Run your logo.svg through an optimizer (like SVGO) to strip metadata and re-upload it.
+   
 
 Deep Optimization (Code architecture)
 
     Flatten the Request Chain: Investigate why main.js is chaining three chunks deep. You may need to adjust your Angular lazy-loading strategy or angular.json optimization settings to bundle those small chunks (0.89 KiB and 2.31 KiB) into the main bundle.
+    maybe defer chatbot and or navbar ? figure out what the chunks load
 
     Implement @defer: Wrap non-critical components (like the footer or clinic location maps) in Angular @defer blocks to address the "Unused JavaScript" warning.
 
-    Hero Image Logic: If you are using an Angular directive that forces lazy loading, refactor the Hero component to ensure it uses fetchpriority="high" and standard browser rendering to hit that LCP target.
+    make chatbot accsissible  focusable and entr to chose option and focus trapping  
